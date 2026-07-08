@@ -1,1465 +1,400 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minas Sabores — Bolos, Doces e Salgados Artesanais</title>
-<meta name="description" content="Minas Sabores: bolos, doces gourmet e salgados feitos com carinho. Encomende pelo site e receba em casa.">
-<meta name="keywords" content="bolos, doces gourmet, salgados, encomendas, Minas Gerais, festa, evento">
-<meta property="og:title" content="Minas Sabores — Cardápio Digital">
-<meta property="og:description" content="Bolos, doces e salgados feitos com carinho. Faça seu pedido online.">
-<meta property="og:type" content="website">
-<link rel="manifest" href="manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#98b7ff",
+                    "tertiary-fixed-dim": "#afc6ff",
+                    "primary": "#f7d054",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#d9e2ff",
+                    "on-tertiary-fixed": "#001a43",
+                    "background": "#16130b",
+                    "surface-container-low": "#1f1b13",
+                    "inverse-primary": "#735c00",
+                    "on-primary-fixed": "#231a00",
+                    "secondary-fixed-dim": "#d1c5b1",
+                    "on-secondary-container": "#c3b7a3",
+                    "on-primary-container": "#594600",
+                    "tertiary": "#c3d3ff",
+                    "on-surface-variant": "#d0c6af",
+                    "surface-dim": "#16130b",
+                    "on-primary-fixed-variant": "#574500",
+                    "outline": "#99907c",
+                    "on-primary": "#3c2f00",
+                    "on-secondary": "#363022",
+                    "on-tertiary": "#002d6c",
+                    "surface-container-lowest": "#110e07",
+                    "inverse-surface": "#eae2d4",
+                    "surface-container": "#231f17",
+                    "surface-variant": "#38342b",
+                    "surface-bright": "#3d392f",
+                    "surface": "#16130b",
+                    "on-surface": "#eae2d4",
+                    "secondary-fixed": "#eee1cc",
+                    "surface-tint": "#e9c349",
+                    "on-tertiary-fixed-variant": "#224585",
+                    "on-tertiary-container": "#244687",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#38342b",
+                    "primary-fixed-dim": "#e9c349",
+                    "primary-fixed": "#ffe087",
+                    "on-secondary-fixed-variant": "#4e4637",
+                    "error-container": "#93000a",
+                    "secondary": "#d1c5b1",
+                    "on-secondary-fixed": "#211b0e",
+                    "primary-container": "#d9b43b",
+                    "surface-container-high": "#2d2a21",
+                    "secondary-container": "#504839",
+                    "outline-variant": "#4d4635",
+                    "on-background": "#eae2d4",
+                    "inverse-on-surface": "#343027",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "lg": "48px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "label-md": ["Be Vietnam Pro"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"],
+                    "label-sm": ["Be Vietnam Pro"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
 <style>
-:root {
-  --brown: #22110D;
-  --gold: #D4AF37;
-  --gold-light: #e8c84a;
-  --cream: #F5E6C8;
-  --cream-light: #fdf6ea;
-  --white: #FFFFFF;
-  --gray: #E8E1DF;
-  --gray-mid: #b0a8a5;
-  --text: #22110D;
-  --radius: 16px;
-  --shadow: 0 4px 24px rgba(34,17,13,.10);
-  --shadow-hover: 0 8px 32px rgba(34,17,13,.18);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Be Vietnam Pro',sans-serif;background:var(--cream-light);color:var(--text);min-height:100vh}
-img{display:block;width:100%;object-fit:cover}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:none;outline:none}
-
-/* HEADER */
-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(34,17,13,.97);backdrop-filter:blur(12px);padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,.3)}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-icon{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;color:var(--brown);font-size:18px;flex-shrink:0}
-.logo-text{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.2rem;font-weight:700;letter-spacing:.5px}
-.header-actions{display:flex;align-items:center;gap:10px}
-.btn-whatsapp{background:var(--gold);color:var(--brown);padding:8px 16px;border-radius:24px;font-weight:600;font-size:.85rem;display:flex;align-items:center;gap:6px;transition:all .2s}
-.btn-whatsapp:hover{background:var(--gold-light);transform:translateY(-1px)}
-.btn-cart{position:relative;background:rgba(212,175,55,.15);border:1px solid var(--gold);color:var(--gold);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:all .2s}
-.btn-cart:hover{background:var(--gold);color:var(--brown)}
-.cart-badge{position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;display:none}
-
-/* HERO */
-#hero{min-height:100vh;background:linear-gradient(135deg,var(--brown) 0%,#3d1f15 40%,#5a2e1e 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px 40px;position:relative;overflow:hidden}
-#hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1400&q=80') center/cover;opacity:.18}
-.hero-content{position:relative;z-index:1;max-width:640px}
-.hero-eyebrow{color:var(--gold);font-size:.85rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:16px}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5.5rem);color:var(--white);line-height:1.05;margin-bottom:16px}
-.hero-title span{color:var(--gold)}
-.hero-subtitle{color:var(--gray);font-size:1.1rem;font-weight:300;margin-bottom:36px;line-height:1.6}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--brown);padding:16px 36px;border-radius:48px;font-weight:700;font-size:1rem;transition:all .25s;box-shadow:0 4px 20px rgba(212,175,55,.4)}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 32px rgba(212,175,55,.5)}
-.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
-.badge{background:rgba(255,255,255,.08);border:1px solid rgba(212,175,55,.3);color:var(--cream);padding:8px 16px;border-radius:24px;font-size:.8rem;font-weight:500}
-
-/* SEARCH */
-#search-section{background:var(--brown);padding:24px 20px;position:sticky;top:64px;z-index:900}
-.search-wrap{max-width:640px;margin:0 auto;position:relative}
-.search-input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(212,175,55,.3);color:var(--white);padding:14px 20px 14px 48px;border-radius:12px;font-size:.95rem;font-family:inherit;transition:all .2s}
-.search-input::placeholder{color:rgba(255,255,255,.4)}
-.search-input:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.12)}
-.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.1rem}
-.search-results{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--white);border-radius:12px;box-shadow:var(--shadow-hover);overflow:hidden;display:none;z-index:100;max-height:360px;overflow-y:auto}
-.search-result-item{padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--gray);cursor:pointer;transition:background .15s}
-.search-result-item:hover{background:var(--cream)}
-.search-result-item:last-child{border-bottom:none}
-.sr-name{font-weight:600;font-size:.9rem}
-.sr-price{color:var(--gold);font-weight:700;font-size:.9rem}
-
-/* CATEGORIES */
-#categories{padding:40px 20px 24px;background:var(--cream-light)}
-.section-title{font-family:'Playfair Display',serif;font-size:1.8rem;text-align:center;color:var(--brown);margin-bottom:24px}
-.cats-wrap{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:var(--gold) transparent;max-width:1100px;margin:0 auto}
-.cat-btn{display:flex;align-items:center;gap:8px;padding:10px 20px;border-radius:32px;background:var(--white);border:2px solid var(--gray);color:var(--brown);font-weight:600;font-size:.88rem;white-space:nowrap;transition:all .2s;flex-shrink:0}
-.cat-btn:hover,.cat-btn.active{background:var(--brown);border-color:var(--brown);color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow)}
-
-/* MENU GRID */
-#menu{padding:24px 20px 60px;max-width:1100px;margin:0 auto}
-.menu-section{margin-bottom:48px}
-.menu-section-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--brown);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:10px}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-.product-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:all .25s;position:relative}
-.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
-.product-img{height:160px;background:linear-gradient(135deg,#f5e6c8,#e8d5a3);position:relative;overflow:hidden}
-.product-img img{height:100%;object-fit:cover;transition:transform .4s}
-.product-card:hover .product-img img{transform:scale(1.05)}
-.badge-hot{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--brown);padding:4px 10px;border-radius:20px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.btn-fav{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.9);border:none;width:32px;height:32px;border-radius:50%;font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s}
-.btn-fav.active,.btn-fav:hover{background:var(--white);transform:scale(1.15)}
-.product-info{padding:14px}
-.product-name{font-family:'Playfair Display',serif;font-weight:600;font-size:1rem;margin-bottom:4px;color:var(--brown)}
-.product-desc{font-size:.8rem;color:var(--gray-mid);margin-bottom:10px;line-height:1.4}
-.product-footer{display:flex;align-items:center;justify-content:space-between}
-.product-price{color:var(--brown);font-weight:700;font-size:1rem}
-.product-price span{font-size:.7rem;color:var(--gray-mid);font-weight:400;display:block}
-.btn-add{background:var(--brown);color:var(--gold);border:none;border-radius:10px;padding:8px 16px;font-weight:600;font-size:.82rem;transition:all .2s;display:flex;align-items:center;gap:6px}
-.btn-add:hover{background:var(--gold);color:var(--brown);transform:scale(1.05)}
-
-/* BEST SELLERS */
-#bestsellers{background:var(--brown);padding:48px 20px}
-#bestsellers .section-title{color:var(--gold)}
-#bestsellers .products-grid{max-width:1100px;margin:0 auto}
-#bestsellers .product-card{background:#2f1710}
-#bestsellers .product-name{color:var(--cream)}
-#bestsellers .product-price{color:var(--gold)}
-
-/* PROMOTIONS */
-#promotions{background:var(--cream);padding:48px 20px}
-.promo-slider{max-width:900px;margin:0 auto;position:relative;overflow:hidden;border-radius:20px}
-.promo-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.promo-slide{min-width:100%;padding:40px;background:linear-gradient(135deg,var(--brown),#5a2e1e);border-radius:20px;color:var(--white);display:flex;flex-direction:column;gap:12px}
-.promo-badge{background:var(--gold);color:var(--brown);padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;text-transform:uppercase;width:fit-content}
-.promo-title{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold)}
-.promo-desc{font-size:.95rem;color:var(--gray);line-height:1.5}
-.promo-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
-.promo-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-mid);cursor:pointer;transition:all .2s}
-.promo-dot.active{background:var(--gold);width:24px;border-radius:4px}
-
-/* REVIEWS */
-#reviews{padding:60px 20px;background:var(--cream-light)}
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;max-width:1000px;margin:0 auto}
-.review-card{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-.review-stars{color:var(--gold);font-size:1rem;margin-bottom:8px}
-.review-text{font-size:.88rem;color:var(--text);line-height:1.6;margin-bottom:14px;font-style:italic}
-.reviewer{display:flex;align-items:center;gap:10px}
-.reviewer-avatar{width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;color:var(--brown);font-size:.9rem;flex-shrink:0}
-.reviewer-name{font-weight:600;font-size:.88rem}
-
-/* INFO */
-#info{background:var(--brown);padding:60px 20px;color:var(--cream)}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;max-width:900px;margin:0 auto}
-.info-item{text-align:center}
-.info-icon{font-size:2rem;margin-bottom:12px}
-.info-label{color:var(--gold);font-size:.75rem;text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:6px}
-.info-value{font-size:.95rem;line-height:1.6}
-
-/* FOOTER */
-footer{background:#160b08;padding:40px 20px;text-align:center;color:var(--gray-mid)}
-.footer-logo{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.4rem;margin-bottom:16px}
-.social-links{display:flex;justify-content:center;gap:16px;margin-bottom:16px}
-.social-links a{color:var(--gray-mid);font-size:.9rem;transition:color .2s;display:flex;align-items:center;gap:4px}
-.social-links a:hover{color:var(--gold)}
-.footer-copy{font-size:.8rem}
-
-/* CART PANEL */
-#cart-panel{position:fixed;top:0;right:-400px;width:min(400px,100vw);height:100vh;background:var(--white);z-index:2000;box-shadow:-8px 0 40px rgba(0,0,0,.2);transition:right .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
-#cart-panel.open{right:0}
-.cart-header{background:var(--brown);padding:20px;display:flex;align-items:center;justify-content:space-between}
-.cart-header h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.2rem}
-.btn-close-cart{background:rgba(212,175,55,.2);border:none;color:var(--gold);width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;transition:all .2s}
-.btn-close-cart:hover{background:var(--gold);color:var(--brown)}
-.cart-items{flex:1;overflow-y:auto;padding:16px}
-.cart-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--gray)}
-.cart-item-name{font-weight:600;font-size:.9rem;flex:1}
-.cart-item-price{font-weight:700;color:var(--brown);font-size:.88rem;margin-top:2px}
-.cart-qty{display:flex;align-items:center;gap:8px;margin-top:6px}
-.qty-btn{background:var(--gray);border:none;width:26px;height:26px;border-radius:6px;font-size.9rem;cursor:pointer;font-weight:700;transition:all .15s}
-.qty-btn:hover{background:var(--gold);color:var(--brown)}
-.qty-val{font-weight:700;font-size:.9rem;min-width:20px;text-align:center}
-.btn-remove{background:none;border:none;color:#c0392b;font-size:.8rem;cursor:pointer;margin-left:auto;padding:2px}
-.cart-empty{text-align:center;padding:60px 20px;color:var(--gray-mid)}
-.cart-empty span{font-size:2.5rem;display:block;margin-bottom:12px}
-.cart-footer{padding:16px;border-top:2px solid var(--gray);background:var(--cream-light)}
-.cart-total{display:flex;justify-content:space-between;font-weight:700;font-size:1.1rem;margin-bottom:14px}
-.btn-checkout{width:100%;background:var(--brown);color:var(--gold);padding:16px;border-radius:12px;font-weight:700;font-size:1rem;transition:all .2s}
-.btn-checkout:hover{background:var(--gold);color:var(--brown)}
-
-/* OVERLAY */
-#overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500;opacity:0;pointer-events:none;transition:opacity .3s}
-#overlay.show{opacity:1;pointer-events:auto}
-
-/* CHECKOUT MODAL */
-#checkout-modal{position:fixed;inset:0;z-index:2500;display:none;align-items:center;justify-content:center;padding:20px}
-#checkout-modal.open{display:flex}
-.checkout-box{background:var(--white);border-radius:20px;width:min(560px,100%);max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.checkout-header{background:var(--brown);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;border-radius:20px 20px 0 0;position:sticky;top:0}
-.checkout-header h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.2rem}
-.checkout-body{padding:24px}
-.form-group{margin-bottom:16px}
-.form-label{font-size:.82rem;font-weight:600;color:var(--brown);display:block;margin-bottom:6px}
-.form-input,.form-select,.form-textarea{width:100%;border:2px solid var(--gray);border-radius:10px;padding:12px 14px;font-family:inherit;font-size:.92rem;color:var(--brown);transition:border-color .2s;background:var(--white)}
-.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--gold)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-textarea{resize:vertical;min-height:80px}
-.payment-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
-.pay-opt{border:2px solid var(--gray);border-radius:10px;padding:12px;text-align:center;cursor:pointer;font-weight:600;font-size:.85rem;transition:all .2s}
-.pay-opt.active{border-color:var(--gold);background:var(--cream)}
-.pix-info{background:var(--cream);border-radius:12px;padding:16px;margin-top:12px;text-align:center;display:none}
-.pix-key{font-weight:700;font-size:1rem;color:var(--brown);margin:8px 0}
-.btn-copy-pix{background:var(--brown);color:var(--gold);padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem;transition:all .2s}
-.btn-copy-pix:hover{background:var(--gold);color:var(--brown)}
-.pix-qr{width:120px;height:120px;margin:12px auto;background:var(--brown);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.7rem;text-align:center;padding:10px}
-.btn-send-whatsapp{width:100%;background:#25D366;color:#fff;padding:16px;border-radius:12px;font-weight:700;font-size:1rem;margin-top:16px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
-.btn-send-whatsapp:hover{background:#20bb5b;transform:translateY(-2px)}
-
-/* TOAST */
-#toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--brown);color:var(--gold);padding:12px 24px;border-radius:32px;font-weight:600;font-size:.88rem;opacity:0;transition:all .3s;z-index:5000;pointer-events:none}
-#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-@media(max-width:600px){
-  .hero-title{font-size:2.8rem}
-  .form-row{grid-template-columns:1fr}
-  .products-grid{grid-template-columns:1fr 1fr}
-  .logo-text{font-size:1rem}
-}
-@media(max-width:380px){
-  .products-grid{grid-template-columns:1fr}
-}
-
-/* ADMIN BUTTON */
-.btn-admin-open{background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);color:var(--gray-mid);width:36px;height:36px;border-radius:50%;font-size:.95rem;transition:all .2s}
-.btn-admin-open:hover{color:var(--gold);border-color:var(--gold)}
-
-/* ADMIN LOGIN MODAL */
-#admin-login{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);backdrop-filter:blur(6px)}
-#admin-login.open{display:flex}
-.login-box{background:var(--brown);border-radius:20px;padding:40px 32px;width:min(380px,90vw);text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative}
-.login-box h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.6rem;margin-bottom:6px}
-.login-box p{color:var(--gray-mid);font-size:.85rem;margin-bottom:28px}
-.login-field{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(212,175,55,.3);color:var(--white);padding:13px 16px;border-radius:10px;font-family:inherit;font-size:.92rem;margin-bottom:12px;transition:border-color .2s}
-.login-field::placeholder{color:rgba(255,255,255,.35)}
-.login-field:focus{outline:none;border-color:var(--gold)}
-.btn-login{width:100%;background:var(--gold);color:var(--brown);padding:14px;border-radius:10px;font-weight:700;font-size:1rem;transition:all .2s;margin-top:6px}
-.btn-login:hover{background:var(--gold-light)}
-.login-err{color:#ff6b6b;font-size:.82rem;margin-top:8px;display:none}
-.btn-close-login{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--gray-mid);font-size:1.2rem;cursor:pointer}
-.btn-close-login:hover{color:var(--gold)}
-
-/* ADMIN PANEL */
-#admin-panel{position:fixed;inset:0;z-index:3000;background:#0f0705;display:none;flex-direction:column}
-#admin-panel.open{display:flex}
-.admin-nav{background:var(--brown);height:60px;display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.4);flex-shrink:0}
-.admin-nav-title{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.1rem;margin-right:auto}
-.admin-tab{background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);color:var(--gray-mid);padding:7px 18px;border-radius:24px;font-size:.85rem;font-weight:600;transition:all .2s}
-.admin-tab:hover,.admin-tab.active{background:var(--gold);color:var(--brown);border-color:var(--gold)}
-.btn-logout{background:rgba(255,80,80,.15);border:1px solid rgba(255,80,80,.3);color:#ff8080;padding:7px 14px;border-radius:24px;font-size:.82rem;font-weight:600;transition:all .2s}
-.btn-logout:hover{background:rgba(255,80,80,.3)}
-.admin-body{flex:1;overflow-y:auto;padding:24px 20px}
-
-/* ORDERS */
-.orders-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:gap}
-.orders-header h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.4rem}
-.btn-clear-orders{background:rgba(255,80,80,.15);border:1px solid rgba(255,80,80,.3);color:#ff8080;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;transition:all .2s}
-.btn-clear-orders:hover{background:rgba(255,80,80,.3)}
-.orders-empty{text-align:center;padding:80px 20px;color:var(--gray-mid)}
-.orders-empty span{font-size:3rem;display:block;margin-bottom:12px}
-.order-card{background:var(--brown);border-radius:14px;padding:18px;margin-bottom:14px;border:1px solid rgba(212,175,55,.15)}
-.order-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:10px;flex-wrap:wrap}
-.order-num{color:var(--gold);font-weight:700;font-size:.9rem}
-.order-time{color:var(--gray-mid);font-size:.78rem}
-.order-status{padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700}
-.status-new{background:rgba(255,200,0,.15);color:#ffc800;border:1px solid rgba(255,200,0,.3)}
-.status-done{background:rgba(0,200,100,.15);color:#00c864;border:1px solid rgba(0,200,100,.3)}
-.order-client{color:var(--cream);font-weight:600;font-size:.95rem;margin-bottom:4px}
-.order-addr{color:var(--gray-mid);font-size:.82rem;margin-bottom:10px}
-.order-items{border-top:1px solid rgba(212,175,55,.15);padding-top:10px;margin-top:10px}
-.order-item-row{display:flex;justify-content:space-between;font-size:.82rem;color:var(--gray);padding:2px 0}
-.order-total{display:flex;justify-content:space-between;font-weight:700;color:var(--gold);margin-top:8px;padding-top:8px;border-top:1px solid rgba(212,175,55,.2)}
-.order-pay{font-size:.8rem;color:var(--gray-mid);margin-top:4px}
-.order-actions{display:flex;gap:8px;margin-top:12px}
-.btn-mark-done{background:rgba(0,200,100,.15);border:1px solid rgba(0,200,100,.3);color:#00c864;padding:6px 14px;border-radius:8px;font-size:.8rem;font-weight:600;transition:all .2s}
-.btn-mark-done:hover{background:rgba(0,200,100,.3)}
-.btn-del-order{background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.25);color:#ff8080;padding:6px 12px;border-radius:8px;font-size:.8rem;font-weight:600;transition:all .2s}
-.btn-del-order:hover{background:rgba(255,80,80,.25)}
-.order-obs{background:rgba(255,255,255,.05);border-radius:8px;padding:8px 10px;font-size:.8rem;color:var(--gray-mid);margin-top:8px}
-
-/* CARDÁPIO ADMIN */
-.admin-menu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px}
-.admin-menu-header h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.4rem}
-.btn-add-product{background:var(--gold);color:var(--brown);padding:10px 20px;border-radius:10px;font-weight:700;font-size:.88rem;transition:all .2s}
-.btn-add-product:hover{background:var(--gold-light)}
-.admin-products-list{display:grid;gap:10px}
-.admin-product-row{background:var(--brown);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;border:1px solid rgba(212,175,55,.15)}
-.admin-product-row img{width:52px;height:52px;border-radius:8px;object-fit:cover;flex-shrink:0}
-.apr-info{flex:1;min-width:0}
-.apr-name{color:var(--cream);font-weight:600;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.apr-meta{color:var(--gray-mid);font-size:.78rem;margin-top:2px}
-.apr-price{color:var(--gold);font-weight:700;font-size:.9rem;white-space:nowrap}
-.apr-actions{display:flex;gap:6px;flex-shrink:0}
-.btn-edit-p{background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);color:var(--gold);padding:5px 10px;border-radius:7px;font-size:.78rem;font-weight:600;transition:all .2s}
-.btn-edit-p:hover{background:var(--gold);color:var(--brown)}
-.btn-del-p{background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.25);color:#ff8080;padding:5px 10px;border-radius:7px;font-size:.78rem;font-weight:600;transition:all .2s}
-.btn-del-p:hover{background:rgba(255,80,80,.25)}
-.hot-toggle{background:none;border:none;font-size:1rem;cursor:pointer;padding:5px;border-radius:6px;transition:all .2s}
-.hot-toggle:hover{transform:scale(1.2)}
-
-/* PRODUCT FORM MODAL */
-#product-form-modal{position:fixed;inset:0;z-index:4000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);padding:16px}
-#product-form-modal.open{display:flex}
-.pf-box{background:#1a0d09;border-radius:16px;width:min(480px,100%);max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.6)}
-.pf-header{background:var(--brown);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-radius:16px 16px 0 0;position:sticky;top:0}
-.pf-header h3{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.1rem}
-.pf-body{padding:20px}
-.pf-body .form-group{margin-bottom:14px}
-.pf-body .form-label{color:var(--cream);font-size:.82rem;font-weight:600;display:block;margin-bottom:5px}
-.pf-body .form-input,.pf-body .form-select{background:rgba(255,255,255,.07);border:1px solid rgba(212,175,55,.25);color:var(--white)}
-.pf-body .form-input::placeholder{color:rgba(255,255,255,.3)}
-.pf-body .form-input:focus,.pf-body .form-select:focus{border-color:var(--gold);outline:none;background:rgba(255,255,255,.1)}
-.pf-body .form-select option{background:#22110D;color:#fff}
-.pf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.pf-hot{display:flex;align-items:center;gap:10px;margin-top:4px}
-.pf-hot input{width:18px;height:18px;accent-color:var(--gold)}
-.pf-hot label{color:var(--cream);font-size:.88rem}
-.btn-save-product{width:100%;background:var(--gold);color:var(--brown);padding:13px;border-radius:10px;font-weight:700;font-size:.95rem;transition:all .2s;margin-top:8px}
-.btn-save-product:hover{background:var(--gold-light)}
-
-/* GALLERY */
-#gallery{padding:60px 20px;background:var(--brown)}
-#gallery .section-title{color:var(--gold);margin-bottom:8px}
-.gallery-subtitle{text-align:center;color:var(--gray-mid);font-size:.9rem;margin-bottom:32px}
-.gallery-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px}
-.gf-btn{padding:7px 18px;border-radius:24px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);color:var(--gray-mid);font-size:.82rem;font-weight:600;transition:all .2s;cursor:pointer}
-.gf-btn:hover,.gf-btn.active{background:var(--gold);color:var(--brown);border-color:var(--gold)}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;max-width:1100px;margin:0 auto}
-.gallery-card{border-radius:14px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:1;background:#1a0d09}
-.gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.gallery-card:hover img{transform:scale(1.07)}
-.gallery-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(34,17,13,.92) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
-.gallery-card:hover .gallery-card-overlay{opacity:1}
-.gallery-card-name{color:var(--white);font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;margin-bottom:4px}
-.gallery-card-tag{color:var(--gold);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
-.btn-pedir-modelo{background:var(--gold);color:var(--brown);padding:8px 16px;border-radius:24px;font-size:.8rem;font-weight:700;border:none;cursor:pointer;transition:all .2s;width:fit-content}
-.btn-pedir-modelo:hover{background:var(--gold-light)}
-/* LIGHTBOX */
-#lightbox{position:fixed;inset:0;z-index:4500;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:20px}
-#lightbox.open{display:flex}
-.lb-inner{position:relative;max-width:700px;width:100%}
-.lb-img{width:100%;border-radius:16px;max-height:70vh;object-fit:contain}
-.lb-info{margin-top:16px;text-align:center}
-.lb-name{font-family:'Playfair Display',serif;color:var(--white);font-size:1.3rem;margin-bottom:4px}
-.lb-tag{color:var(--gold);font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
-.lb-close{position:absolute;top:-16px;right:-16px;background:var(--brown);border:1px solid var(--gold);color:var(--gold);width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.lb-close:hover{background:var(--gold);color:var(--brown)}
-.lb-nav{display:flex;gap:10px;justify-content:center;margin-top:8px}
-.lb-arrow{background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);color:var(--gold);width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
-.lb-arrow:hover{background:var(--gold);color:var(--brown)}
-.btn-pedir-lb{background:var(--gold);color:var(--brown);padding:12px 28px;border-radius:32px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-pedir-lb:hover{background:var(--gold-light);transform:translateY(-1px)}
-/* stats bar */
-.admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:24px}
-.stat-card{background:var(--brown);border-radius:12px;padding:16px;border:1px solid rgba(212,175,55,.15);text-align:center}
-.stat-val{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.8rem;font-weight:700}
-.stat-lbl{color:var(--gray-mid);font-size:.75rem;margin-top:4px}
-.gal-admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:16px}
-.gal-admin-card{background:var(--brown);border-radius:12px;overflow:hidden;border:1px solid rgba(212,175,55,.15)}
-.gal-admin-card img{width:100%;aspect-ratio:1;object-fit:cover}
-.gal-admin-info{padding:10px}
-.gal-admin-name{color:var(--cream);font-size:.82rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gal-admin-tag{color:var(--gold);font-size:.72rem;margin-top:2px}
-.gal-admin-actions{display:flex;gap:6px;margin-top:8px}
-.gal-add-form{background:var(--brown);border-radius:14px;padding:18px;margin-bottom:20px;border:1px solid rgba(212,175,55,.2)}
-.gal-add-form h3{color:var(--gold);font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:14px}
-.gal-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-@media(max-width:480px){.gal-form-row{grid-template-columns:1fr}}
-</style>
+      body { background-color: #16130b; color: #eae2d4; font-family: 'Be Vietnam Pro', sans-serif; }
+      .glass { backdrop-filter: blur(16px); background: rgba(35, 31, 23, 0.8); border: 1px solid rgba(217, 180, 59, 0.1); }
+      .glass-card { background: rgba(45, 42, 33, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(217, 180, 59, 0.05); transition: all 0.3s ease; }
+      .glass-card:hover { border-color: rgba(217, 180, 59, 0.3); transform: translateY(-2px); }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .gold-glow { box-shadow: 0 0 15px rgba(217, 180, 59, 0.2); }
+    </style>
 </head>
-<body>
-
-<!-- HEADER -->
-<header>
-  <div class="logo">
-    <div class="logo-icon">M</div>
-    <span class="logo-text">Minas Sabores</span>
-  </div>
-  <div class="header-actions">
-    <button class="btn-admin-open" onclick="openAdminLogin()" title="Área Admin">⚙️</button>
-    <a href="https://wa.me/5531999999999" class="btn-whatsapp" target="_blank">
-      <span>📱</span> WhatsApp
-    </a>
-    <button class="btn-cart" id="cartBtn">
-      🛒
-      <span class="cart-badge" id="cartBadge">0</span>
-    </button>
-  </div>
+<body class="overflow-x-hidden selection:bg-primary/30">
+<!-- SideNavBar (from JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col p-md backdrop-blur-xl bg-surface/80 border-r border-outline-variant/20 shadow-xl shadow-[#1A0C09]/40 z-50">
+<div class="mb-lg px-2">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">L'Artisan</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest opacity-60">Admin Suite</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<!-- Active State: Products (mapped to Cardápio intent) -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary bg-primary-container/20 rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bakery_dining</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="font-body-md text-body-md">Gallery</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<button class="mt-auto bg-primary text-on-primary py-3 px-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 gold-glow hover:scale-[1.02] active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+            New Collection
+        </button>
+</aside>
+<!-- Main Workspace -->
+<main class="ml-64 min-h-screen bg-background relative overflow-hidden">
+<!-- Subtle background animation -->
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full px-lg py-sm backdrop-blur-md border-b border-primary/10 bg-transparent">
+<div class="flex items-center gap-6 flex-1">
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Menu Management</h2>
+<!-- Search Bar -->
+<div class="relative w-96 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2.5 pl-10 pr-4 text-on-surface placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/40 transition-all font-body-md" placeholder="Procurar produtos no cardápio..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-variant">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-variant">account_circle</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">link</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 px-10 text-on-surface placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/40 transition-all font-body-md text-label-sm w-64" placeholder="URL da Imagem do Produto" type="url"/>
+</div><button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">
+                    Novo Produto
+                </button>
+</div>
 </header>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Artesanal · Com Carinho · Minas Gerais</div>
-    <h1 class="hero-title">Minas<br><span>Sabores</span></h1>
-    <p class="hero-subtitle">Bolos, doces e salgados feitos com carinho<br>e ingredientes selecionados para momentos especiais.</p>
-    <a href="#categories" class="btn-primary">Faça seu Pedido ↓</a>
-    <div class="hero-badges">
-      <span class="badge">📦 Pedido mínimo 20 unidades</span>
-      <span class="badge">📅 Encomenda com 3–4 dias</span>
-      <span class="badge">🚗 Entrega sob consulta</span>
-    </div>
-  </div>
-</section>
-
-<!-- SEARCH -->
-<section id="search-section">
-  <div class="search-wrap">
-    <span class="search-icon">🔍</span>
-    <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar produtos ou categorias…">
-    <div class="search-results" id="searchResults"></div>
-  </div>
-</section>
-
-<!-- CATEGORIES -->
-<section id="categories">
-  <div class="cats-wrap" id="catsWrap">
-    <button class="cat-btn active" data-cat="all">🍽️ Todos</button>
-    <button class="cat-btn" data-cat="frutas">🍓 Saladas de Frutas</button>
-    <button class="cat-btn" data-cat="fritos">🥟 Salgados Fritos</button>
-    <button class="cat-btn" data-cat="assados">🥐 Salgados Assados</button>
-    <button class="cat-btn" data-cat="lanches">🥪 Mini Lanches</button>
-    <button class="cat-btn" data-cat="bolos">🍰 Bolos e Tortas</button>
-    <button class="cat-btn" data-cat="doces">🍫 Doces Gourmet</button>
-    <button class="cat-btn" data-cat="pratos">🍲 Pratos Especiais</button>
-  </div>
-</section>
-
-<!-- MENU -->
-<div id="menu"></div>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <h2 class="section-title">🎂 Galeria de Bolos Personalizados</h2>
-  <p class="gallery-subtitle">Veja nossos modelos e encomende o seu — entregamos o bolo dos seus sonhos!</p>
-  <div class="gallery-filters" id="galleryFilters">
-    <button class="gf-btn active" data-gcat="all">Todos</button>
-    <button class="gf-btn" data-gcat="festa">Festa</button>
-    <button class="gf-btn" data-gcat="infantil">Infantil</button>
-    <button class="gf-btn" data-gcat="casamento">Casamento</button>
-    <button class="gf-btn" data-gcat="gourmet">Gourmet</button>
-    <button class="gf-btn" data-gcat="naked">Naked Cake</button>
-  </div>
-  <div class="gallery-grid" id="galleryGrid"></div>
-</section>
-
-<!-- LIGHTBOX -->
-<div id="lightbox">
-  <div class="lb-inner">
-    <button class="lb-close" onclick="closeLB()">✕</button>
-    <img class="lb-img" id="lbImg" src="" alt="">
-    <div class="lb-info">
-      <div class="lb-name" id="lbName"></div>
-      <div class="lb-tag" id="lbTag"></div>
-      <div class="lb-nav">
-        <button class="lb-arrow" onclick="navLB(-1)">‹</button>
-        <button class="btn-pedir-lb" onclick="pedirModelo()">📱 Pedir este modelo</button>
-        <button class="lb-arrow" onclick="navLB(1)">›</button>
-      </div>
-    </div>
-  </div>
+<!-- Content Canvas -->
+<section class="p-lg space-y-md relative z-10">
+<!-- Quick Filters -->
+<div class="flex items-center gap-3 overflow-x-auto pb-4 scrollbar-hide">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md transition-all whitespace-nowrap">Todos</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Bolos</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Doces Finos</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Salgados Gourmet</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Bebidas Artesanais</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Edições Limitadas</button>
 </div>
-
-<!-- BEST SELLERS -->
-<section id="bestsellers">
-  <h2 class="section-title">⭐ Mais Vendidos</h2>
-  <div class="products-grid" id="bestsellersGrid"></div>
+<!-- Table Container -->
+<div class="glass border border-outline-variant/10 rounded-xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/50 border-b border-outline-variant/20">
+<th class="px-6 py-4 w-12">
+<input class="rounded bg-surface-container text-primary focus:ring-primary border-outline-variant transition-all cursor-pointer" id="selectAll" type="checkbox"/>
+</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Produto</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Categoria</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Preço</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Item 1 -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded bg-surface-container text-primary focus:ring-primary border-outline-variant transition-all cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a luxurious dark chocolate ganache tartlet with gold leaf flakes and a sprinkle of sea salt. The tart sits on a marble surface with soft, cinematic lighting highlighting the textures of the creamy filling and crisp pastry crust. Professional gourmet photography style with warm, moody shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIR0P_aPZAEaglN8lbZ4Tdh5d6RILvIwwBR1kotLR2Y8H6-7wE-EF_33BbxPriTjROb2MhdAz-CKtPo0NhDo2qvfYGr5mSDS3fjsPz-_i04-A6btNGCNhFQKY1_SD4EPraIQHHYCZZMY4hGol47EkphVo9jJiDGA5JSQzGKMcQa0Hx7-PvmEX-Hj98ZWlG1i9yoE9FvH7nq1fLZ6wCChJqJJLynjVqO7r8ZPudvC1cCkUHIz6BvXTJlD8cUYBmZOB7vyNPsK7io79_"/>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Torta de Chocolate Belga</div>
+<div class="text-label-sm text-on-surface-variant">SKU: ART-001</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Bolos &amp; Tortas</span>
+</td>
+<td class="px-6 py-4">
+<div class="font-body-md text-body-md text-primary font-bold">R$ 145,00</div>
+</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ms-3 text-label-sm text-on-surface-variant">Disponível</span>
+</label>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="document.getElementById('deleteConfirm').classList.remove('opacity-0', 'pointer-events-none')"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Item 2 -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded bg-surface-container text-primary focus:ring-primary border-outline-variant transition-all cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="An exquisite arrangement of assorted Brazilian gourmet brigadeiros in a gold-lined gift box. Each truffle is uniquely decorated with cocoa nibs, edible glitter, or crushed pistachios. The background is a soft, blurred mahogany wood, creating a warm and sophisticated atmosphere of high-end confectionery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTKgtu2ooFght3YJfHDrx3BeyiQhx-tSw4047NZF3f8N-AtsUl2Hcu9Co6frQEC5YD-IRGeOOUVndbTwG9fGqKwFDFKtSJ-B6xLo9fuBkwDuIjSocNF2rk-ZrJIcOIuYMfQd27pH_S0WWypu7CfVlkhKNkvgP6GC99GoqhPoM0QQvNDs1H9ET6XghcAjb3Iq2OyVQ3OGBnKm4q-_JYsXHjo6NZPeFxOXYiNMlUfobJxfivZFbhKDkJXTJEsrDoJ-gSPiLxAghVPzov"/>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Caixa de Doces Finos (12 un)</div>
+<div class="text-label-sm text-on-surface-variant">SKU: ART-042</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Doces</span>
+</td>
+<td class="px-6 py-4">
+<div class="font-body-md text-body-md text-primary font-bold">R$ 89,00</div>
+</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ms-3 text-label-sm text-on-surface-variant">Disponível</span>
+</label>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="document.getElementById('deleteConfirm').classList.remove('opacity-0', 'pointer-events-none')"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded bg-surface-container text-primary focus:ring-primary border-outline-variant transition-all cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A tall, multi-layered Red Velvet cake slice with vibrant crimson layers and thick, smooth cream cheese frosting. Garnished with a single fresh raspberry on top. The plate is elegant ceramic, set against a dark chocolate background that emphasizes the rich colors and artisanal texture of the cake." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp9t_bTKYnhMtCaLkkCpdz8HNTCg7QwN1ojRvgy3kCmhb-MguI181W4qEjnpYSDg-6_1fB4yQ0Y9G5vWI67-L8JqaYRSMEE2m-ZWNMzbFT0QzG2E3rk3KndATbm7hF3Ad4uaer6YoZJjIlcHpw3afJrz1Vs1nMHFLLhnwOwObFUt5ogt4PQA9TxedMq_8BafX1ipQy8uHWt_5nPpMmOcL7Vlo8Bivl16RX76tSh80ptPuiknOVXxJTs7uBKEfFSLSITPfyhgrb3apd"/>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Bolo Red Velvet</div>
+<div class="text-label-sm text-on-surface-variant">SKU: ART-109</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Bolos &amp; Tortas</span>
+</td>
+<td class="px-6 py-4">
+<div class="font-body-md text-body-md text-primary font-bold">R$ 180,00</div>
+</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ms-3 text-label-sm text-on-surface-variant">Esgotado</span>
+</label>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="document.getElementById('deleteConfirm').classList.remove('opacity-0', 'pointer-events-none')"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bulk Actions Bar (Hidden by default, shown via JS) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 -ml-32 translate-y-20 glass px-8 py-4 rounded-full flex items-center gap-6 shadow-2xl transition-all duration-500 border border-primary/30 opacity-0 z-50" id="bulkActions">
+<span class="text-on-surface font-label-md text-label-md"><span id="selectedCount">0</span> itens selecionados</span>
+<div class="h-6 w-[1px] bg-outline-variant"></div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md">
+<span class="material-symbols-outlined">visibility_off</span> Desativar
+                    </button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md">
+<span class="material-symbols-outlined">category</span> Alterar Categoria
+                    </button>
+<button class="flex items-center gap-2 text-error hover:scale-105 transition-all font-label-md text-label-md">
+<span class="material-symbols-outlined">delete</span> Remover
+                    </button>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface" id="closeBulk">close</button>
+</div>
 </section>
-
-<!-- PROMOTIONS -->
-<section id="promotions">
-  <h2 class="section-title">🎉 Promoções</h2>
-  <div class="promo-slider">
-    <div class="promo-track" id="promoTrack">
-      <div class="promo-slide">
-        <div class="promo-badge">Promoção</div>
-        <div class="promo-title">Combo Festa Completa</div>
-        <div class="promo-desc">100 salgados fritos + 1 bolo festa redondo + 100 doces gourmet. Perfeito para até 20 pessoas.</div>
-        <div style="color:var(--gold);font-weight:700;font-size:1.3rem">R$ 420,00 → R$ 350,00</div>
-      </div>
-      <div class="promo-slide">
-        <div class="promo-badge">Novo</div>
-        <div class="promo-title">100 Doces — 2 Sabores</div>
-        <div class="promo-desc">Nos pedidos de 100 doces, escolha 2 sabores com 50 unidades cada. Preço do sabor escolhido!</div>
-        <div style="color:var(--gold);font-weight:700;font-size:1.3rem">A partir de R$ 150,00</div>
-      </div>
-      <div class="promo-slide">
-        <div class="promo-badge">Especial</div>
-        <div class="promo-title">Kit Mini Lanche</div>
-        <div class="promo-desc">50 Mini Sanduíches de Patê de Frango + 50 Mini Pizzas de Calabresa. Ideal para eventos corporativos.</div>
-        <div style="color:var(--gold);font-weight:700;font-size:1.3rem">Consulte disponibilidade</div>
-      </div>
-    </div>
-    <div class="promo-dots" id="promoDots"></div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews">
-  <h2 class="section-title">💬 Avaliações</h2>
-  <div class="reviews-grid">
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Os doces gourmet são incríveis! Meus convidados adoraram o Ferrero Rocher artesanal. Voltarei sempre!"</p>
-      <div class="reviewer"><div class="reviewer-avatar">A</div><span class="reviewer-name">Ana Beatriz M.</span></div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Coxinhas perfectas, crocantes por fora e cremosas por dentro. Chegaram quentinhas e no prazo combinado."</p>
-      <div class="reviewer"><div class="reviewer-avatar">C</div><span class="reviewer-name">Carlos Eduardo R.</span></div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"O bolo festa foi lindo e delicioso! Muito caprichado, atendimento ótimo. Super recomendo a Minas Sabores!"</p>
-      <div class="reviewer"><div class="reviewer-avatar">F</div><span class="reviewer-name">Fernanda Oliveira</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- INFO -->
-<section id="info">
-  <div class="info-grid">
-    <div class="info-item">
-      <div class="info-icon">📦</div>
-      <div class="info-label">Pedido Mínimo</div>
-      <div class="info-value">20 unidades por pedido</div>
-    </div>
-    <div class="info-item">
-      <div class="info-icon">📅</div>
-      <div class="info-label">Prazo de Produção</div>
-      <div class="info-value">3 a 4 dias de antecedência</div>
-    </div>
-    <div class="info-item">
-      <div class="info-icon">🚗</div>
-      <div class="info-label">Entrega</div>
-      <div class="info-value">Sob consulta na sua região</div>
-    </div>
-    <div class="info-item">
-      <div class="info-icon">🕐</div>
-      <div class="info-label">Horário</div>
-      <div class="info-value">Seg–Sáb · 8h às 18h</div>
-    </div>
-    <div class="info-item">
-      <div class="info-icon">📍</div>
-      <div class="info-label">Localização</div>
-      <div class="info-value">Minas Gerais, Brasil</div>
-    </div>
-    <div class="info-item">
-      <div class="info-icon">📱</div>
-      <div class="info-label">Contato</div>
-      <div class="info-value">(31) 9 9999-9999</div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Minas Sabores</div>
-  <div class="social-links">
-    <a href="#">📸 Instagram</a>
-    <a href="#">👤 Facebook</a>
-    <a href="https://wa.me/5531999999999" target="_blank">📱 WhatsApp</a>
-  </div>
-  <p class="footer-copy">© 2025 Minas Sabores · Feito com ❤️ em Minas Gerais</p>
+<!-- Pagination / Footer info -->
+<footer class="px-lg py-6 flex justify-between items-center text-on-surface-variant/60 font-label-sm text-label-sm">
+<div>Exibindo 1-10 de 124 produtos</div>
+<div class="flex gap-4">
+<button class="hover:text-primary transition-colors">Anterior</button>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded bg-primary text-on-primary">1</button>
+<button class="w-8 h-8 rounded hover:bg-surface-variant">2</button>
+<button class="w-8 h-8 rounded hover:bg-surface-variant">3</button>
+</div>
+<button class="hover:text-primary transition-colors">Próximo</button>
+</div>
 </footer>
-
-<!-- CART PANEL -->
-<div id="cart-panel">
-  <div class="cart-header">
-    <h2>🛒 Seu Pedido</h2>
-    <button class="btn-close-cart" id="closeCart">✕</button>
-  </div>
-  <div class="cart-items" id="cartItems">
-    <div class="cart-empty"><span>🛒</span>Carrinho vazio<br><small>Adicione produtos do cardápio</small></div>
-  </div>
-  <div class="cart-footer" id="cartFooter" style="display:none">
-    <div class="cart-total"><span>Total</span><span id="cartTotal">R$ 0,00</span></div>
-    <button class="btn-checkout" id="btnCheckout">Finalizar Pedido →</button>
-  </div>
+<!-- Confirmation Dialog (Hidden by default) -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="deleteConfirm">
+<div class="glass-card p-lg rounded-xl max-w-md w-full border border-primary/20 shadow-2xl">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">warning</span>
 </div>
-
-<!-- OVERLAY -->
-<div id="overlay"></div>
-
-<!-- CHECKOUT MODAL -->
-<div id="checkout-modal">
-  <div class="checkout-box">
-    <div class="checkout-header">
-      <h2>📋 Dados para Entrega</h2>
-      <button class="btn-close-cart" id="closeCheckout">✕</button>
-    </div>
-    <div class="checkout-body">
-      <div class="form-group">
-        <label class="form-label">Nome completo *</label>
-        <input type="text" class="form-input" id="fNome" placeholder="Seu nome">
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Telefone *</label>
-          <input type="tel" class="form-input" id="fTel" placeholder="(31) 9 0000-0000">
-        </div>
-        <div class="form-group">
-          <label class="form-label">CEP *</label>
-          <input type="text" class="form-input" id="fCep" placeholder="00000-000" maxlength="9">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Endereço *</label>
-          <input type="text" class="form-input" id="fEnd" placeholder="Rua / Av.">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Número *</label>
-          <input type="text" class="form-input" id="fNum" placeholder="123">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Bairro *</label>
-          <input type="text" class="form-input" id="fBairro" placeholder="Seu bairro">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Complemento</label>
-          <input type="text" class="form-input" id="fComp" placeholder="Apto, bloco…">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Cidade *</label>
-        <input type="text" class="form-input" id="fCidade" placeholder="Sua cidade">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Forma de Pagamento *</label>
-        <div class="payment-options" id="payOpts">
-          <div class="pay-opt" data-pay="PIX">💰 PIX</div>
-          <div class="pay-opt" data-pay="Dinheiro">💵 Dinheiro</div>
-          <div class="pay-opt" data-pay="Débito">💳 Débito</div>
-          <div class="pay-opt" data-pay="Crédito">💳 Crédito</div>
-        </div>
-        <div class="pix-info" id="pixInfo">
-          <p style="font-size:.8rem;color:var(--gray-mid)">Escaneie o QR Code ou copie a chave PIX</p>
-          <div class="pix-qr">QR CODE<br>Minas<br>Sabores</div>
-          <div class="pix-key">📋 31.99999.9999-minas</div>
-          <button class="btn-copy-pix" onclick="copyPix()">Copiar Chave PIX</button>
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Observações</label>
-        <textarea class="form-textarea" id="fObs" placeholder="Alguma preferência, restrição alimentar ou observação?"></textarea>
-      </div>
-      <button class="btn-send-whatsapp" onclick="sendWhatsApp()">
-        <span>📱</span> Enviar Pedido pelo WhatsApp
-      </button>
-    </div>
-  </div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Confirmar Exclusão</h3>
 </div>
-
-<!-- ADMIN LOGIN -->
-<div id="admin-login">
-  <div class="login-box">
-    <button class="btn-close-login" onclick="closeAdminLogin()">✕</button>
-    <div style="font-size:2rem;margin-bottom:10px">🔐</div>
-    <h2>Área Administrativa</h2>
-    <p>Acesso restrito ao administrador</p>
-    <input type="text" class="login-field" id="adminUser" placeholder="Usuário" autocomplete="off">
-    <input type="password" class="login-field" id="adminPass" placeholder="Senha" onkeydown="if(event.key==='Enter')doLogin()">
-    <button class="btn-login" onclick="doLogin()">Entrar</button>
-    <div class="login-err" id="loginErr">Usuário ou senha incorretos.</div>
-  </div>
+<p class="text-on-surface-variant mb-6">Você tem certeza que deseja remover este produto? Esta ação não pode ser desfeita.</p>
+<div class="flex justify-end gap-4">
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant transition-all font-label-md" onclick="document.getElementById('deleteConfirm').classList.add('opacity-0', 'pointer-events-none')">Cancelar</button>
+<button class="px-6 py-2 rounded-full bg-error text-on-error hover:brightness-110 transition-all font-label-md" onclick="document.getElementById('deleteConfirm').classList.add('opacity-0', 'pointer-events-none')">Excluir Produto</button>
 </div>
-
-<!-- ADMIN PANEL -->
-<div id="admin-panel">
-  <nav class="admin-nav">
-    <span class="admin-nav-title">⚙️ Minas Sabores — Admin</span>
-    <button class="admin-tab active" id="tabOrders" onclick="switchTab('orders')">📋 Pedidos</button>
-    <button class="admin-tab" id="tabMenu" onclick="switchTab('menu')">🍽️ Cardápio</button>
-    <button class="admin-tab" id="tabGallery" onclick="switchTab('gallery')">🖼️ Galeria</button>
-    <button class="btn-logout" onclick="doLogout()">Sair</button>
-  </nav>
-  <div class="admin-body" id="adminBody"></div>
 </div>
-
-<!-- PRODUCT FORM MODAL -->
-<div id="product-form-modal">
-  <div class="pf-box">
-    <div class="pf-header">
-      <h3 id="pfTitle">Novo Produto</h3>
-      <button class="btn-close-cart" onclick="closePF()">✕</button>
-    </div>
-    <div class="pf-body">
-      <input type="hidden" id="pfId">
-      <div class="form-group">
-        <label class="form-label">Nome do produto *</label>
-        <input type="text" class="form-input" id="pfName" placeholder="Ex: Coxinha de Frango">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Descrição</label>
-        <input type="text" class="form-input" id="pfDesc" placeholder="Breve descrição">
-      </div>
-      <div class="pf-row">
-        <div class="form-group">
-          <label class="form-label">Categoria *</label>
-          <select class="form-select form-input" id="pfCat">
-            <option value="frutas">🍓 Saladas de Frutas</option>
-            <option value="fritos">🥟 Salgados Fritos</option>
-            <option value="assados">🥐 Salgados Assados</option>
-            <option value="lanches">🥪 Mini Lanches</option>
-            <option value="bolos">🍰 Bolos e Tortas</option>
-            <option value="doces">🍫 Doces Gourmet</option>
-            <option value="pratos">🍲 Pratos Especiais</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Unidade *</label>
-          <input type="text" class="form-input" id="pfUnit" placeholder="unidade, cento, bolo…">
-        </div>
-      </div>
-      <div class="pf-row">
-        <div class="form-group">
-          <label class="form-label">Preço (R$) *</label>
-          <input type="number" class="form-input" id="pfPrice" placeholder="0,00" step="0.01" min="0">
-        </div>
-        <div class="form-group">
-          <label class="form-label">URL da Imagem</label>
-          <input type="text" class="form-input" id="pfImg" placeholder="https://…">
-        </div>
-      </div>
-      <div class="pf-hot">
-        <input type="checkbox" id="pfHot">
-        <label for="pfHot">⭐ Marcar como "Mais Vendido"</label>
-      </div>
-      <button class="btn-save-product" onclick="saveProduct()">Salvar Produto</button>
-    </div>
-  </div>
-</div>
-
-
+</div></main>
 <script>
-// ===================== DATA =====================
-const products = [
-  // Frutas
-  {id:1,name:'Salada de Frutas com Suco de Laranja Natural',desc:'Frutas frescas da estação com suco de laranja espremido na hora.',cat:'frutas',price:4.50,unit:'unidade',img:'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=400&q=70',hot:false},
-  {id:2,name:'Salada de Frutas com Gelatina Colorida',desc:'Frutas frescas com gelatina colorida, uma combinação especial.',cat:'frutas',price:4.80,unit:'unidade',img:'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=400&q=70',hot:false},
-  // Fritos
-  {id:3,name:'Coxinha',desc:'Coxinha de frango tradicional, crocante por fora e cremosa por dentro.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=400&q=70',hot:true},
-  {id:4,name:'Coxinha com Catupiry',desc:'Nossa coxinha especial com recheio de frango e catupiry cremoso.',cat:'fritos',price:100.00,unit:'cento',img:'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=400&q=70',hot:true},
-  {id:5,name:'Kibe',desc:'Kibe frito com carne moída temperada e toque de hortelã.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:6,name:'Bolinha de Queijo',desc:'Mini bolinhas crocantes recheadas com queijo derretido.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:true},
-  {id:7,name:'Risole de Carne',desc:'Risole frito com recheio de carne moída e temperos especiais.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:8,name:'Risole de Milho',desc:'Risole com recheio cremoso de milho verde e queijo.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:9,name:'Risole de Alho Poró',desc:'Risole especial com recheio de alho poró e creme.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:10,name:'Pastel de Carne',desc:'Pastel frito com recheio generoso de carne moída temperada.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:11,name:'Pastel de Queijo',desc:'Pastel crocante recheado com queijo mussarela derretido.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:12,name:'Pastel de Frango',desc:'Pastel frito com recheio de frango desfiado e temperos.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:13,name:'Pastel de Pizza',desc:'Pastel recheado com molho, mussarela e presunto.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  // Assados
-  {id:14,name:'Empada de Frango',desc:'Empada assada com recheio cremoso de frango e azeitona.',cat:'assados',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=70',hot:false},
-  {id:15,name:'Esfirra de Carne',desc:'Esfirra assada com recheio temperado de carne moída.',cat:'assados',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=70',hot:false},
-  {id:16,name:'Esfirra de Frango',desc:'Esfirra assada com frango desfiado e temperos especiais.',cat:'assados',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=70',hot:false},
-  {id:17,name:'Enrolado de Presunto e Mussarela',desc:'Massa assada recheada com presunto e mussarela derretida.',cat:'assados',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=70',hot:true},
-  // Lanches
-  {id:18,name:'Mini Sanduíche de Patê de Frango',desc:'Mini sanduíches macios com patê de frango caseiro temperado.',cat:'lanches',price:112.50,unit:'cento',img:'https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400&q=70',hot:true},
-  {id:19,name:'Mini Pizza de Calabresa e Alho Poró',desc:'Mini pizzas assadas com molho, calabresa e alho poró.',cat:'lanches',price:87.80,unit:'cento',img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=70',hot:false},
-  // Bolos
-  {id:20,name:'Bolo Festa Retangular',desc:'Serve 40 a 50 pessoas. Escolha o recheio e a cobertura.',cat:'bolos',price:487.40,unit:'bolo',img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=70',hot:true},
-  {id:21,name:'Bolo Festa Redondo',desc:'Serve 20 pessoas. Perfeito para aniversários e comemorações.',cat:'bolos',price:198.90,unit:'bolo',img:'https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=400&q=70',hot:false},
-  {id:22,name:'Torta de Frango',desc:'Torta caseira de frango para 4 a 5 pessoas. Cremosa e saborosa.',cat:'bolos',price:130.60,unit:'torta',img:'https://images.unsplash.com/photo-1621743478914-cc8a86d7e7b5?w=400&q=70',hot:false},
-  {id:23,name:'Bolo de Creme',desc:'Bolo em 48 mini pedaços. Ideal para mesa de doces.',cat:'bolos',price:90.00,unit:'bolo',img:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&q=70',hot:false},
-  // Doces
-  {id:24,name:'Beijinho',desc:'Doce de coco com açúcar, envolto em açúcar cristal.',cat:'doces',price:2.00,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:false},
-  {id:25,name:'Ferrero Rocher Gourmet',desc:'Bombom artesanal com avelã, chocolate e wafer crocante.',cat:'doces',price:3.00,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:true},
-  {id:26,name:'Doce Gourmet de Nozes',desc:'Doce cremoso de nozes com chocolate belga.',cat:'doces',price:3.20,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:false},
-  {id:27,name:'Ninho com Nutella',desc:'Bombom de leite ninho com recheio de Nutella cremosa.',cat:'doces',price:2.70,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:true},
-  {id:28,name:'Palha Italiana',desc:'Palha italiana clássica com biscoito maisena e chocolate.',cat:'doces',price:2.70,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:false},
-  {id:29,name:'Churros Gourmet',desc:'Churros de chocolate artesanal com doce de leite.',cat:'doces',price:2.70,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:false},
-  // Pratos
-  {id:30,name:'Escondidinho de Mandioca com Carne de Sol',desc:'Prato especial mineiro com purê de mandioca e carne de sol desfiada.',cat:'pratos',price:180.50,unit:'porção',img:'https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=70',hot:true},
-];
+        // Simple selection logic for demo purposes
+        const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+        const bulkBar = document.getElementById('bulkActions');
+        const selectedCountLabel = document.getElementById('selectedCount');
+        const selectAll = document.getElementById('selectAll');
+        const closeBulk = document.getElementById('closeBulk');
 
-const catNames = {
-  frutas:'🍓 Saladas de Frutas',
-  fritos:'🥟 Salgados Fritos',
-  assados:'🥐 Salgados Assados',
-  lanches:'🥪 Mini Lanches',
-  bolos:'🍰 Bolos e Tortas',
-  doces:'🍫 Doces Gourmet',
-  pratos:'🍲 Pratos Especiais',
-};
+        function updateBulkBar() {
+            const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+            if (checkedCount > 0) {
+                bulkBar.classList.remove('translate-y-20', 'opacity-0');
+                selectedCountLabel.textContent = checkedCount;
+            } else {
+                bulkBar.classList.add('translate-y-20', 'opacity-0');
+            }
+        }
 
-// ===================== CART =====================
-let cart = JSON.parse(localStorage.getItem('ms_cart') || '[]');
-let favs = JSON.parse(localStorage.getItem('ms_favs') || '[]');
-let selectedPay = '';
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', updateBulkBar);
+        });
 
-function saveCart(){localStorage.setItem('ms_cart',JSON.stringify(cart))}
-function saveFavs(){localStorage.setItem('ms_favs',JSON.stringify(favs))}
+        selectAll.addEventListener('change', () => {
+            checkboxes.forEach(cb => cb.checked = selectAll.checked);
+            updateBulkBar();
+        });
 
-function fmtPrice(v){return 'R$ '+v.toFixed(2).replace('.',',')}
+        closeBulk.addEventListener('click', () => {
+            checkboxes.forEach(cb => cb.checked = false);
+            selectAll.checked = false;
+            updateBulkBar();
+        });
 
-function cartTotal(){return cart.reduce((s,i)=>s+i.price*i.qty,0)}
-
-function cartCount(){return cart.reduce((s,i)=>s+i.qty,0)}
-
-function updateCartBadge(){
-  const n=cartCount();
-  const b=document.getElementById('cartBadge');
-  b.textContent=n;
-  b.style.display=n>0?'flex':'none';
-}
-
-function renderCart(){
-  const el=document.getElementById('cartItems');
-  const footer=document.getElementById('cartFooter');
-  if(!cart.length){
-    el.innerHTML='<div class="cart-empty"><span>🛒</span>Carrinho vazio<br><small>Adicione produtos do cardápio</small></div>';
-    footer.style.display='none';
-    return;
-  }
-  footer.style.display='block';
-  el.innerHTML=cart.map(item=>`
-    <div class="cart-item">
-      <div style="flex:1">
-        <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-price">${fmtPrice(item.price*item.qty)}</div>
-        <div class="cart-qty">
-          <button class="qty-btn" onclick="changeQty(${item.id},-1)">−</button>
-          <span class="qty-val">${item.qty}</span>
-          <button class="qty-btn" onclick="changeQty(${item.id},1)">+</button>
-          <button class="btn-remove" onclick="removeFromCart(${item.id})">🗑️</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-  document.getElementById('cartTotal').textContent=fmtPrice(cartTotal());
-}
-
-function addToCart(id){
-  const p=products.find(x=>x.id===id);
-  const existing=cart.find(x=>x.id===id);
-  if(existing) existing.qty++;
-  else cart.push({id,name:p.name,price:p.price,qty:1});
-  saveCart();updateCartBadge();renderCart();
-  showToast(`✅ ${p.name} adicionado!`);
-}
-
-function changeQty(id,delta){
-  const item=cart.find(x=>x.id===id);
-  if(!item) return;
-  item.qty+=delta;
-  if(item.qty<=0) cart=cart.filter(x=>x.id!==id);
-  saveCart();updateCartBadge();renderCart();
-}
-
-function removeFromCart(id){
-  cart=cart.filter(x=>x.id!==id);
-  saveCart();updateCartBadge();renderCart();
-}
-
-// ===================== FAVS =====================
-function toggleFav(id){
-  if(favs.includes(id)) favs=favs.filter(x=>x!==id);
-  else favs.push(id);
-  saveFavs();
-  document.querySelectorAll(`.btn-fav[data-id="${id}"]`).forEach(b=>{
-    b.classList.toggle('active',favs.includes(id));
-    b.textContent=favs.includes(id)?'❤️':'🤍';
-  });
-}
-
-// ===================== RENDER PRODUCTS =====================
-function productCard(p){
-  const isFav=favs.includes(p.id);
-  return `
-  <div class="product-card" data-cat="${p.cat}">
-    <div class="product-img">
-      <img src="${p.img}" alt="${p.name}" loading="lazy">
-      ${p.hot?'<span class="badge-hot">⭐ Mais Vendido</span>':''}
-      <button class="btn-fav${isFav?' active':''}" data-id="${p.id}" onclick="toggleFav(${p.id})">${isFav?'❤️':'🤍'}</button>
-    </div>
-    <div class="product-info">
-      <div class="product-name">${p.name}</div>
-      <div class="product-desc">${p.desc}</div>
-      <div class="product-footer">
-        <div class="product-price">${fmtPrice(p.price)}<span>por ${p.unit}</span></div>
-        <button class="btn-add" onclick="addToCart(${p.id})">+ Adicionar</button>
-      </div>
-    </div>
-  </div>`;
-}
-
-function renderMenu(catFilter='all'){
-  const menu=document.getElementById('menu');
-  const cats=catFilter==='all'?Object.keys(catNames):[catFilter];
-  menu.innerHTML=cats.map(cat=>{
-    const ps=products.filter(p=>p.cat===cat);
-    if(!ps.length) return '';
-    return `<div class="menu-section"><h2 class="menu-section-title">${catNames[cat]}</h2><div class="products-grid">${ps.map(productCard).join('')}</div></div>`;
-  }).join('');
-}
-
-function renderBestsellers(){
-  const hot=products.filter(p=>p.hot);
-  document.getElementById('bestsellersGrid').innerHTML=hot.map(productCard).join('');
-}
-
-// ===================== CATEGORIES =====================
-document.getElementById('catsWrap').addEventListener('click',e=>{
-  const btn=e.target.closest('.cat-btn');
-  if(!btn) return;
-  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderMenu(btn.dataset.cat);
-  document.getElementById('menu').scrollIntoView({behavior:'smooth',block:'start'});
-});
-
-// ===================== SEARCH =====================
-const searchInput=document.getElementById('searchInput');
-const searchResults=document.getElementById('searchResults');
-
-searchInput.addEventListener('input',()=>{
-  const q=searchInput.value.trim().toLowerCase();
-  if(!q){searchResults.style.display='none';return;}
-  const res=products.filter(p=>p.name.toLowerCase().includes(q)||catNames[p.cat].toLowerCase().includes(q));
-  if(!res.length){searchResults.style.display='none';return;}
-  searchResults.innerHTML=res.slice(0,8).map(p=>`
-    <div class="search-result-item" onclick="addToCart(${p.id});searchInput.value='';searchResults.style.display='none'">
-      <span class="sr-name">${p.name}</span>
-      <span class="sr-price">${fmtPrice(p.price)}</span>
-    </div>`).join('');
-  searchResults.style.display='block';
-});
-
-document.addEventListener('click',e=>{if(!e.target.closest('#search-section')){searchResults.style.display='none';}});
-
-// ===================== PROMO SLIDER =====================
-let promoIdx=0;
-const promoSlides=document.querySelectorAll('.promo-slide');
-const promoDots=document.getElementById('promoDots');
-
-promoSlides.forEach((_,i)=>{
-  const d=document.createElement('div');
-  d.className='promo-dot'+(i===0?' active':'');
-  d.onclick=()=>goPromo(i);
-  promoDots.appendChild(d);
-});
-
-function goPromo(i){
-  promoIdx=i;
-  document.getElementById('promoTrack').style.transform=`translateX(-${i*100}%)`;
-  document.querySelectorAll('.promo-dot').forEach((d,j)=>d.classList.toggle('active',j===i));
-}
-
-setInterval(()=>goPromo((promoIdx+1)%promoSlides.length),4000);
-
-// ===================== CART PANEL =====================
-document.getElementById('cartBtn').onclick=()=>openCart();
-document.getElementById('closeCart').onclick=()=>closeCart();
-document.getElementById('overlay').onclick=()=>{closeCart();closeCheckout();};
-
-function openCart(){
-  document.getElementById('cart-panel').classList.add('open');
-  document.getElementById('overlay').classList.add('show');
-}
-function closeCart(){
-  document.getElementById('cart-panel').classList.remove('open');
-  document.getElementById('overlay').classList.remove('show');
-}
-
-// ===================== CHECKOUT =====================
-document.getElementById('btnCheckout').onclick=()=>{
-  closeCart();
-  document.getElementById('checkout-modal').classList.add('open');
-  document.getElementById('overlay').classList.add('show');
-};
-document.getElementById('closeCheckout').onclick=closeCheckout;
-function closeCheckout(){
-  document.getElementById('checkout-modal').classList.remove('open');
-  document.getElementById('overlay').classList.remove('show');
-}
-
-// Phone mask
-document.getElementById('fTel').addEventListener('input',function(){
-  let v=this.value.replace(/\D/g,'');
-  if(v.length>11) v=v.slice(0,11);
-  if(v.length>7) v=`(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
-  else if(v.length>2) v=`(${v.slice(0,2)}) ${v.slice(2)}`;
-  this.value=v;
-});
-
-// CEP lookup
-document.getElementById('fCep').addEventListener('blur',async function(){
-  const cep=this.value.replace(/\D/g,'');
-  if(cep.length!==8) return;
-  try{
-    const r=await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-    const d=await r.json();
-    if(!d.erro){
-      document.getElementById('fEnd').value=d.logradouro||'';
-      document.getElementById('fBairro').value=d.bairro||'';
-      document.getElementById('fCidade').value=d.localidade||'';
-    }
-  }catch(e){}
-});
-document.getElementById('fCep').addEventListener('input',function(){
-  let v=this.value.replace(/\D/g,'');
-  if(v.length>5) v=v.slice(0,5)+'-'+v.slice(5,8);
-  this.value=v;
-});
-
-// Payment
-document.getElementById('payOpts').addEventListener('click',e=>{
-  const opt=e.target.closest('.pay-opt');
-  if(!opt) return;
-  document.querySelectorAll('.pay-opt').forEach(o=>o.classList.remove('active'));
-  opt.classList.add('active');
-  selectedPay=opt.dataset.pay;
-  document.getElementById('pixInfo').style.display=selectedPay==='PIX'?'block':'none';
-});
-
-function copyPix(){
-  navigator.clipboard.writeText('31.99999.9999-minas').then(()=>showToast('✅ Chave PIX copiada!'));
-}
-
-// ===================== WHATSAPP =====================
-function sendWhatsApp(){
-  const nome=document.getElementById('fNome').value.trim();
-  const tel=document.getElementById('fTel').value.trim();
-  const cep=document.getElementById('fCep').value.trim();
-  const end=document.getElementById('fEnd').value.trim();
-  const num=document.getElementById('fNum').value.trim();
-  const bairro=document.getElementById('fBairro').value.trim();
-  const comp=document.getElementById('fComp').value.trim();
-  const cidade=document.getElementById('fCidade').value.trim();
-  const obs=document.getElementById('fObs').value.trim();
-
-  if(!nome||!tel||!end||!num||!bairro||!cidade||!selectedPay){
-    showToast('⚠️ Preencha todos os campos obrigatórios!');return;
-  }
-  if(!cart.length){showToast('⚠️ Carrinho vazio!');return;}
-
-  const itens=cart.map(i=>`• ${i.name} x${i.qty} = ${fmtPrice(i.price*i.qty)}`).join('\n');
-  const total=fmtPrice(cartTotal());
-
-  const msg=`🧁 *MINAS SABORES — NOVO PEDIDO*
-━━━━━━━━━━━━━━━━━━━━
-👤 *Cliente:* ${nome}
-📱 *Telefone:* ${tel}
-━━━━━━━━━━━━━━━━━━━━
-📍 *Endereço de Entrega:*
-${end}, ${num}${comp?', '+comp:''}
-${bairro} — ${cidade}
-CEP: ${cep}
-━━━━━━━━━━━━━━━━━━━━
-🛍️ *Itens do Pedido:*
-${itens}
-━━━━━━━━━━━━━━━━━━━━
-💰 *Total: ${total}*
-💳 *Pagamento:* ${selectedPay}
-${obs?`📝 *Obs:* ${obs}`:''}
-━━━━━━━━━━━━━━━━━━━━
-_Aguardando confirmação_ ✅`;
-
-  const url=`https://wa.me/5531999999999?text=${encodeURIComponent(msg)}`;
-  window.open(url,'_blank');
-  closeCheckout();
-  cart=[];saveCart();updateCartBadge();renderCart();
-  showToast('🎉 Pedido enviado com sucesso!');
-}
-
-// ===================== TOAST =====================
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;
-  t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2800);
-}
-
-// ===================== GALLERY =====================
-const defaultGallery=[
-  {id:1,name:'Bolo Floral Elegante',tag:'festa',img:'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80'},
-  {id:2,name:'Naked Cake Rústico',tag:'naked',img:'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80'},
-  {id:3,name:'Bolo Casamento Branco',tag:'casamento',img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'},
-  {id:4,name:'Bolo Infantil Colorido',tag:'infantil',img:'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=600&q=80'},
-  {id:5,name:'Bolo Gourmet de Chocolate',tag:'gourmet',img:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80'},
-  {id:6,name:'Bolo Festa Rosa',tag:'festa',img:'https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=600&q=80'},
-  {id:7,name:'Naked Cake Frutas',tag:'naked',img:'https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80'},
-  {id:8,name:'Bolo Infantil Unicórnio',tag:'infantil',img:'https://images.unsplash.com/photo-1611293388250-580b08c4a145?w=600&q=80'},
-  {id:9,name:'Bolo Casamento Dourado',tag:'casamento',img:'https://images.unsplash.com/photo-1519869325930-281384150729?w=600&q=80'},
-  {id:10,name:'Bolo Gourmet Red Velvet',tag:'gourmet',img:'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=600&q=80'},
-  {id:11,name:'Bolo Festa Azul Marinho',tag:'festa',img:'https://images.unsplash.com/photo-1622207311835-b3a6c1b8b37c?w=600&q=80'},
-  {id:12,name:'Naked Cake Minimalista',tag:'naked',img:'https://images.unsplash.com/photo-1531685250784-7569952593d2?w=600&q=80'},
-];
-
-const galTagLabels={festa:'Festa',infantil:'Infantil',casamento:'Casamento',gourmet:'Gourmet',naked:'Naked Cake'};
-
-function getGallery(){
-  const s=localStorage.getItem('ms_gallery');
-  return s?JSON.parse(s):defaultGallery;
-}
-function saveGallery(list){localStorage.setItem('ms_gallery',JSON.stringify(list));}
-
-let galFilter='all';
-let lbIndex=0;
-let lbList=[];
-
-function renderGallery(cat){
-  galFilter=cat||galFilter;
-  const all=getGallery();
-  lbList=galFilter==='all'?all:all.filter(g=>g.tag===galFilter);
-  document.getElementById('galleryGrid').innerHTML=lbList.map((g,i)=>`
-    <div class="gallery-card" onclick="openLB(${i})">
-      <img src="${g.img}" alt="${g.name}" loading="lazy">
-      <div class="gallery-card-overlay">
-        <div class="gallery-card-tag">${galTagLabels[g.tag]||g.tag}</div>
-        <div class="gallery-card-name">${g.name}</div>
-        <button class="btn-pedir-modelo" onclick="event.stopPropagation();pedirModeloById(${g.id})">📱 Pedir este modelo</button>
-      </div>
-    </div>`).join('');
-}
-
-document.getElementById('galleryFilters').addEventListener('click',e=>{
-  const btn=e.target.closest('.gf-btn');
-  if(!btn) return;
-  document.querySelectorAll('.gf-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderGallery(btn.dataset.gcat);
-});
-
-function openLB(i){
-  lbIndex=i;
-  updateLB();
-  document.getElementById('lightbox').classList.add('open');
-}
-function closeLB(){document.getElementById('lightbox').classList.remove('open');}
-function navLB(dir){
-  lbIndex=(lbIndex+dir+lbList.length)%lbList.length;
-  updateLB();
-}
-function updateLB(){
-  const g=lbList[lbIndex];
-  document.getElementById('lbImg').src=g.img;
-  document.getElementById('lbImg').alt=g.name;
-  document.getElementById('lbName').textContent=g.name;
-  document.getElementById('lbTag').textContent=galTagLabels[g.tag]||g.tag;
-}
-function pedirModelo(){pedirModeloById(lbList[lbIndex].id);}
-function pedirModeloById(id){
-  const g=getGallery().find(x=>x.id===id);
-  if(!g) return;
-  closeLB();
-  const msg=`Olá! Vi a galeria do site e gostaria de encomendar um bolo personalizado no modelo:\n\n🎂 *${g.name}*\n\nPoderia me passar mais informações sobre preço e disponibilidade?`;
-  window.open(`https://wa.me/5531999999999?text=${encodeURIComponent(msg)}`,'_blank');
-}
-// close lightbox on backdrop click
-document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===document.getElementById('lightbox'))closeLB();});
-
-// ===================== INIT =====================
-renderMenu();
-renderBestsellers();
-renderGallery('all');
-updateCartBadge();
-renderCart();
-
-// ===================== ADMIN =====================
-const ADMIN_USER='admin';
-const ADMIN_PASS='minas2025';
-
-// Orders saved to localStorage when WhatsApp is sent
-// We'll also intercept sendWhatsApp to save order
-const _origSend=sendWhatsApp;
-window.sendWhatsApp=function(){
-  const nome=document.getElementById('fNome').value.trim();
-  const tel=document.getElementById('fTel').value.trim();
-  const cep=document.getElementById('fCep').value.trim();
-  const end=document.getElementById('fEnd').value.trim();
-  const num=document.getElementById('fNum').value.trim();
-  const bairro=document.getElementById('fBairro').value.trim();
-  const comp=document.getElementById('fComp').value.trim();
-  const cidade=document.getElementById('fCidade').value.trim();
-  const obs=document.getElementById('fObs').value.trim();
-  if(!nome||!tel||!end||!num||!bairro||!cidade||!selectedPay){showToast('⚠️ Preencha todos os campos obrigatórios!');return;}
-  if(!cart.length){showToast('⚠️ Carrinho vazio!');return;}
-  // Save order
-  const orders=JSON.parse(localStorage.getItem('ms_orders')||'[]');
-  orders.unshift({
-    id:Date.now(),
-    time:new Date().toLocaleString('pt-BR'),
-    status:'new',
-    nome,tel,
-    addr:`${end}, ${num}${comp?', '+comp:''} — ${bairro}, ${cidade} — CEP: ${cep}`,
-    items:cart.map(i=>({name:i.name,qty:i.qty,price:i.price})),
-    total:cartTotal(),
-    pay:selectedPay,
-    obs
-  });
-  localStorage.setItem('ms_orders',JSON.stringify(orders));
-  const itens=cart.map(i=>`• ${i.name} x${i.qty} = ${fmtPrice(i.price*i.qty)}`).join('\n');
-  const total=fmtPrice(cartTotal());
-  const msg=`🧁 *MINAS SABORES — NOVO PEDIDO*\n━━━━━━━━━━━━━━━━━━━━\n👤 *Cliente:* ${nome}\n📱 *Telefone:* ${tel}\n━━━━━━━━━━━━━━━━━━━━\n📍 *Endereço:*\n${end}, ${num}${comp?', '+comp:''}\n${bairro} — ${cidade}\nCEP: ${cep}\n━━━━━━━━━━━━━━━━━━━━\n🛍️ *Itens:*\n${itens}\n━━━━━━━━━━━━━━━━━━━━\n💰 *Total: ${total}*\n💳 *Pagamento:* ${selectedPay}\n${obs?'📝 *Obs:* '+obs:''}\n━━━━━━━━━━━━━━━━━━━━\n_Aguardando confirmação_ ✅`;
-  window.open(`https://wa.me/5531999999999?text=${encodeURIComponent(msg)}`,'_blank');
-  closeCheckout();
-  cart=[];saveCart();updateCartBadge();renderCart();
-  showToast('🎉 Pedido enviado com sucesso!');
-};
-
-// ---- LOGIN ----
-function openAdminLogin(){document.getElementById('admin-login').classList.add('open');}
-function closeAdminLogin(){document.getElementById('admin-login').classList.remove('open');document.getElementById('loginErr').style.display='none';document.getElementById('adminUser').value='';document.getElementById('adminPass').value='';}
-function doLogin(){
-  const u=document.getElementById('adminUser').value.trim();
-  const p=document.getElementById('adminPass').value;
-  if(u===ADMIN_USER&&p===ADMIN_PASS){
-    closeAdminLogin();
-    sessionStorage.setItem('ms_admin','1');
-    openAdminPanel();
-  } else {
-    document.getElementById('loginErr').style.display='block';
-  }
-}
-function doLogout(){sessionStorage.removeItem('ms_admin');document.getElementById('admin-panel').classList.remove('open');}
-
-// ---- PANEL ----
-let adminCurrentTab='orders';
-function openAdminPanel(){
-  document.getElementById('admin-panel').classList.add('open');
-  switchTab('orders');
-}
-function switchTab(tab){
-  adminCurrentTab=tab;
-  document.getElementById('tabOrders').classList.toggle('active',tab==='orders');
-  document.getElementById('tabMenu').classList.toggle('active',tab==='menu');
-  document.getElementById('tabGallery').classList.toggle('active',tab==='gallery');
-  if(tab==='orders') renderAdminOrders();
-  else if(tab==='menu') renderAdminMenu();
-  else renderAdminGallery();
-}
-
-// ---- ORDERS ----
-function getOrders(){return JSON.parse(localStorage.getItem('ms_orders')||'[]');}
-function saveOrders(o){localStorage.setItem('ms_orders',JSON.stringify(o));}
-
-function renderAdminOrders(){
-  const orders=getOrders();
-  const total=orders.reduce((s,o)=>s+o.total,0);
-  const newOrders=orders.filter(o=>o.status==='new').length;
-  document.getElementById('adminBody').innerHTML=`
-    <div class="admin-stats">
-      <div class="stat-card"><div class="stat-val">${orders.length}</div><div class="stat-lbl">Total de Pedidos</div></div>
-      <div class="stat-card"><div class="stat-val">${newOrders}</div><div class="stat-lbl">Aguardando</div></div>
-      <div class="stat-card"><div class="stat-val">${fmtPrice(total)}</div><div class="stat-lbl">Receita Total</div></div>
-    </div>
-    <div class="orders-header">
-      <h2>📋 Pedidos Recebidos</h2>
-      ${orders.length?`<button class="btn-clear-orders" onclick="clearOrders()">Limpar todos</button>`:''}
-    </div>
-    ${!orders.length?`<div class="orders-empty"><span>📭</span>Nenhum pedido ainda.<br><small>Os pedidos aparecerão aqui quando forem enviados via WhatsApp.</small></div>`
-    :orders.map(o=>`
-    <div class="order-card" id="order-${o.id}">
-      <div class="order-card-header">
-        <div>
-          <div class="order-num">#${String(o.id).slice(-6)}</div>
-          <div class="order-time">🕐 ${o.time}</div>
-        </div>
-        <span class="order-status ${o.status==='done'?'status-done':'status-new'}">${o.status==='done'?'✅ Concluído':'🔔 Novo'}</span>
-      </div>
-      <div class="order-client">👤 ${o.nome} · 📱 ${o.tel}</div>
-      <div class="order-addr">📍 ${o.addr}</div>
-      <div class="order-items">
-        ${o.items.map(i=>`<div class="order-item-row"><span>${i.name} x${i.qty}</span><span>${fmtPrice(i.price*i.qty)}</span></div>`).join('')}
-        <div class="order-total"><span>Total</span><span>${fmtPrice(o.total)}</span></div>
-        <div class="order-pay">💳 ${o.pay}</div>
-      </div>
-      ${o.obs?`<div class="order-obs">📝 ${o.obs}</div>`:''}
-      <div class="order-actions">
-        ${o.status!=='done'?`<button class="btn-mark-done" onclick="markDone(${o.id})">✅ Marcar como Concluído</button>`:''}
-        <button class="btn-del-order" onclick="deleteOrder(${o.id})">🗑️ Excluir</button>
-      </div>
-    </div>`).join('')}`;
-}
-
-function markDone(id){
-  const orders=getOrders();
-  const o=orders.find(x=>x.id===id);
-  if(o) o.status='done';
-  saveOrders(orders);renderAdminOrders();
-}
-function deleteOrder(id){
-  saveOrders(getOrders().filter(o=>o.id!==id));renderAdminOrders();
-}
-function clearOrders(){
-  if(confirm('Excluir todos os pedidos?')){saveOrders([]);renderAdminOrders();}
-}
-
-// ---- MENU ADMIN ----
-function getCustomProducts(){
-  const saved=localStorage.getItem('ms_custom_products');
-  return saved?JSON.parse(saved):null;
-}
-function getAdminProducts(){
-  return getCustomProducts()||products;
-}
-function saveCustomProducts(list){
-  localStorage.setItem('ms_custom_products',JSON.stringify(list));
-  products.length=0;
-  list.forEach(p=>products.push(p));
-  renderMenu();renderBestsellers();
-}
-
-function renderAdminMenu(){
-  const ps=getAdminProducts();
-  document.getElementById('adminBody').innerHTML=`
-    <div class="admin-menu-header">
-      <h2>🍽️ Gerenciar Cardápio</h2>
-      <button class="btn-add-product" onclick="openPF()">+ Novo Produto</button>
-    </div>
-    <div class="admin-products-list">
-      ${ps.map(p=>`
-      <div class="admin-product-row">
-        <img src="${p.img||'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=100&q=60'}" alt="${p.name}" loading="lazy">
-        <div class="apr-info">
-          <div class="apr-name">${p.name}</div>
-          <div class="apr-meta">${catNames[p.cat]||p.cat} · por ${p.unit}</div>
-        </div>
-        <div class="apr-price">${fmtPrice(p.price)}</div>
-        <button class="hot-toggle" onclick="toggleHot(${p.id})" title="${p.hot?'Remover destaque':'Marcar como Mais Vendido'}">${p.hot?'⭐':'☆'}</button>
-        <div class="apr-actions">
-          <button class="btn-edit-p" onclick="openPF(${p.id})">✏️</button>
-          <button class="btn-del-p" onclick="delProduct(${p.id})">🗑️</button>
-        </div>
-      </div>`).join('')}
-    </div>`;
-}
-
-function toggleHot(id){
-  id=Number(id);
-  const ps=[...getAdminProducts()];
-  const p=ps.find(x=>Number(x.id)===id);
-  if(p) p.hot=!p.hot;
-  saveCustomProducts(ps);renderAdminMenu();
-}
-
-function delProduct(id){
-  id=Number(id);
-  if(!confirm('Excluir este produto?')) return;
-  const filtered=getAdminProducts().filter(p=>Number(p.id)!==id);
-  saveCustomProducts(filtered);
-  renderAdminMenu();
-}
-
-function renderAdminGallery(){
-  const list=getGallery();
-  document.getElementById('adminBody').innerHTML=`
-    <div class="gal-add-form">
-      <h3>➕ Adicionar Foto à Galeria</h3>
-      <div class="gal-form-row">
-        <div class="form-group" style="margin:0">
-          <label class="form-label" style="color:var(--cream)">Nome do bolo *</label>
-          <input type="text" class="form-input" id="galName" placeholder="Ex: Bolo Floral Rosa" style="background:rgba(255,255,255,.07);border-color:rgba(212,175,55,.25);color:#fff">
-        </div>
-        <div class="form-group" style="margin:0">
-          <label class="form-label" style="color:var(--cream)">Categoria *</label>
-          <select class="form-input form-select" id="galTag" style="background:#22110D;border-color:rgba(212,175,55,.25);color:#fff">
-            <option value="festa">Festa</option>
-            <option value="infantil">Infantil</option>
-            <option value="casamento">Casamento</option>
-            <option value="gourmet">Gourmet</option>
-            <option value="naked">Naked Cake</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group" style="margin-bottom:12px">
-        <label class="form-label" style="color:var(--cream)">URL da foto *</label>
-        <input type="text" class="form-input" id="galImg" placeholder="https://…" style="background:rgba(255,255,255,.07);border-color:rgba(212,175,55,.25);color:#fff">
-      </div>
-      <button class="btn-add-product" onclick="addGalleryItem()">Adicionar à Galeria</button>
-    </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-      <span style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.1rem">${list.length} fotos na galeria</span>
-      ${list.length>defaultGallery.length?`<button class="btn-clear-orders" onclick="resetGallery()">Restaurar padrão</button>`:''}
-    </div>
-    <div class="gal-admin-grid">
-      ${list.map(g=>`
-      <div class="gal-admin-card">
-        <img src="${g.img}" alt="${g.name}" loading="lazy">
-        <div class="gal-admin-info">
-          <div class="gal-admin-name">${g.name}</div>
-          <div class="gal-admin-tag">${galTagLabels[g.tag]||g.tag}</div>
-          <div class="gal-admin-actions">
-            <button class="btn-del-p" onclick="delGalleryItem(${g.id})" style="flex:1;justify-content:center">🗑️ Excluir</button>
-          </div>
-        </div>
-      </div>`).join('')}
-    </div>`;
-}
-
-function addGalleryItem(){
-  const name=document.getElementById('galName').value.trim();
-  const tag=document.getElementById('galTag').value;
-  const img=document.getElementById('galImg').value.trim();
-  if(!name||!img){showToast('⚠️ Nome e URL da foto são obrigatórios!');return;}
-  const list=getGallery();
-  list.push({id:Date.now(),name,tag,img});
-  saveGallery(list);
-  renderAdminGallery();
-  renderGallery(galFilter);
-  showToast('✅ Foto adicionada à galeria!');
-}
-
-function delGalleryItem(id){
-  id=Number(id);
-  if(!confirm('Excluir esta foto da galeria?')) return;
-  saveGallery(getGallery().filter(g=>Number(g.id)!==id));
-  renderAdminGallery();
-  renderGallery(galFilter);
-}
-
-function resetGallery(){
-  if(!confirm('Restaurar a galeria padrão? As fotos adicionadas serão removidas.')) return;
-  localStorage.removeItem('ms_gallery');
-  renderAdminGallery();
-  renderGallery(galFilter);
-}
-function openPF(id){
-  id=id?Number(id):null;
-  const ps=getAdminProducts();
-  const p=id?ps.find(x=>Number(x.id)===id):null;
-  document.getElementById('pfTitle').textContent=p?'Editar Produto':'Novo Produto';
-  document.getElementById('pfId').value=p?p.id:'';
-  document.getElementById('pfName').value=p?p.name:'';
-  document.getElementById('pfDesc').value=p?p.desc:'';
-  document.getElementById('pfCat').value=p?p.cat:'fritos';
-  document.getElementById('pfUnit').value=p?p.unit:'';
-  document.getElementById('pfPrice').value=p?p.price:'';
-  document.getElementById('pfImg').value=p?p.img:'';
-  document.getElementById('pfHot').checked=p?p.hot:false;
-  document.getElementById('product-form-modal').classList.add('open');
-}
-function closePF(){document.getElementById('product-form-modal').classList.remove('open');}
-
-function saveProduct(){
-  const id=document.getElementById('pfId').value;
-  const name=document.getElementById('pfName').value.trim();
-  const price=parseFloat(document.getElementById('pfPrice').value);
-  const unit=document.getElementById('pfUnit').value.trim();
-  if(!name||!price||!unit){showToast('⚠️ Nome, preço e unidade são obrigatórios!');return;}
-  const ps=[...getAdminProducts()];
-  const newP={
-    id:id?parseInt(id):Date.now(),
-    name,
-    desc:document.getElementById('pfDesc').value.trim(),
-    cat:document.getElementById('pfCat').value,
-    price,
-    unit,
-    img:document.getElementById('pfImg').value.trim()||'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=70',
-    hot:document.getElementById('pfHot').checked
-  };
-  if(id){
-    const idx=ps.findIndex(x=>x.id===parseInt(id));
-    if(idx>=0) ps[idx]=newP;
-  } else {
-    ps.push(newP);
-  }
-  saveCustomProducts(ps);
-  closePF();
-  renderAdminMenu();
-  showToast(id?'✅ Produto atualizado!':'✅ Produto adicionado!');
-}
-
-// auto-open if session active
-if(sessionStorage.getItem('ms_admin')==='1') openAdminPanel();
-</script>
-</body>
-</html>
+        // Hover effect for table rows
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.querySelector('.material-symbols-outlined').classList.add('scale-110');
+            });
+            row.addEventListener('mouseleave', () => {
+                row.querySelector('.material-symbols-outlined').classList.remove('scale-110');
+            });
+        });
+    </script>
+</body></html>
