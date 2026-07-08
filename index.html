@@ -111,7 +111,7 @@
 </head>
 <body class="overflow-x-hidden selection:bg-primary/30">
 <!-- SideNavBar (from JSON) -->
-<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col p-md backdrop-blur-xl bg-surface/80 border-r border-outline-variant/20 shadow-xl shadow-[#1A0C09]/40 z-50">
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col p-md backdrop-blur-xl bg-surface/80 border-r border-outline-variant/20 shadow-xl shadow-[#1A0C09]/40 z-50 mobile-hide">
 <div class="mb-lg px-2">
 <h1 class="font-headline-md text-headline-md font-bold text-primary">L'Artisan</h1>
 <p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest opacity-60">Admin Suite</p>
@@ -145,14 +145,14 @@
         </button>
 </aside>
 <!-- Main Workspace -->
-<main class="ml-64 min-h-screen bg-background relative overflow-hidden">
+<main class="ml-64 min-h-screen bg-background relative overflow-hidden main-content-mobile">
 <!-- Subtle background animation -->
 <!-- TopAppBar -->
-<header class="sticky top-0 z-40 flex justify-between items-center w-full px-lg py-sm backdrop-blur-md border-b border-primary/10 bg-transparent">
+<header class="sticky top-0 z-40 flex justify-between items-center w-full px-lg py-sm backdrop-blur-md border-b border-primary/10 bg-transparent px-4">
 <div class="flex items-center gap-6 flex-1">
 <h2 class="font-headline-md text-headline-md text-primary font-bold">Menu Management</h2>
 <!-- Search Bar -->
-<div class="relative w-96 group">
+<div class="relative w-96 group mobile-hide">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
 <input class="w-full bg-surface-container-low border-none rounded-full py-2.5 pl-10 pr-4 text-on-surface placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/40 transition-all font-body-md" placeholder="Procurar produtos no cardápio..." type="text"/>
 </div>
@@ -160,8 +160,8 @@
 <div class="flex items-center gap-4">
 <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-variant">notifications</button>
 <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-variant">account_circle</button>
-<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
-<div class="relative group">
+<div class="h-8 w-[1px] bg-outline-variant mx-2 mobile-hide"></div>
+<div class="relative group mobile-hide">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">link</span>
 <input class="bg-surface-container-low border-none rounded-full py-2 px-10 text-on-surface placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/40 transition-all font-body-md text-label-sm w-64" placeholder="URL da Imagem do Produto" type="url"/>
 </div><button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">
@@ -181,152 +181,110 @@
 <button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Edições Limitadas</button>
 </div>
 <!-- Table Container -->
-<div class="glass border border-outline-variant/10 rounded-xl overflow-hidden">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-surface-container-high/50 border-b border-outline-variant/20">
-<th class="px-6 py-4 w-12">
-<input class="rounded bg-surface-container text-primary focus:ring-primary border-outline-variant transition-all cursor-pointer" id="selectAll" type="checkbox"/>
-</th>
-<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Produto</th>
-<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Categoria</th>
-<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Preço</th>
-<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
-<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Ações</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-outline-variant/10">
-<!-- Item 1 -->
-<tr class="hover:bg-primary/5 transition-colors group">
-<td class="px-6 py-4">
-<input class="rounded bg-surface-container text-primary focus:ring-primary border-outline-variant transition-all cursor-pointer" type="checkbox"/>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0 border border-outline-variant/20">
-<img class="w-full h-full object-cover" data-alt="A macro shot of a luxurious dark chocolate ganache tartlet with gold leaf flakes and a sprinkle of sea salt. The tart sits on a marble surface with soft, cinematic lighting highlighting the textures of the creamy filling and crisp pastry crust. Professional gourmet photography style with warm, moody shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIR0P_aPZAEaglN8lbZ4Tdh5d6RILvIwwBR1kotLR2Y8H6-7wE-EF_33BbxPriTjROb2MhdAz-CKtPo0NhDo2qvfYGr5mSDS3fjsPz-_i04-A6btNGCNhFQKY1_SD4EPraIQHHYCZZMY4hGol47EkphVo9jJiDGA5JSQzGKMcQa0Hx7-PvmEX-Hj98ZWlG1i9yoE9FvH7nq1fLZ6wCChJqJJLynjVqO7r8ZPudvC1cCkUHIz6BvXTJlD8cUYBmZOB7vyNPsK7io79_"/>
-</div>
-<div>
-<div class="font-body-md text-body-md text-on-surface font-semibold">Torta de Chocolate Belga</div>
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="glass-card p-4 rounded-xl flex flex-col gap-4">
+<div class="flex gap-4">
+<img class="w-20 h-20 rounded-lg object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIR0P_aPZAEaglN8lbZ4Tdh5d6RILvIwwBR1kotLR2Y8H6-7wE-EF_33BbxPriTjROb2MhdAz-CKtPo0NhDo2qvfYGr5mSDS3fjsPz-_i04-A6btNGCNhFQKY1_SD4EPraIQHHYCZZMY4hGol47EkphVo9jJiDGA5JSQzGKMcQa0Hx7-PvmEX-Hj98ZWlG1i9yoE9FvH7nq1fLZ6wCChJqJJLynjVqO7r8ZPudvC1cCkUHIz6BvXTJlD8cUYBmZOB7vyNPsK7io79_"/>
+<div class="flex-1">
+<div class="font-body-md text-on-surface font-semibold">Torta de Chocolate Belga</div>
 <div class="text-label-sm text-on-surface-variant">SKU: ART-001</div>
+<span class="inline-block mt-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Bolos &amp; Tortas</span>
 </div>
 </div>
-</td>
-<td class="px-6 py-4">
-<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Bolos &amp; Tortas</span>
-</td>
-<td class="px-6 py-4">
-<div class="font-body-md text-body-md text-primary font-bold">R$ 145,00</div>
-</td>
-<td class="px-6 py-4">
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
+<div class="font-body-md text-primary font-bold">R$ 145,00</div>
+<div class="flex items-center gap-4">
 <label class="relative inline-flex items-center cursor-pointer">
 <input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-<span class="ms-3 text-label-sm text-on-surface-variant">Disponível</span>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
 </label>
-</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-2">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
-<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="document.getElementById('deleteConfirm').classList.remove('opacity-0', 'pointer-events-none')"><span class="material-symbols-outlined">delete</span></button>
+<div class="flex gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete</span></button>
 </div>
-</td>
-</tr>
-<!-- Item 2 -->
-<tr class="hover:bg-primary/5 transition-colors group">
-<td class="px-6 py-4">
-<input class="rounded bg-surface-container text-primary focus:ring-primary border-outline-variant transition-all cursor-pointer" type="checkbox"/>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0 border border-outline-variant/20">
-<img class="w-full h-full object-cover" data-alt="An exquisite arrangement of assorted Brazilian gourmet brigadeiros in a gold-lined gift box. Each truffle is uniquely decorated with cocoa nibs, edible glitter, or crushed pistachios. The background is a soft, blurred mahogany wood, creating a warm and sophisticated atmosphere of high-end confectionery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTKgtu2ooFght3YJfHDrx3BeyiQhx-tSw4047NZF3f8N-AtsUl2Hcu9Co6frQEC5YD-IRGeOOUVndbTwG9fGqKwFDFKtSJ-B6xLo9fuBkwDuIjSocNF2rk-ZrJIcOIuYMfQd27pH_S0WWypu7CfVlkhKNkvgP6GC99GoqhPoM0QQvNDs1H9ET6XghcAjb3Iq2OyVQ3OGBnKm4q-_JYsXHjo6NZPeFxOXYiNMlUfobJxfivZFbhKDkJXTJEsrDoJ-gSPiLxAghVPzov"/>
 </div>
-<div>
-<div class="font-body-md text-body-md text-on-surface font-semibold">Caixa de Doces Finos (12 un)</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-4 rounded-xl flex flex-col gap-4">
+<div class="flex gap-4">
+<img class="w-20 h-20 rounded-lg object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTKgtu2ooFght3YJfHDrx3BeyiQhx-tSw4047NZF3f8N-AtsUl2Hcu9Co6frQEC5YD-IRGeOOUVndbTwG9fGqKwFDFKtSJ-B6xLo9fuBkwDuIjSocNF2rk-ZrJIcOIuYMfQd27pH_S0WWypu7CfVlkhKNkvgP6GC99GoqhPoM0QQvNDs1H9ET6XghcAjb3Iq2OyVQ3OGBnKm4q-_JYsXHjo6NZPeFxOXYiNMlUfobJxfivZFbhKDkJXTJEsrDoJ-gSPiLxAghVPzov"/>
+<div class="flex-1">
+<div class="font-body-md text-on-surface font-semibold">Caixa de Doces Finos (12 un)</div>
 <div class="text-label-sm text-on-surface-variant">SKU: ART-042</div>
+<span class="inline-block mt-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Doces</span>
 </div>
 </div>
-</td>
-<td class="px-6 py-4">
-<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Doces</span>
-</td>
-<td class="px-6 py-4">
-<div class="font-body-md text-body-md text-primary font-bold">R$ 89,00</div>
-</td>
-<td class="px-6 py-4">
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
+<div class="font-body-md text-primary font-bold">R$ 89,00</div>
+<div class="flex items-center gap-4">
 <label class="relative inline-flex items-center cursor-pointer">
 <input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-<span class="ms-3 text-label-sm text-on-surface-variant">Disponível</span>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
 </label>
-</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-2">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
-<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="document.getElementById('deleteConfirm').classList.remove('opacity-0', 'pointer-events-none')"><span class="material-symbols-outlined">delete</span></button>
-</div>
-</td>
-</tr>
-<!-- Item 3 -->
-<tr class="hover:bg-primary/5 transition-colors group">
-<td class="px-6 py-4">
-<input class="rounded bg-surface-container text-primary focus:ring-primary border-outline-variant transition-all cursor-pointer" type="checkbox"/>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0 border border-outline-variant/20">
-<img class="w-full h-full object-cover" data-alt="A tall, multi-layered Red Velvet cake slice with vibrant crimson layers and thick, smooth cream cheese frosting. Garnished with a single fresh raspberry on top. The plate is elegant ceramic, set against a dark chocolate background that emphasizes the rich colors and artisanal texture of the cake." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp9t_bTKYnhMtCaLkkCpdz8HNTCg7QwN1ojRvgy3kCmhb-MguI181W4qEjnpYSDg-6_1fB4yQ0Y9G5vWI67-L8JqaYRSMEE2m-ZWNMzbFT0QzG2E3rk3KndATbm7hF3Ad4uaer6YoZJjIlcHpw3afJrz1Vs1nMHFLLhnwOwObFUt5ogt4PQA9TxedMq_8BafX1ipQy8uHWt_5nPpMmOcL7Vlo8Bivl16RX76tSh80ptPuiknOVXxJTs7uBKEfFSLSITPfyhgrb3apd"/>
-</div>
-<div>
-<div class="font-body-md text-body-md text-on-surface font-semibold">Bolo Red Velvet</div>
-<div class="text-label-sm text-on-surface-variant">SKU: ART-109</div>
+<div class="flex gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete</span></button>
 </div>
 </div>
-</td>
-<td class="px-6 py-4">
-<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Bolos &amp; Tortas</span>
-</td>
-<td class="px-6 py-4">
-<div class="font-body-md text-body-md text-primary font-bold">R$ 180,00</div>
-</td>
-<td class="px-6 py-4">
-<label class="relative inline-flex items-center cursor-pointer">
-<input class="sr-only peer" type="checkbox"/>
-<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-<span class="ms-3 text-label-sm text-on-surface-variant">Esgotado</span>
-</label>
-</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-2">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
-<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="document.getElementById('deleteConfirm').classList.remove('opacity-0', 'pointer-events-none')"><span class="material-symbols-outlined">delete</span></button>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
+</div>
 </div>
 <!-- Bulk Actions Bar (Hidden by default, shown via JS) -->
-<div class="fixed bottom-8 left-1/2 -translate-x-1/2 -ml-32 translate-y-20 glass px-8 py-4 rounded-full flex items-center gap-6 shadow-2xl transition-all duration-500 border border-primary/30 opacity-0 z-50" id="bulkActions">
-<span class="text-on-surface font-label-md text-label-md"><span id="selectedCount">0</span> itens selecionados</span>
-<div class="h-6 w-[1px] bg-outline-variant"></div>
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="glass-card p-4 rounded-xl flex flex-col gap-4">
 <div class="flex gap-4">
-<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md">
-<span class="material-symbols-outlined">visibility_off</span> Desativar
-                    </button>
-<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md">
-<span class="material-symbols-outlined">category</span> Alterar Categoria
-                    </button>
-<button class="flex items-center gap-2 text-error hover:scale-105 transition-all font-label-md text-label-md">
-<span class="material-symbols-outlined">delete</span> Remover
-                    </button>
+<img class="w-20 h-20 rounded-lg object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIR0P_aPZAEaglN8lbZ4Tdh5d6RILvIwwBR1kotLR2Y8H6-7wE-EF_33BbxPriTjROb2MhdAz-CKtPo0NhDo2qvfYGr5mSDS3fjsPz-_i04-A6btNGCNhFQKY1_SD4EPraIQHHYCZZMY4hGol47EkphVo9jJiDGA5JSQzGKMcQa0Hx7-PvmEX-Hj98ZWlG1i9yoE9FvH7nq1fLZ6wCChJqJJLynjVqO7r8ZPudvC1cCkUHIz6BvXTJlD8cUYBmZOB7vyNPsK7io79_"/>
+<div class="flex-1">
+<div class="font-body-md text-on-surface font-semibold">Torta de Chocolate Belga</div>
+<div class="text-label-sm text-on-surface-variant">SKU: ART-001</div>
+<span class="inline-block mt-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Bolos &amp; Tortas</span>
 </div>
-<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface" id="closeBulk">close</button>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
+<div class="font-body-md text-primary font-bold">R$ 145,00</div>
+<div class="flex items-center gap-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+<div class="flex gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-4 rounded-xl flex flex-col gap-4">
+<div class="flex gap-4">
+<img class="w-20 h-20 rounded-lg object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTKgtu2ooFght3YJfHDrx3BeyiQhx-tSw4047NZF3f8N-AtsUl2Hcu9Co6frQEC5YD-IRGeOOUVndbTwG9fGqKwFDFKtSJ-B6xLo9fuBkwDuIjSocNF2rk-ZrJIcOIuYMfQd27pH_S0WWypu7CfVlkhKNkvgP6GC99GoqhPoM0QQvNDs1H9ET6XghcAjb3Iq2OyVQ3OGBnKm4q-_JYsXHjo6NZPeFxOXYiNMlUfobJxfivZFbhKDkJXTJEsrDoJ-gSPiLxAghVPzov"/>
+<div class="flex-1">
+<div class="font-body-md text-on-surface font-semibold">Caixa de Doces Finos (12 un)</div>
+<div class="text-label-sm text-on-surface-variant">SKU: ART-042</div>
+<span class="inline-block mt-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Doces</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
+<div class="font-body-md text-primary font-bold">R$ 89,00</div>
+<div class="flex items-center gap-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+<div class="flex gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <!-- Pagination / Footer info -->
-<footer class="px-lg py-6 flex justify-between items-center text-on-surface-variant/60 font-label-sm text-label-sm">
+<footer class="px-lg py-6 flex justify-between items-center text-on-surface-variant/60 font-label-sm text-label-sm flex-col gap-4 text-center">
 <div>Exibindo 1-10 de 124 produtos</div>
 <div class="flex gap-4">
 <button class="hover:text-primary transition-colors">Anterior</button>
@@ -397,4 +355,21 @@
             });
         });
     </script>
-</body></html>
+<nav class="fixed bottom-0 left-0 right-0 h-16 bg-surface/90 backdrop-blur-xl border-t border-outline-variant/20 flex items-center justify-around px-4 z-50 md:hidden">
+<button class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined">bakery_dining</span>
+<span class="text-[10px] font-label-sm">Produtos</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-[10px] font-label-sm">Pedidos</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-label-sm">Painel</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-label-sm">Ajustes</span>
+</button>
+</nav></body></html>
