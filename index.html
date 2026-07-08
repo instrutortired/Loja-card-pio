@@ -2,374 +2,567 @@
 
 <html class="dark" lang="pt-BR"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Minas Sabores - Galeria</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "tertiary-container": "#98b7ff",
-                    "tertiary-fixed-dim": "#afc6ff",
-                    "primary": "#f7d054",
-                    "on-error": "#690005",
-                    "tertiary-fixed": "#d9e2ff",
-                    "on-tertiary-fixed": "#001a43",
-                    "background": "#16130b",
-                    "surface-container-low": "#1f1b13",
-                    "inverse-primary": "#735c00",
-                    "on-primary-fixed": "#231a00",
-                    "secondary-fixed-dim": "#d1c5b1",
-                    "on-secondary-container": "#c3b7a3",
-                    "on-primary-container": "#594600",
-                    "tertiary": "#c3d3ff",
-                    "on-surface-variant": "#d0c6af",
-                    "surface-dim": "#16130b",
-                    "on-primary-fixed-variant": "#574500",
-                    "outline": "#99907c",
-                    "on-primary": "#3c2f00",
-                    "on-secondary": "#363022",
-                    "on-tertiary": "#002d6c",
-                    "surface-container-lowest": "#110e07",
-                    "inverse-surface": "#eae2d4",
-                    "surface-container": "#231f17",
-                    "surface-variant": "#38342b",
-                    "surface-bright": "#3d392f",
-                    "surface": "#16130b",
-                    "on-surface": "#eae2d4",
-                    "secondary-fixed": "#eee1cc",
-                    "surface-tint": "#e9c349",
-                    "on-tertiary-fixed-variant": "#224585",
-                    "on-tertiary-container": "#244687",
-                    "on-error-container": "#ffdad6",
-                    "surface-container-highest": "#38342b",
-                    "primary-fixed-dim": "#e9c349",
-                    "primary-fixed": "#ffe087",
-                    "on-secondary-fixed-variant": "#4e4637",
-                    "error-container": "#93000a",
-                    "secondary": "#d1c5b1",
-                    "on-secondary-fixed": "#211b0e",
-                    "primary-container": "#d9b43b",
-                    "surface-container-high": "#2d2a21",
-                    "secondary-container": "#504839",
-                    "outline-variant": "#4d4635",
-                    "on-background": "#eae2d4",
-                    "inverse-on-surface": "#343027",
-                    "error": "#ffb4ab"
-            },
-            "borderRadius": {
-                    "DEFAULT": "1rem",
-                    "lg": "2rem",
-                    "xl": "3rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "xl": "80px",
-                    "sm": "12px",
-                    "base": "8px",
-                    "lg": "48px",
-                    "gutter": "24px",
-                    "xs": "4px",
-                    "md": "24px",
-                    "container-max": "1200px"
-            },
-            "fontFamily": {
-                    "label-md": ["Be Vietnam Pro"],
-                    "display-lg": ["Playfair Display"],
-                    "body-md": ["Be Vietnam Pro"],
-                    "body-lg": ["Be Vietnam Pro"],
-                    "label-sm": ["Be Vietnam Pro"],
-                    "headline-lg": ["Playfair Display"],
-                    "headline-md": ["Playfair Display"]
-            },
-            "fontSize": {
-                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}]
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffe087",
+                        "surface-container-high": "#2d2a21",
+                        "secondary-fixed-dim": "#d1c5b1",
+                        "on-primary": "#3c2f00",
+                        "surface-dim": "#16130b",
+                        "inverse-primary": "#735c00",
+                        "outline-variant": "#4d4635",
+                        "on-surface": "#eae2d4",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-tint": "#e9c349",
+                        "tertiary-fixed": "#d9e2ff",
+                        "on-secondary-fixed-variant": "#4e4637",
+                        "on-primary-fixed": "#231a00",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#eae2d4",
+                        "tertiary": "#c3d3ff",
+                        "secondary-fixed": "#eee1cc",
+                        "on-tertiary-fixed-variant": "#224585",
+                        "surface": "#16130b",
+                        "on-secondary": "#363022",
+                        "surface-bright": "#3d392f",
+                        "surface-container-highest": "#38342b",
+                        "inverse-surface": "#eae2d4",
+                        "surface-container": "#231f17",
+                        "error": "#ffb4ab",
+                        "primary-container": "#d9b43b",
+                        "surface-variant": "#38342b",
+                        "surface-container-lowest": "#110e07",
+                        "tertiary-fixed-dim": "#afc6ff",
+                        "on-tertiary": "#002d6c",
+                        "outline": "#99907c",
+                        "on-tertiary-container": "#244687",
+                        "on-tertiary-fixed": "#001a43",
+                        "on-primary-container": "#594600",
+                        "primary": "#f7d054",
+                        "on-surface-variant": "#d0c6af",
+                        "on-secondary-container": "#c3b7a3",
+                        "inverse-on-surface": "#343027",
+                        "on-secondary-fixed": "#211b0e",
+                        "surface-container-low": "#1f1b13",
+                        "background": "#16130b",
+                        "primary-fixed-dim": "#e9c349",
+                        "secondary-container": "#504839",
+                        "secondary": "#d1c5b1",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#98b7ff",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "container-max": "1200px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-sm": ["Be Vietnam Pro"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }]
+                    }
+                }
             }
-          },
-        },
-      }
+        }
     </script>
 <style>
-      body { background-color: #16130b; color: #eae2d4; font-family: 'Be Vietnam Pro', sans-serif; }
-      .glass { backdrop-filter: blur(16px); background: rgba(35, 31, 23, 0.8); border: 1px solid rgba(217, 180, 59, 0.1); }
-      .glass-card { background: rgba(45, 42, 33, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(217, 180, 59, 0.05); transition: all 0.3s ease; }
-      .glass-card:hover { border-color: rgba(217, 180, 59, 0.3); transform: translateY(-2px); }
-      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
-      .scrollbar-hide::-webkit-scrollbar { display: none; }
-      .gold-glow { box-shadow: 0 0 15px rgba(217, 180, 59, 0.2); }
+        .glass-panel {
+            background: rgba(45, 42, 33, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 232, 211, 0.05);
+        }
+        .gallery-card {
+            background: rgba(45, 42, 33, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(217, 180, 59, 0.1);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .gallery-card:active {
+            transform: scale(0.97);
+        }
+        .shadow-glow {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .lux-transition {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+        
+        .haptic-scale:active {
+            transform: scale(0.92);
+        }
+        
+        .snap-x-mandatory {
+            scroll-snap-type: x mandatory;
+        }
+        .snap-center {
+            scroll-snap-align: center;
+        }
+        
+        .category-pill-container {
+            position: relative;
+            display: inline-flex;
+        }
+        .active-pill {
+            position: absolute;
+            height: 100%;
+            background-color: theme('colors.primary-container');
+            border-radius: 9999px;
+            z-index: 0;
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .menu-item {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .menu-open .menu-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .menu-item:nth-child(1) { transition-delay: 100ms; }
+        .menu-item:nth-child(2) { transition-delay: 150ms; }
+        .menu-item:nth-child(3) { transition-delay: 200ms; }
+        .menu-item:nth-child(4) { transition-delay: 250ms; }
+        .menu-item:nth-child(5) { transition-delay: 300ms; }
+        
+        #mobile-menu, #cart-drawer {
+            transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .pt-safe {
+            padding-top: env(safe-area-inset-top);
+        }
+
+        /* Improved touch target for links */
+        .touch-target {
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+<style>
+        body {
+            min-height: 100dvh;
+            padding-bottom: calc(84px + env(safe-area-inset-bottom));
+        }
     </style>
 </head>
-<body class="overflow-x-hidden selection:bg-primary/30">
-<!-- SideNavBar (from JSON) -->
-<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col p-md backdrop-blur-xl bg-surface/80 border-r border-outline-variant/20 shadow-xl shadow-[#1A0C09]/40 z-50 mobile-hide">
-<div class="mb-lg px-2">
-<h1 class="font-headline-md text-headline-md font-bold text-primary">L'Artisan</h1>
-<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest opacity-60">Admin Suite</p>
+<body class="bg-background text-on-background font-body-md antialiased flex flex-col relative overflow-x-hidden">
+<!-- Compact Header -->
+<header class="fixed top-0 w-full z-40 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm lux-transition pt-safe">
+<div class="flex justify-between items-center px-gutter py-3 max-w-container-max mx-auto">
+<div class="flex items-center">
+<span class="font-headline-lg-mobile text-[22px] font-bold text-primary tracking-tight">Minas Sabores</span>
 </div>
-<nav class="flex-1 space-y-2">
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-body-md text-body-md">Dashboard</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
-<span class="material-symbols-outlined">shopping_cart</span>
-<span class="font-body-md text-body-md">Orders</span>
-</a>
-<!-- Active State: Products (mapped to Cardápio intent) -->
-<a class="flex items-center gap-3 px-4 py-3 text-primary bg-primary-container/20 rounded-lg font-bold" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bakery_dining</span>
-<span class="font-body-md text-body-md">Products</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
-<span class="material-symbols-outlined">photo_library</span>
-<span class="font-body-md text-body-md">Gallery</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-body-md text-body-md">Settings</span>
-</a>
-</nav>
-<button class="mt-auto bg-primary text-on-primary py-3 px-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 gold-glow hover:scale-[1.02] active:scale-95 transition-transform">
-<span class="material-symbols-outlined">add</span>
-            New Collection
-        </button>
-</aside>
-<!-- Main Workspace -->
-<main class="ml-64 min-h-screen bg-background relative overflow-hidden main-content-mobile">
-<!-- Subtle background animation -->
-<!-- TopAppBar -->
-<header class="sticky top-0 z-40 flex justify-between items-center w-full px-lg py-sm backdrop-blur-md border-b border-primary/10 bg-transparent px-4">
-<div class="flex items-center gap-6 flex-1">
-<h2 class="font-headline-md text-headline-md text-primary font-bold">Menu Management</h2>
-<!-- Search Bar -->
-<div class="relative w-96 group mobile-hide">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
-<input class="w-full bg-surface-container-low border-none rounded-full py-2.5 pl-10 pr-4 text-on-surface placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/40 transition-all font-body-md" placeholder="Procurar produtos no cardápio..." type="text"/>
+<div class="flex items-center gap-2">
+<button aria-label="Menu" class="haptic-scale touch-target rounded-full hover:bg-surface-variant/30" id="menu-trigger">
+<span class="material-symbols-outlined text-primary text-[28px]">menu</span>
+</button>
 </div>
-</div>
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-variant">notifications</button>
-<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-variant">account_circle</button>
-<div class="h-8 w-[1px] bg-outline-variant mx-2 mobile-hide"></div>
-<div class="relative group mobile-hide">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">link</span>
-<input class="bg-surface-container-low border-none rounded-full py-2 px-10 text-on-surface placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/40 transition-all font-body-md text-label-sm w-64" placeholder="URL da Imagem do Produto" type="url"/>
-</div><button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">
-                    Novo Produto
-                </button>
 </div>
 </header>
-<!-- Content Canvas -->
-<section class="p-lg space-y-md relative z-10">
-<!-- Quick Filters -->
-<div class="flex items-center gap-3 overflow-x-auto pb-4 scrollbar-hide">
-<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md transition-all whitespace-nowrap">Todos</button>
-<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Bolos</button>
-<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Doces Finos</button>
-<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Salgados Gourmet</button>
-<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Bebidas Artesanais</button>
-<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary/50 hover:text-on-surface font-label-md text-label-md transition-all whitespace-nowrap">Edições Limitadas</button>
+<!-- Slide-out Menu (Public) -->
+<div class="fixed inset-0 z-50 bg-surface/98 backdrop-blur-2xl translate-x-full flex flex-col" id="mobile-menu">
+<div class="flex justify-end p-4 pt-safe">
+<button aria-label="Fechar" class="touch-target rounded-full hover:bg-surface-variant/50 lux-transition" id="menu-close">
+<span class="material-symbols-outlined text-on-surface text-[32px]">close</span>
+</button>
 </div>
-<!-- Table Container -->
-<div class="space-y-4">
-<!-- Card 1 -->
-<div class="glass-card p-4 rounded-xl flex flex-col gap-4">
-<div class="flex gap-4">
-<img class="w-20 h-20 rounded-lg object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIR0P_aPZAEaglN8lbZ4Tdh5d6RILvIwwBR1kotLR2Y8H6-7wE-EF_33BbxPriTjROb2MhdAz-CKtPo0NhDo2qvfYGr5mSDS3fjsPz-_i04-A6btNGCNhFQKY1_SD4EPraIQHHYCZZMY4hGol47EkphVo9jJiDGA5JSQzGKMcQa0Hx7-PvmEX-Hj98ZWlG1i9yoE9FvH7nq1fLZ6wCChJqJJLynjVqO7r8ZPudvC1cCkUHIz6BvXTJlD8cUYBmZOB7vyNPsK7io79_"/>
-<div class="flex-1">
-<div class="font-body-md text-on-surface font-semibold">Torta de Chocolate Belga</div>
-<div class="text-label-sm text-on-surface-variant">SKU: ART-001</div>
-<span class="inline-block mt-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Bolos &amp; Tortas</span>
+<div class="flex-grow flex flex-col justify-center items-start gap-6 px-12" id="menu-items-container">
+<a class="menu-item font-headline-md text-[36px] text-on-surface hover:text-primary lux-transition" href="#">Início</a>
+<a class="menu-item font-headline-md text-[36px] text-on-surface hover:text-primary lux-transition" href="#">Galeria</a>
+<a class="menu-item font-headline-md text-[36px] text-on-surface hover:text-primary lux-transition" href="#">Cardápio</a>
+<a class="menu-item font-headline-md text-[36px] text-on-surface hover:text-primary lux-transition" href="#">Sobre Nós</a>
+<div class="menu-item w-full h-[1px] bg-outline-variant/30 my-2"></div>
+<a class="menu-item font-label-md text-primary text-[20px] flex items-center gap-3" href="https://wa.me/5531999999999" target="_blank">
+<span class="material-symbols-outlined">call</span>
+            Fale Conosco
+        </a>
 </div>
 </div>
-<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
-<div class="font-body-md text-primary font-bold">R$ 145,00</div>
-<div class="flex items-center gap-4">
-<label class="relative inline-flex items-center cursor-pointer">
-<input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
-</label>
-<div class="flex gap-1">
-<button class="p-2 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
-<button class="p-2 text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete</span></button>
+<!-- Main Content -->
+<main class="flex-grow pt-28 pb-xl px-[20px] md:px-gutter max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<section class="text-center mb-lg pt-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-sm tracking-tight">Galeria de Trabalhos</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto leading-relaxed">Explore nossa coleção de obras-primas artesanais. Cada doce é uma expressão de dedicação e luxo.</p>
+</section>
+<!-- Filters (Scrollable horizontally) -->
+<section class="mb-lg overflow-x-auto hide-scrollbar -mx-[20px] px-[20px] md:mx-0 md:px-0">
+<div class="flex gap-2 whitespace-nowrap pb-2 snap-x-mandatory category-pill-container" id="category-container">
+<div class="active-pill" id="active-pill" style="width: 82px; left: 0px;"></div>
+<button class="category-btn snap-center relative z-10 font-label-md text-label-md px-6 py-3 rounded-full text-on-primary-container lux-transition touch-target" data-index="0">Todos</button>
+<button class="category-btn snap-center relative z-10 font-label-md text-label-md px-6 py-3 rounded-full text-on-surface hover:text-primary lux-transition touch-target" data-index="1">Bolos</button>
+<button class="category-btn snap-center relative z-10 font-label-md text-label-md px-6 py-3 rounded-full text-on-surface hover:text-primary lux-transition touch-target" data-index="2">Salgados</button>
+<button class="category-btn snap-center relative z-10 font-label-md text-label-md px-6 py-3 rounded-full text-on-surface hover:text-primary lux-transition touch-target" data-index="3">Doces</button>
+<button class="category-btn snap-center relative z-10 font-label-md text-label-md px-6 py-3 rounded-full text-on-surface hover:text-primary lux-transition touch-target" data-index="4">Eventos</button>
 </div>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="glass-card p-4 rounded-xl flex flex-col gap-4">
-<div class="flex gap-4">
-<img class="w-20 h-20 rounded-lg object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTKgtu2ooFght3YJfHDrx3BeyiQhx-tSw4047NZF3f8N-AtsUl2Hcu9Co6frQEC5YD-IRGeOOUVndbTwG9fGqKwFDFKtSJ-B6xLo9fuBkwDuIjSocNF2rk-ZrJIcOIuYMfQd27pH_S0WWypu7CfVlkhKNkvgP6GC99GoqhPoM0QQvNDs1H9ET6XghcAjb3Iq2OyVQ3OGBnKm4q-_JYsXHjo6NZPeFxOXYiNMlUfobJxfivZFbhKDkJXTJEsrDoJ-gSPiLxAghVPzov"/>
-<div class="flex-1">
-<div class="font-body-md text-on-surface font-semibold">Caixa de Doces Finos (12 un)</div>
-<div class="text-label-sm text-on-surface-variant">SKU: ART-042</div>
-<span class="inline-block mt-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Doces</span>
-</div>
-</div>
-<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
-<div class="font-body-md text-primary font-bold">R$ 89,00</div>
-<div class="flex items-center gap-4">
-<label class="relative inline-flex items-center cursor-pointer">
-<input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
-</label>
-<div class="flex gap-1">
-<button class="p-2 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
-<button class="p-2 text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete</span></button>
+</section>
+<!-- Gallery Grid -->
+<section class="grid grid-cols-2 gap-4 md:gap-md mb-xl">
+<!-- Item 1 -->
+<div class="gallery-card rounded-lg overflow-hidden relative group aspect-square cursor-pointer">
+<img alt="Trufa Ouro Negro" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0leK62rMVvGv4ppVfa8UWXkpUTQa-UbARuoAhJkP3V3TrmzF4Tyy_G0v8e0irsQ4UFtrdrkh6HDxmOdZsRaVc67k-KapoilwxuSOLwfsLEwkm2zLQdvCPBGcOnM0nIkG1NNaqHd6AVUqJqpC31jze92WLtprm7PZe0H0GnWHtbdJaa-3SstYfESNSec4Y4_SD99nFAK3C3LMvh-V7710BkSW2IW8OAgKdB6GAZz_Vqwmyz2WcudlZ3RUohlsEWJJO2lcSkO-XWg_Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 gallery-overlay">
+<span class="font-label-sm text-[10px] text-primary mb-1 uppercase tracking-wider">Doces Gourmet</span>
+<h3 class="font-headline-md text-on-surface text-sm">Trufa Ouro Negro</h3>
+<div class="mt-2 flex justify-between items-center">
+<span class="font-label-md text-primary font-bold">R$ 15,00</span>
+<button class="touch-target w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center haptic-scale add-to-cart-btn" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
 </div>
 </div>
 </div>
-</div>
-</div>
-<!-- Bulk Actions Bar (Hidden by default, shown via JS) -->
-<div class="space-y-4">
-<!-- Card 1 -->
-<div class="glass-card p-4 rounded-xl flex flex-col gap-4">
-<div class="flex gap-4">
-<img class="w-20 h-20 rounded-lg object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIR0P_aPZAEaglN8lbZ4Tdh5d6RILvIwwBR1kotLR2Y8H6-7wE-EF_33BbxPriTjROb2MhdAz-CKtPo0NhDo2qvfYGr5mSDS3fjsPz-_i04-A6btNGCNhFQKY1_SD4EPraIQHHYCZZMY4hGol47EkphVo9jJiDGA5JSQzGKMcQa0Hx7-PvmEX-Hj98ZWlG1i9yoE9FvH7nq1fLZ6wCChJqJJLynjVqO7r8ZPudvC1cCkUHIz6BvXTJlD8cUYBmZOB7vyNPsK7io79_"/>
-<div class="flex-1">
-<div class="font-body-md text-on-surface font-semibold">Torta de Chocolate Belga</div>
-<div class="text-label-sm text-on-surface-variant">SKU: ART-001</div>
-<span class="inline-block mt-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Bolos &amp; Tortas</span>
-</div>
-</div>
-<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
-<div class="font-body-md text-primary font-bold">R$ 145,00</div>
-<div class="flex items-center gap-4">
-<label class="relative inline-flex items-center cursor-pointer">
-<input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
-</label>
-<div class="flex gap-1">
-<button class="p-2 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
-<button class="p-2 text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete</span></button>
+<!-- Item 2 -->
+<div class="gallery-card rounded-lg overflow-hidden relative group aspect-square cursor-pointer">
+<img alt="Bolo Floral" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF_Db_eKXWZH-Zvb55xn6aQrBKlKQWNQS7sRN8RJ_pywucylXttM9fcqnx2oD-VYwFMhHrWBie2YK0V8kWCiODyR5V0Ver5ZDNw2ZLmttF_3Sg9pzYApqN6mqgxIrnAEEVxx_YiEiMBnYyfExUFER4vZiAUJZB9z6vJB2cpE3ociqXO4WTGI1UrZPphy7VvSt-c7wlPCzjyPYgFjQnX8cicH-1nLiwwfdNrX-zNVKpNJBTXGZMpE1Do7zCb1eSHvZxJOOEuoHOi0kN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 gallery-overlay">
+<span class="font-label-sm text-[10px] text-primary mb-1 uppercase tracking-wider">Bolos</span>
+<h3 class="font-headline-md text-on-surface text-sm">Bolo Floral Clássico</h3>
+<div class="mt-2 flex justify-between items-center">
+<span class="font-label-md text-primary font-bold">R$ 450,00</span>
+<button class="touch-target w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center haptic-scale add-to-cart-btn" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
 </div>
 </div>
 </div>
-</div>
-<!-- Card 2 -->
-<div class="glass-card p-4 rounded-xl flex flex-col gap-4">
-<div class="flex gap-4">
-<img class="w-20 h-20 rounded-lg object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTKgtu2ooFght3YJfHDrx3BeyiQhx-tSw4047NZF3f8N-AtsUl2Hcu9Co6frQEC5YD-IRGeOOUVndbTwG9fGqKwFDFKtSJ-B6xLo9fuBkwDuIjSocNF2rk-ZrJIcOIuYMfQd27pH_S0WWypu7CfVlkhKNkvgP6GC99GoqhPoM0QQvNDs1H9ET6XghcAjb3Iq2OyVQ3OGBnKm4q-_JYsXHjo6NZPeFxOXYiNMlUfobJxfivZFbhKDkJXTJEsrDoJ-gSPiLxAghVPzov"/>
-<div class="flex-1">
-<div class="font-body-md text-on-surface font-semibold">Caixa de Doces Finos (12 un)</div>
-<div class="text-label-sm text-on-surface-variant">SKU: ART-042</div>
-<span class="inline-block mt-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-label-sm">Doces</span>
-</div>
-</div>
-<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
-<div class="font-body-md text-primary font-bold">R$ 89,00</div>
-<div class="flex items-center gap-4">
-<label class="relative inline-flex items-center cursor-pointer">
-<input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
-</label>
-<div class="flex gap-1">
-<button class="p-2 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
-<button class="p-2 text-on-surface-variant hover:text-error"><span class="material-symbols-outlined">delete</span></button>
+<!-- Item 3 -->
+<div class="gallery-card rounded-lg overflow-hidden relative group aspect-square cursor-pointer">
+<img alt="Seleção Premium" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0_dfrrWmBwoMGt09E8zhenXKUZOmAZsDaeY8bugk4zK5DeynxKUWezd9OkMxmp_rmHAPo5-u6psnDH8r21C3_JVlTURu9i11FtdAJ996lWk55Q-yHKwP7-J2hiSeiHYpdQGzFP-ImIG5P_Bhb2RBUV8L4oYB-GS2TtQ1j7wzgdQa8kWQsFr21lF0-_pPgV4XDged-hI90W1MB60ENtZlFgX5HKAiKh_d5jMj8m7MOpxkt6rgHnN1c_AFUyCkeZz94umgUVqrtMPJ7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 gallery-overlay">
+<span class="font-label-sm text-[10px] text-primary mb-1 uppercase tracking-wider">Salgados</span>
+<h3 class="font-headline-md text-on-surface text-sm">Seleção Premium</h3>
+<div class="mt-2 flex justify-between items-center">
+<span class="font-label-md text-primary font-bold">R$ 180,00</span>
+<button class="touch-target w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center haptic-scale add-to-cart-btn" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
 </div>
 </div>
+</div>
+<!-- Item 4 -->
+<div class="gallery-card rounded-lg overflow-hidden relative group aspect-square cursor-pointer">
+<img alt="Mesa Imperial" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwKbW7VseMlbQaXscab5GEnvKt1-mSAa6eSCBVWKiwQWPHfXP_9vGQl1JGnHwzRuwxBkVdqg9knsCQycK8PJ0XNgEpLNKQKC-7J9Ep50Cme5jJuIFmk1uThNEdb8Z6tlwBKUtudMX3Y8dGnH2QLjWTwB2Cy34VouAnbblP0hKlYEZwxnajF1HvpE41nVp2AfQACcQakwR4-9AEtUx_EzxHZhEuWq5qCxWilRNDq03d1vMfn03W5XS-FKt-yJC4OW3UZtkx3lsqEiyg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 gallery-overlay">
+<span class="font-label-sm text-[10px] text-primary mb-1 uppercase tracking-wider">Eventos</span>
+<h3 class="font-headline-md text-on-surface text-sm">Mesa Imperial</h3>
+<div class="mt-2 flex justify-between items-center">
+<span class="font-label-md text-primary font-bold">Sob consulta</span>
+<button class="touch-target w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center haptic-scale add-to-cart-btn" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 5 - Featured Full Width -->
+<div class="gallery-card rounded-lg overflow-hidden relative group aspect-[16/10] col-span-2 cursor-pointer shadow-xl">
+<img alt="Design Arquitetônico" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb1zyub0ID2Z_wfvEK2wbcvYPuO4iJQqwOdpXe8Qmq2FlbB0P32EmYUHhOtjMtwbXKCJvCVoRiLBqZ1E074MtYWCJFC3vzwBHOxYyAggB9Lw4WncMtrTl8W9EU2WutjGgFqdcYY03qK1RPsYBlNNKYeq56yCVOukp0TBZgYMtLt0bSHjzJuxE1QZCM1LVFYpsQ2BLwaE2AoaepYvBqqR5987WfljVYtSHpaD6lPyV7dLToicOpVQHEJ3sBuHeyYP5qBVQ04foOwx7N"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/98 via-surface/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 gallery-overlay">
+<span class="font-label-md text-primary mb-2 uppercase tracking-widest text-xs">Bolos de Design</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Design Arquitetônico</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-2 text-sm">Uma obra de arte comestível, combinando geometria moderna com o sabor clássico mineiro.</p>
+<div class="mt-4 flex justify-between items-center">
+<span class="font-headline-md text-primary">R$ 520,00</span>
+<button class="touch-target px-6 h-12 rounded-full bg-primary text-on-primary font-label-md flex items-center gap-2 haptic-scale add-to-cart-btn" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined">shopping_bag</span>
+                        Adicionar
+                    </button>
 </div>
 </div>
 </div>
 </section>
-<!-- Pagination / Footer info -->
-<footer class="px-lg py-6 flex justify-between items-center text-on-surface-variant/60 font-label-sm text-label-sm flex-col gap-4 text-center">
-<div>Exibindo 1-10 de 124 produtos</div>
-<div class="flex gap-4">
-<button class="hover:text-primary transition-colors">Anterior</button>
-<div class="flex gap-2">
-<button class="w-8 h-8 rounded bg-primary text-on-primary">1</button>
-<button class="w-8 h-8 rounded hover:bg-surface-variant">2</button>
-<button class="w-8 h-8 rounded hover:bg-surface-variant">3</button>
+<!-- CTA Section -->
+<section class="text-center py-xl glass-panel rounded-xl mb-xl px-6 relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4">Gostou do que viu?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10 max-w-sm mx-auto leading-relaxed">Transforme seu evento com a elegância e o sabor inconfundível da Minas Sabores.</p>
+<button class="w-full md:w-auto touch-target font-label-md text-label-md bg-primary text-on-primary py-5 px-10 rounded-full shadow-glow haptic-scale flex items-center justify-center gap-2 mx-auto active:scale-95 transition-transform">
+                Peça um orçamento
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
 </div>
-<button class="hover:text-primary transition-colors">Próximo</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter grid grid-cols-1 md:grid-cols-4 gap-xl max-w-container-max mx-auto bg-surface-dim border-t border-white/5 mt-auto pb-36">
+<div>
+<div class="font-headline-lg text-headline-lg text-primary mb-4 tracking-tighter">Minas Sabores</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 opacity-80">Tradição e Luxo em cada detalhe artesanal.</p>
+<div class="flex gap-4">
+<button aria-label="Instagram" class="touch-target w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary lux-transition haptic-scale">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</button>
+<button aria-label="Compartilhar" class="touch-target w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary lux-transition haptic-scale">
+<span class="material-symbols-outlined text-[24px]">share</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<a class="font-label-md text-on-surface-variant hover:text-primary lux-transition" href="#">Nossa História</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary lux-transition" href="#">Políticas de Privacidade</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary lux-transition" href="#">Termos de Uso</a>
+</div>
+<div class="md:col-span-2 text-left md:text-right flex flex-col justify-end pt-8 md:pt-0">
+<p class="font-label-sm text-on-surface-variant opacity-60">© 2024 Minas Sabores. Todos os direitos reservados.</p>
 </div>
 </footer>
-<!-- Confirmation Dialog (Hidden by default) -->
-<div class="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="deleteConfirm">
-<div class="glass-card p-lg rounded-xl max-w-md w-full border border-primary/20 shadow-2xl">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center text-error">
-<span class="material-symbols-outlined">warning</span>
+<!-- Bottom Navigation Bar (Refined for Admin/Integrated context) -->
+<nav class="fixed bottom-0 w-full z-40 bg-surface/85 backdrop-blur-2xl border-t border-white/10 pb-safe pt-2 px-2 shadow-[0_-10px_40px_rgba(0,0,0,0.6)]">
+<div class="flex justify-around items-end max-w-container-max mx-auto mb-1">
+<a class="haptic-scale flex flex-col items-center gap-1 flex-1 py-2 text-primary" href="#">
+<span class="material-symbols-outlined text-[30px] leading-none">home</span>
+<span class="font-label-sm text-[10px] font-semibold">Home</span>
+</a>
+<a class="haptic-scale flex flex-col items-center gap-1 flex-1 py-2 text-on-surface-variant opacity-70 hover:opacity-100" href="#">
+<span class="material-symbols-outlined text-[30px] leading-none">restaurant_menu</span>
+<span class="font-label-sm text-[10px] font-semibold">Menu</span>
+</a>
+<!-- Main Action (Order/Cart) -->
+<a class="haptic-scale flex flex-col items-center gap-1 flex-1 py-2 text-on-surface-variant opacity-70 hover:opacity-100 relative" href="#" id="cart-trigger">
+<div class="relative">
+<span class="material-symbols-outlined text-[30px] leading-none">shopping_cart</span>
+<span class="absolute -top-1 -right-1 w-4 h-4 bg-error text-white text-[9px] flex items-center justify-center rounded-full font-bold">1</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-on-surface">Confirmar Exclusão</h3>
+<span class="font-label-sm text-[10px] font-semibold">Pedidos</span>
+</a>
+<!-- Admin Shortcut / More -->
+<a class="haptic-scale flex flex-col items-center gap-1 flex-1 py-2 text-on-surface-variant opacity-70 hover:opacity-100" href="#">
+<span class="material-symbols-outlined text-[30px] leading-none">admin_panel_settings</span>
+<span class="font-label-sm text-[10px] font-semibold">Painel</span>
+</a>
 </div>
-<p class="text-on-surface-variant mb-6">Você tem certeza que deseja remover este produto? Esta ação não pode ser desfeita.</p>
-<div class="flex justify-end gap-4">
-<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant transition-all font-label-md" onclick="document.getElementById('deleteConfirm').classList.add('opacity-0', 'pointer-events-none')">Cancelar</button>
-<button class="px-6 py-2 rounded-full bg-error text-on-error hover:brightness-110 transition-all font-label-md" onclick="document.getElementById('deleteConfirm').classList.add('opacity-0', 'pointer-events-none')">Excluir Produto</button>
+</nav>
+<!-- Scroll to Top (Touch Optimized) -->
+<button aria-label="Voltar ao topo" class="fixed bottom-28 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center opacity-0 translate-y-6 pointer-events-none z-30 haptic-scale active:scale-90 transition-all duration-300" id="scroll-top-btn">
+<span class="material-symbols-outlined text-[28px]">arrow_upward</span>
+</button>
+<!-- Checkout Drawer (WhatsApp Intent Verification) -->
+<div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md hidden opacity-0 transition-opacity duration-300" id="cart-overlay"></div>
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface rounded-t-[2.5rem] translate-y-full flex flex-col max-h-[90vh] shadow-2xl border-t border-white/5" id="cart-drawer">
+<div class="w-12 h-1.5 bg-outline-variant/40 rounded-full mx-auto mt-4 mb-2"></div>
+<div class="p-6 pt-2 border-b border-white/5 flex justify-between items-center">
+<h2 class="font-headline-md text-on-surface">Minha Reserva</h2>
+<button class="touch-target rounded-full bg-surface-variant/30 text-on-surface haptic-scale" id="cart-close">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-grow overflow-y-auto p-6 flex flex-col gap-5">
+<!-- Cart Item -->
+<div class="flex gap-4 items-center bg-surface-container-low rounded-2xl p-4 border border-white/5">
+<img class="w-20 h-20 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0leK62rMVvGv4ppVfa8UWXkpUTQa-UbARuoAhJkP3V3TrmzF4Tyy_G0v8e0irsQ4UFtrdrkh6HDxmOdZsRaVc67k-KapoilwxuSOLwfsLEwkm2zLQdvCPBGcOnM0nIkG1NNaqHd6AVUqJqpC31jze92WLtprm7PZe0H0GnWHtbdJaa-3SstYfESNSec4Y4_SD99nFAK3C3LMvh-V7710BkSW2IW8OAgKdB6GAZz_Vqwmyz2WcudlZ3RUohlsEWJJO2lcSkO-XWg_Y"/>
+<div class="flex-grow">
+<h4 class="font-label-md text-on-surface font-semibold text-base">Trufa Ouro Negro</h4>
+<p class="font-label-sm text-primary mt-1 font-bold">R$ 15,00</p>
+<div class="flex items-center gap-4 mt-3">
+<div class="flex items-center gap-1 bg-surface-variant/50 rounded-full px-2 py-1">
+<button class="touch-target text-on-surface haptic-scale"><span class="material-symbols-outlined text-[20px]">remove</span></button>
+<span class="font-label-md text-on-surface w-8 text-center font-bold">1</span>
+<button class="touch-target text-on-surface haptic-scale"><span class="material-symbols-outlined text-[20px]">add</span></button>
+</div>
+<button class="text-error opacity-70 touch-target"><span class="material-symbols-outlined">delete</span></button>
 </div>
 </div>
-</div></main>
+</div>
+</div>
+<div class="p-8 bg-surface-container-high/50 border-t border-white/5 pb-safe">
+<div class="flex justify-between items-center mb-6">
+<span class="font-body-md text-on-surface-variant font-medium">Subtotal Estimado</span>
+<span class="font-headline-md text-primary font-bold">R$ 15,00</span>
+</div>
+<!-- WhatsApp Mobile Intent Integration -->
+<a class="w-full bg-[#25D366] text-white font-label-md py-5 rounded-full flex items-center justify-center gap-3 shadow-xl hover:brightness-110 active:scale-[0.98] transition-all haptic-scale no-underline" href="https://wa.me/5531999999999?text=Olá!%20Gostaria%20de%20encomendar:%20Trufa%20Ouro%20Negro%20(1x)%20-%20Total:%20R$15,00" id="whatsapp-order-btn" target="_blank">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.538-2.961-2.654-.087-.116-.708-.941-.708-1.792 0-.85.445-1.268.603-1.441.159-.173.346-.217.462-.217.115 0 .23 0 .331.005.109.004.258-.041.404.31.159.383.541 1.32.589 1.416.049.096.082.208.017.33-.065.122-.099.198-.196.31-.097.113-.203.252-.29.341-.1.102-.204.212-.087.41.117.198.52.859 1.114 1.388.765.681 1.409.892 1.611.993.203.101.32.085.44-.05.12-.135.511-.595.648-.797.137-.202.274-.17.463-.1.188.07 1.197.565 1.406.67s.346.156.396.244c.051.088.051.512-.093.917zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z"></path></svg>
+            Finalizar no WhatsApp
+        </a>
+</div>
+</div>
 <script>
-        // Simple selection logic for demo purposes
-        const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
-        const bulkBar = document.getElementById('bulkActions');
-        const selectedCountLabel = document.getElementById('selectedCount');
-        const selectAll = document.getElementById('selectAll');
-        const closeBulk = document.getElementById('closeBulk');
+    // Utility for active pill alignment
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const activePill = document.getElementById('active-pill');
 
-        function updateBulkBar() {
-            const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
-            if (checkedCount > 0) {
-                bulkBar.classList.remove('translate-y-20', 'opacity-0');
-                selectedCountLabel.textContent = checkedCount;
-            } else {
-                bulkBar.classList.add('translate-y-20', 'opacity-0');
-            }
+    function updatePill(btn) {
+        const btnRect = btn.getBoundingClientRect();
+        const containerRect = btn.parentElement.getBoundingClientRect();
+        
+        activePill.style.width = `${btnRect.width}px`;
+        activePill.style.left = `${btnRect.left - containerRect.left + btn.parentElement.scrollLeft}px`;
+        
+        categoryBtns.forEach(b => {
+            b.classList.remove('text-on-primary-container');
+            b.classList.add('text-on-surface');
+        });
+        
+        btn.classList.remove('text-on-surface');
+        btn.classList.add('text-on-primary-container');
+    }
+
+    // Initialize pill position
+    window.addEventListener('load', () => {
+        const firstBtn = categoryBtns[0];
+        if (firstBtn) updatePill(firstBtn);
+    });
+
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            updatePill(e.target);
+            e.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        });
+    });
+
+    // Mobile Menu Logic
+    const menuTrigger = document.getElementById('menu-trigger');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuItemsContainer = document.getElementById('menu-items-container');
+
+    menuTrigger.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+        setTimeout(() => menuItemsContainer.classList.add('menu-open'), 50);
+        document.body.style.overflow = 'hidden';
+    });
+
+    menuClose.addEventListener('click', () => {
+        menuItemsContainer.classList.remove('menu-open');
+        setTimeout(() => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }, 300);
+    });
+
+    // Cart Drawer Logic
+    const cartTrigger = document.getElementById('cart-trigger');
+    const cartClose = document.getElementById('cart-close');
+    const cartDrawer = document.getElementById('cart-drawer');
+    const cartOverlay = document.getElementById('cart-overlay');
+    
+    function openCart(e) {
+        if(e) e.preventDefault();
+        cartOverlay.classList.remove('hidden');
+        setTimeout(() => {
+            cartOverlay.classList.remove('opacity-0');
+            cartDrawer.classList.remove('translate-y-full');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeCart() {
+        cartDrawer.classList.add('translate-y-full');
+        cartOverlay.classList.add('opacity-0');
+        setTimeout(() => {
+            cartOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 300);
+    }
+    
+    cartTrigger.addEventListener('click', openCart);
+    cartClose.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+    
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            openCart();
+        });
+    });
+
+    // Scroll to Top visibility
+    const scrollTopBtn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            scrollTopBtn.classList.remove('opacity-0', 'translate-y-6', 'pointer-events-none');
+            scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            scrollTopBtn.classList.add('opacity-0', 'translate-y-6', 'pointer-events-none');
+            scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
         }
+    });
 
-        checkboxes.forEach(cb => {
-            cb.addEventListener('change', updateBulkBar);
-        });
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-        selectAll.addEventListener('change', () => {
-            checkboxes.forEach(cb => cb.checked = selectAll.checked);
-            updateBulkBar();
+    // Tapping on gallery card logic (mobile friendly)
+    document.querySelectorAll('.gallery-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const overlay = this.querySelector('.gallery-overlay');
+            const isVisible = overlay.style.opacity === '1';
+            
+            // Reset all overlays
+            document.querySelectorAll('.gallery-overlay').forEach(o => o.style.opacity = '0');
+            
+            // Toggle current
+            if(!isVisible) {
+                overlay.style.opacity = '1';
+            }
         });
+    });
 
-        closeBulk.addEventListener('click', () => {
-            checkboxes.forEach(cb => cb.checked = false);
-            selectAll.checked = false;
-            updateBulkBar();
-        });
-
-        // Hover effect for table rows
-        document.querySelectorAll('tr').forEach(row => {
-            row.addEventListener('mouseenter', () => {
-                row.querySelector('.material-symbols-outlined').classList.add('scale-110');
-            });
-            row.addEventListener('mouseleave', () => {
-                row.querySelector('.material-symbols-outlined').classList.remove('scale-110');
-            });
-        });
-    </script>
-<nav class="fixed bottom-0 left-0 right-0 h-16 bg-surface/90 backdrop-blur-xl border-t border-outline-variant/20 flex items-center justify-around px-4 z-50 md:hidden">
-<button class="flex flex-col items-center text-primary">
-<span class="material-symbols-outlined">bakery_dining</span>
-<span class="text-[10px] font-label-sm">Produtos</span>
-</button>
-<button class="flex flex-col items-center text-on-surface-variant">
-<span class="material-symbols-outlined">shopping_cart</span>
-<span class="text-[10px] font-label-sm">Pedidos</span>
-</button>
-<button class="flex flex-col items-center text-on-surface-variant">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="text-[10px] font-label-sm">Painel</span>
-</button>
-<button class="flex flex-col items-center text-on-surface-variant">
-<span class="material-symbols-outlined">settings</span>
-<span class="text-[10px] font-label-sm">Ajustes</span>
-</button>
-</nav></body></html>
+    // Verify WhatsApp trigger on mobile
+    const waBtn = document.getElementById('whatsapp-order-btn');
+    waBtn.addEventListener('click', function(e) {
+        // Log intent for diagnostic purposes in non-prod environments
+        console.log("Triggering WhatsApp Mobile Intent...");
+    });
+</script>
+</body></html>
