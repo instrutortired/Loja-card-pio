@@ -1237,8 +1237,9 @@ function switchTab(tab){
 }
 
 function renderAdminConfig(){
-  const c=getBinConfig()||{binId:'',apiKey:''};
   const connected=hasBin();
+  const binId=localStorage.getItem('ms_bin_id')||'';
+  const apiKey=localStorage.getItem('ms_bin_key')||'';
   document.getElementById('adminBody').innerHTML=`
     <div style="max-width:520px;margin:0 auto">
       <div style="background:var(--brown);border-radius:14px;padding:24px;border:1px solid rgba(212,175,55,.2);margin-bottom:20px">
@@ -1252,7 +1253,8 @@ function renderAdminConfig(){
           2. Clique em <strong style="color:var(--cream)">CREATE BIN</strong> → cole <code style="color:var(--gold)">{}</code> → Save<br>
           3. Copie o <strong style="color:var(--cream)">BIN ID</strong> (ex: <code style="color:var(--gold)">64abc123…</code>)<br>
           4. Vá em <strong style="color:var(--cream)">API Keys</strong> → copie a <strong style="color:var(--cream)">Master Key</strong><br>
-          5. Cole os dois campos abaixo e clique em Salvar
+          5. Cole os dois campos abaixo e clique em Salvar<br>
+          6. Um novo <strong style="color:var(--cream)">index.html</strong> será baixado automaticamente — faça upload dele no GitHub para os clientes verem o cardápio atualizado
         </div>
         <div class="form-group" style="margin-bottom:14px">
           <label class="form-label" style="color:var(--cream)">BIN ID</label>
@@ -1273,21 +1275,44 @@ function renderAdminConfig(){
       </div>
     </div>`;
   // Set values via JS to avoid HTML escaping issues with special chars ($ in API key)
-  document.getElementById('cfgBinId').value = c.binId || '';
-  document.getElementById('cfgApiKey').value = c.apiKey || '';
+  document.getElementById('cfgBinId').value = binId;
+  document.getElementById('cfgApiKey').value = apiKey;
 }
 
 function saveBinConfig(){
   const binId=document.getElementById('cfgBinId').value.trim();
   const apiKey=document.getElementById('cfgApiKey').value.trim();
   if(!binId||!apiKey){showToast('⚠️ Preencha o BIN ID e a API Key.');return;}
-  localStorage.setItem('ms_bin_cfg',JSON.stringify({binId,apiKey}));
-  showToast('✅ Configuração salva!');
+  localStorage.setItem('ms_bin_id', binId);
+  localStorage.setItem('ms_bin_key', apiKey);
+  _BIN_ID = binId;
+  _API_KEY = apiKey;
+  showToast('✅ Salvo! Leia as instruções abaixo.');
   renderAdminConfig();
+  // Show download with credentials embedded
+  setTimeout(()=>{
+    const src=document.documentElement.outerHTML;
+    const updated=src.replace(
+      "let _BIN_ID = localStorage.getItem('ms_bin_id') || '';",
+      `let _BIN_ID = '${binId}';`
+    ).replace(
+      "let _API_KEY = localStorage.getItem('ms_bin_key') || '';",
+      `let _API_KEY = '${apiKey}';`
+    );
+    const blob=new Blob([updated],{type:'text/html'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='index.html';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  },300);
 }
 function clearBinConfig(){
   if(!confirm('Desconectar da nuvem?')) return;
+  localStorage.removeItem('ms_bin_id');
+  localStorage.removeItem('ms_bin_key');
   localStorage.removeItem('ms_bin_cfg');
+  _BIN_ID=''; _API_KEY='';
   renderAdminConfig();
 }
 async function testCloudSync(){
@@ -1355,11 +1380,18 @@ function clearOrders(){
 }
 
 // ---- MENU ADMIN ----
-// JSONBin config — admin configura na aba ⚙️ Configurações
+// JSONBin — credenciais ficam no código após admin configurar (leitura pública)
+// O admin pode sobrescrever via painel, mas o BIN_ID precisa estar aqui para clientes lerem
+let _BIN_ID = localStorage.getItem('ms_bin_id') || '';
+let _API_KEY = localStorage.getItem('ms_bin_key') || '';
+
 function getBinConfig(){
-  try{return JSON.parse(localStorage.getItem('ms_bin_cfg')||'null');}catch(e){return null;}
+  const id = _BIN_ID || localStorage.getItem('ms_bin_id') || '';
+  const key = _API_KEY || localStorage.getItem('ms_bin_key') || '';
+  if(!id||!key) return null;
+  return {binId:id, apiKey:key};
 }
-function hasBin(){const c=getBinConfig();return c&&c.binId&&c.apiKey;}
+function hasBin(){const c=getBinConfig();return !!(c&&c.binId&&c.apiKey);}
 
 async function cloudGet(){
   const c=getBinConfig();
