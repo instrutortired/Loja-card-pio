@@ -1239,7 +1239,7 @@ function renderAdminConfig(){
       <div style="background:var(--brown);border-radius:14px;padding:24px;border:1px solid rgba(212,175,55,.2);margin-bottom:20px">
         <h3 style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:8px">☁️ Sincronização na Nuvem</h3>
         <p style="color:var(--gray-mid);font-size:.83rem;line-height:1.6;margin-bottom:20px">
-          Configure o <strong style="color:var(--cream)">JSONBin.io</strong> para salvar o cardápio e a galeria permanentemente na nuvem — assim as alterações ficam disponíveis em qualquer dispositivo, mesmo após atualizar a página.
+          Configure o <strong style="color:var(--cream)">JSONBin.io</strong> para salvar o cardápio e a galeria permanentemente na nuvem.
         </p>
         <div style="background:rgba(212,175,55,.07);border:1px solid rgba(212,175,55,.2);border-radius:10px;padding:14px;margin-bottom:20px;font-size:.82rem;color:var(--gray-mid);line-height:1.8">
           <strong style="color:var(--gold)">Como configurar (grátis):</strong><br>
@@ -1251,21 +1251,25 @@ function renderAdminConfig(){
         </div>
         <div class="form-group" style="margin-bottom:14px">
           <label class="form-label" style="color:var(--cream)">BIN ID</label>
-          <input type="text" class="form-input" id="cfgBinId" value="${c.binId}" placeholder="64abc123def456…" style="background:rgba(255,255,255,.07);border-color:rgba(212,175,55,.25);color:#fff">
+          <input type="text" class="form-input" id="cfgBinId" placeholder="64abc123def456…" style="background:rgba(255,255,255,.07);border-color:rgba(212,175,55,.25);color:#fff">
         </div>
         <div class="form-group" style="margin-bottom:18px">
           <label class="form-label" style="color:var(--cream)">API Master Key</label>
-          <input type="password" class="form-input" id="cfgApiKey" value="${c.apiKey}" placeholder="$2a$10$…" style="background:rgba(255,255,255,.07);border-color:rgba(212,175,55,.25);color:#fff">
+          <input type="password" class="form-input" id="cfgApiKey" placeholder="$2a$10$…" style="background:rgba(255,255,255,.07);border-color:rgba(212,175,55,.25);color:#fff">
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <button class="btn-add-product" onclick="saveBinConfig()">💾 Salvar Configuração</button>
           ${connected?`<button class="btn-add-product" style="background:rgba(212,175,55,.2);color:var(--gold)" onclick="testCloudSync()">🔄 Sincronizar Agora</button>`:''}
           ${connected?`<button class="btn-clear-orders" onclick="clearBinConfig()">Desconectar</button>`:''}
         </div>
-        ${connected?`<div style="margin-top:14px;padding:10px 14px;background:rgba(0,200,100,.1);border:1px solid rgba(0,200,100,.3);border-radius:8px;color:#00c864;font-size:.82rem">✅ Nuvem configurada — alterações no cardápio e galeria são salvas automaticamente.</div>`
-        :`<div style="margin-top:14px;padding:10px 14px;background:rgba(255,200,0,.08);border:1px solid rgba(255,200,0,.2);border-radius:8px;color:#ffc800;font-size:.82rem">⚠️ Sem nuvem configurada — dados salvos apenas neste navegador.</div>`}
+        ${connected
+          ?`<div style="margin-top:14px;padding:10px 14px;background:rgba(0,200,100,.1);border:1px solid rgba(0,200,100,.3);border-radius:8px;color:#00c864;font-size:.82rem">✅ Nuvem configurada — alterações são salvas automaticamente.</div>`
+          :`<div style="margin-top:14px;padding:10px 14px;background:rgba(255,200,0,.08);border:1px solid rgba(255,200,0,.2);border-radius:8px;color:#ffc800;font-size:.82rem">⚠️ Sem nuvem configurada — dados salvos apenas neste navegador.</div>`}
       </div>
     </div>`;
+  // Set values via JS to avoid HTML escaping issues with special chars ($ in API key)
+  document.getElementById('cfgBinId').value = c.binId || '';
+  document.getElementById('cfgApiKey').value = c.apiKey || '';
 }
 
 function saveBinConfig(){
