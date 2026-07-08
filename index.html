@@ -589,7 +589,7 @@ footer{background:#160b08;padding:40px 20px;text-align:center;color:var(--gray-m
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Telefone *</label>
-          <input type="tel" class="form-input" id="fTel" placeholder="(31) 9 9427371">
+          <input type="tel" class="form-input" id="fTel" placeholder="(31) 9 0000-0000">
         </div>
         <div class="form-group">
           <label class="form-label">CEP *</label>
@@ -1148,12 +1148,17 @@ function pedirModeloById(id){
 document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===document.getElementById('lightbox'))closeLB();});
 
 // ===================== INIT =====================
-renderMenu();
-renderBestsellers();
-renderGallery('all');
 updateCartBadge();
 renderCart();
-loadCloudData(); // load cloud data if JSONBin configured
+
+async function init(){
+  // Always load from cloud first if configured, then render
+  await loadCloudData();
+  renderMenu();
+  renderBestsellers();
+  renderGallery('all');
+}
+init();
 
 // ===================== ADMIN =====================
 const ADMIN_USER='admin';
@@ -1385,18 +1390,22 @@ function getAdminProducts(){
 }
 
 async function saveCustomProducts(list){
+  // Update local state immediately
   localStorage.setItem('ms_custom_products',JSON.stringify(list));
   products.length=0;
   list.forEach(p=>products.push(p));
-  renderMenu();renderBestsellers();
+  renderMenu();
+  renderBestsellers();
+  // Save to cloud
   if(hasBin()){
     showToast('☁️ Salvando na nuvem…');
-    const data=await cloudGet()||{};
-    data.products=list;
-    const ok=await cloudSet(data);
-    showToast(ok?'✅ Cardápio salvo na nuvem!':'⚠️ Erro ao salvar na nuvem.');
+    // Fetch current bin to preserve gallery, then overwrite products
+    const current=await cloudGet()||{};
+    current.products=list;
+    const ok=await cloudSet(current);
+    showToast(ok?'✅ Cardápio salvo na nuvem!':'⚠️ Erro ao salvar. Tente novamente.');
   } else {
-    showToast('✅ Salvo localmente. Configure o JSONBin para salvar na nuvem.');
+    showToast('✅ Salvo! Configure o JSONBin para sincronizar entre dispositivos.');
   }
 }
 
@@ -1404,14 +1413,17 @@ async function loadCloudData(){
   if(!hasBin()) return;
   const data=await cloudGet();
   if(!data) return;
-  if(data.products&&data.products.length){
-    localStorage.setItem('ms_custom_products',JSON.stringify(data.products));
-    products.length=0; data.products.forEach(p=>products.push(p));
-    renderMenu();renderBestsellers();
+  // Products: use cloud version if it exists (even if empty array means admin cleared all)
+  if(Array.isArray(data.products)){
+    const list=data.products;
+    localStorage.setItem('ms_custom_products',JSON.stringify(list));
+    products.length=0;
+    (list.length?list:products).forEach(()=>{});
+    list.forEach(p=>products.push(p));
   }
-  if(data.gallery&&data.gallery.length){
+  // Gallery
+  if(Array.isArray(data.gallery)&&data.gallery.length){
     localStorage.setItem('ms_gallery',JSON.stringify(data.gallery));
-    renderGallery(galFilter);
   }
 }
 
