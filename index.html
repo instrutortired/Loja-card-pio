@@ -667,6 +667,7 @@ footer{background:#160b08;padding:40px 20px;text-align:center;color:var(--gray-m
     <button class="admin-tab active" id="tabOrders" onclick="switchTab('orders')">📋 Pedidos</button>
     <button class="admin-tab" id="tabMenu" onclick="switchTab('menu')">🍽️ Cardápio</button>
     <button class="admin-tab" id="tabGallery" onclick="switchTab('gallery')">🖼️ Galeria</button>
+    <button class="admin-tab" id="tabConfig" onclick="switchTab('config')">⚙️</button>
     <button class="btn-logout" onclick="doLogout()">Sair</button>
   </nav>
   <div class="admin-body" id="adminBody"></div>
@@ -1152,6 +1153,7 @@ renderBestsellers();
 renderGallery('all');
 updateCartBadge();
 renderCart();
+loadCloudData(); // load cloud data if JSONBin configured
 
 // ===================== ADMIN =====================
 const ADMIN_USER='admin';
@@ -1222,9 +1224,69 @@ function switchTab(tab){
   document.getElementById('tabOrders').classList.toggle('active',tab==='orders');
   document.getElementById('tabMenu').classList.toggle('active',tab==='menu');
   document.getElementById('tabGallery').classList.toggle('active',tab==='gallery');
+  document.getElementById('tabConfig').classList.toggle('active',tab==='config');
   if(tab==='orders') renderAdminOrders();
   else if(tab==='menu') renderAdminMenu();
-  else renderAdminGallery();
+  else if(tab==='gallery') renderAdminGallery();
+  else renderAdminConfig();
+}
+
+function renderAdminConfig(){
+  const c=getBinConfig()||{binId:'',apiKey:''};
+  const connected=hasBin();
+  document.getElementById('adminBody').innerHTML=`
+    <div style="max-width:520px;margin:0 auto">
+      <div style="background:var(--brown);border-radius:14px;padding:24px;border:1px solid rgba(212,175,55,.2);margin-bottom:20px">
+        <h3 style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:8px">☁️ Sincronização na Nuvem</h3>
+        <p style="color:var(--gray-mid);font-size:.83rem;line-height:1.6;margin-bottom:20px">
+          Configure o <strong style="color:var(--cream)">JSONBin.io</strong> para salvar o cardápio e a galeria permanentemente na nuvem — assim as alterações ficam disponíveis em qualquer dispositivo, mesmo após atualizar a página.
+        </p>
+        <div style="background:rgba(212,175,55,.07);border:1px solid rgba(212,175,55,.2);border-radius:10px;padding:14px;margin-bottom:20px;font-size:.82rem;color:var(--gray-mid);line-height:1.8">
+          <strong style="color:var(--gold)">Como configurar (grátis):</strong><br>
+          1. Acesse <a href="https://jsonbin.io" target="_blank" style="color:var(--gold)">jsonbin.io</a> e crie uma conta gratuita<br>
+          2. Clique em <strong style="color:var(--cream)">CREATE BIN</strong> → cole <code style="color:var(--gold)">{}</code> → Save<br>
+          3. Copie o <strong style="color:var(--cream)">BIN ID</strong> (ex: <code style="color:var(--gold)">64abc123…</code>)<br>
+          4. Vá em <strong style="color:var(--cream)">API Keys</strong> → copie a <strong style="color:var(--cream)">Master Key</strong><br>
+          5. Cole os dois campos abaixo e clique em Salvar
+        </div>
+        <div class="form-group" style="margin-bottom:14px">
+          <label class="form-label" style="color:var(--cream)">BIN ID</label>
+          <input type="text" class="form-input" id="cfgBinId" value="${c.binId}" placeholder="64abc123def456…" style="background:rgba(255,255,255,.07);border-color:rgba(212,175,55,.25);color:#fff">
+        </div>
+        <div class="form-group" style="margin-bottom:18px">
+          <label class="form-label" style="color:var(--cream)">API Master Key</label>
+          <input type="password" class="form-input" id="cfgApiKey" value="${c.apiKey}" placeholder="$2a$10$…" style="background:rgba(255,255,255,.07);border-color:rgba(212,175,55,.25);color:#fff">
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn-add-product" onclick="saveBinConfig()">💾 Salvar Configuração</button>
+          ${connected?`<button class="btn-add-product" style="background:rgba(212,175,55,.2);color:var(--gold)" onclick="testCloudSync()">🔄 Sincronizar Agora</button>`:''}
+          ${connected?`<button class="btn-clear-orders" onclick="clearBinConfig()">Desconectar</button>`:''}
+        </div>
+        ${connected?`<div style="margin-top:14px;padding:10px 14px;background:rgba(0,200,100,.1);border:1px solid rgba(0,200,100,.3);border-radius:8px;color:#00c864;font-size:.82rem">✅ Nuvem configurada — alterações no cardápio e galeria são salvas automaticamente.</div>`
+        :`<div style="margin-top:14px;padding:10px 14px;background:rgba(255,200,0,.08);border:1px solid rgba(255,200,0,.2);border-radius:8px;color:#ffc800;font-size:.82rem">⚠️ Sem nuvem configurada — dados salvos apenas neste navegador.</div>`}
+      </div>
+    </div>`;
+}
+
+function saveBinConfig(){
+  const binId=document.getElementById('cfgBinId').value.trim();
+  const apiKey=document.getElementById('cfgApiKey').value.trim();
+  if(!binId||!apiKey){showToast('⚠️ Preencha o BIN ID e a API Key.');return;}
+  localStorage.setItem('ms_bin_cfg',JSON.stringify({binId,apiKey}));
+  showToast('✅ Configuração salva!');
+  renderAdminConfig();
+}
+function clearBinConfig(){
+  if(!confirm('Desconectar da nuvem?')) return;
+  localStorage.removeItem('ms_bin_cfg');
+  renderAdminConfig();
+}
+async function testCloudSync(){
+  showToast('🔄 Sincronizando…');
+  const ps=getAdminProducts();
+  const gl=getGallery();
+  const ok=await cloudSet({products:ps,gallery:gl});
+  showToast(ok?'✅ Dados sincronizados com sucesso!':'❌ Erro de conexão. Verifique o BIN ID e a API Key.');
 }
 
 // ---- ORDERS ----
@@ -1284,6 +1346,32 @@ function clearOrders(){
 }
 
 // ---- MENU ADMIN ----
+// JSONBin config — admin configura na aba ⚙️ Configurações
+function getBinConfig(){
+  try{return JSON.parse(localStorage.getItem('ms_bin_cfg')||'null');}catch(e){return null;}
+}
+function hasBin(){const c=getBinConfig();return c&&c.binId&&c.apiKey;}
+
+async function cloudGet(){
+  const c=getBinConfig();
+  try{
+    const r=await fetch(`https://api.jsonbin.io/v3/b/${c.binId}/latest`,{headers:{'X-Master-Key':c.apiKey}});
+    const d=await r.json();
+    return d.record||null;
+  }catch(e){return null;}
+}
+async function cloudSet(data){
+  const c=getBinConfig();
+  try{
+    await fetch(`https://api.jsonbin.io/v3/b/${c.binId}`,{
+      method:'PUT',
+      headers:{'Content-Type':'application/json','X-Master-Key':c.apiKey},
+      body:JSON.stringify(data)
+    });
+    return true;
+  }catch(e){return false;}
+}
+
 function getCustomProducts(){
   const saved=localStorage.getItem('ms_custom_products');
   return saved?JSON.parse(saved):null;
@@ -1291,11 +1379,45 @@ function getCustomProducts(){
 function getAdminProducts(){
   return getCustomProducts()||products;
 }
-function saveCustomProducts(list){
+
+async function saveCustomProducts(list){
   localStorage.setItem('ms_custom_products',JSON.stringify(list));
   products.length=0;
   list.forEach(p=>products.push(p));
   renderMenu();renderBestsellers();
+  if(hasBin()){
+    showToast('☁️ Salvando na nuvem…');
+    const data=await cloudGet()||{};
+    data.products=list;
+    const ok=await cloudSet(data);
+    showToast(ok?'✅ Cardápio salvo na nuvem!':'⚠️ Erro ao salvar na nuvem.');
+  } else {
+    showToast('✅ Salvo localmente. Configure o JSONBin para salvar na nuvem.');
+  }
+}
+
+async function loadCloudData(){
+  if(!hasBin()) return;
+  const data=await cloudGet();
+  if(!data) return;
+  if(data.products&&data.products.length){
+    localStorage.setItem('ms_custom_products',JSON.stringify(data.products));
+    products.length=0; data.products.forEach(p=>products.push(p));
+    renderMenu();renderBestsellers();
+  }
+  if(data.gallery&&data.gallery.length){
+    localStorage.setItem('ms_gallery',JSON.stringify(data.gallery));
+    renderGallery(galFilter);
+  }
+}
+
+async function saveGalleryCloud(list){
+  saveGallery(list);
+  if(hasBin()){
+    const data=await cloudGet()||{};
+    data.gallery=list;
+    await cloudSet(data);
+  }
 }
 
 function renderAdminMenu(){
@@ -1392,23 +1514,25 @@ function addGalleryItem(){
   if(!name||!img){showToast('⚠️ Nome e URL da foto são obrigatórios!');return;}
   const list=getGallery();
   list.push({id:Date.now(),name,tag,img});
-  saveGallery(list);
+  saveGalleryCloud(list);
   renderAdminGallery();
   renderGallery(galFilter);
-  showToast('✅ Foto adicionada à galeria!');
+  showToast('✅ Foto adicionada!');
 }
 
 function delGalleryItem(id){
   id=Number(id);
   if(!confirm('Excluir esta foto da galeria?')) return;
-  saveGallery(getGallery().filter(g=>Number(g.id)!==id));
+  const list=getGallery().filter(g=>Number(g.id)!==id);
+  saveGalleryCloud(list);
   renderAdminGallery();
   renderGallery(galFilter);
 }
 
 function resetGallery(){
-  if(!confirm('Restaurar a galeria padrão? As fotos adicionadas serão removidas.')) return;
+  if(!confirm('Restaurar a galeria padrão?')) return;
   localStorage.removeItem('ms_gallery');
+  saveGalleryCloud(defaultGallery);
   renderAdminGallery();
   renderGallery(galFilter);
 }
@@ -1461,5 +1585,5 @@ function saveProduct(){
 // auto-open if session active
 if(sessionStorage.getItem('ms_admin')==='1') openAdminPanel();
 </script>
-</body> 
+</body>
 </html>
