@@ -1226,7 +1226,7 @@ window.sendWhatsApp=function(){
   const itens=cart.map(i=>`• ${i.name} x${i.qty} = ${fmtPrice(i.price*i.qty)}`).join('\n');
   const total=fmtPrice(cartTotal());
   const msg=`🧁 *MINAS SABORES — NOVO PEDIDO*\n━━━━━━━━━━━━━━━━━━━━\n👤 *Cliente:* ${nome}\n📱 *Telefone:* ${tel}\n━━━━━━━━━━━━━━━━━━━━\n📍 *Endereço:*\n${end}, ${num}${comp?', '+comp:''}\n${bairro} — ${cidade}\nCEP: ${cep}\n━━━━━━━━━━━━━━━━━━━━\n🛍️ *Itens:*\n${itens}\n━━━━━━━━━━━━━━━━━━━━\n💰 *Total: ${total}*\n💳 *Pagamento:* ${selectedPay}\n${obs?'📝 *Obs:* '+obs:''}\n━━━━━━━━━━━━━━━━━━━━\n_Aguardando confirmação_ ✅`;
-  window.open(`https://wa.me/5531999427371?text=${encodeURIComponent(msg)}`,'_blank');
+  window.open(`https://wa.me/5531999999999?text=${encodeURIComponent(msg)}`,'_blank');
   closeCheckout();
   cart=[];saveCart();updateCartBadge();renderCart();
   showToast('🎉 Pedido enviado com sucesso!');
