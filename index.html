@@ -357,7 +357,74 @@ footer{background:#160b08;padding:40px 20px;text-align:center;color:var(--gray-m
 .gal-add-form{background:var(--brown);border-radius:14px;padding:18px;margin-bottom:20px;border:1px solid rgba(212,175,55,.2)}
 .gal-add-form h3{color:var(--gold);font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:14px}
 .gal-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-@media(max-width:480px){.gal-form-row{grid-template-columns:1fr}}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  header{padding:0 12px;height:56px}
+  .logo-text{font-size:.95rem}
+  .logo-icon{width:34px;height:34px;font-size:15px}
+  .btn-whatsapp span{display:none}
+  .btn-whatsapp{padding:7px 12px;font-size:.8rem}
+  #hero{padding:70px 16px 36px}
+  .hero-title{font-size:2.4rem}
+  .hero-subtitle{font-size:.95rem}
+  .btn-primary{padding:13px 28px;font-size:.92rem}
+  .hero-badges{gap:6px}
+  .badge{font-size:.72rem;padding:6px 12px}
+  #search-section{top:56px;padding:12px}
+  #categories{padding:24px 12px 16px}
+  .cat-btn{padding:8px 14px;font-size:.8rem}
+  #menu{padding:16px 12px 40px}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product-img{height:130px}
+  .product-name{font-size:.88rem}
+  .product-desc{font-size:.75rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .product-price{font-size:.88rem}
+  .btn-add{padding:7px 10px;font-size:.75rem}
+  .menu-section-title{font-size:1.2rem}
+  #bestsellers{padding:32px 12px}
+  #bestsellers .products-grid{grid-template-columns:repeat(2,1fr)}
+  #gallery{padding:36px 12px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .gallery-filters{gap:6px}
+  .gf-btn{padding:6px 12px;font-size:.78rem}
+  #reviews{padding:36px 12px}
+  .reviews-grid{grid-template-columns:1fr}
+  #info{padding:36px 12px}
+  .info-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  #cart-panel{width:100vw}
+  #checkout-modal{padding:0;align-items:flex-end}
+  .checkout-box{border-radius:20px 20px 0 0;max-height:95vh;width:100%}
+  .form-row{grid-template-columns:1fr}
+  .admin-nav{padding:0 10px;gap:6px;overflow-x:auto;flex-wrap:nowrap}
+  .admin-nav-title{display:none}
+  .admin-tab{padding:6px 10px;font-size:.75rem;white-space:nowrap;flex-shrink:0}
+  .btn-logout{padding:6px 10px;font-size:.75rem;flex-shrink:0}
+  .admin-body{padding:14px 12px}
+  .order-card-header{flex-direction:column;gap:6px}
+  .order-actions{flex-wrap:wrap}
+  .admin-product-row{flex-wrap:wrap;gap:8px}
+  .apr-actions{width:100%;justify-content:flex-end}
+  #product-form-modal{padding:0;align-items:flex-end}
+  .pf-box{border-radius:20px 20px 0 0;max-height:95vh;width:100%}
+  .pf-row{grid-template-columns:1fr}
+  #promotions{padding:32px 12px}
+  .promo-slide{padding:24px 18px}
+  .promo-title{font-size:1.3rem}
+  .lb-inner{width:100%}
+  .lb-img{max-height:55vh}
+  .lb-name{font-size:1rem}
+  footer{padding:28px 16px}
+  .social-links{flex-wrap:wrap;gap:12px}
+  .gal-form-row{grid-template-columns:1fr}
+}
+@media(max-width:380px){
+  .products-grid{grid-template-columns:1fr}
+  #bestsellers .products-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
+  .hero-title{font-size:2rem}
+}
 </style>
 </head>
 <body>
@@ -730,45 +797,8 @@ footer{background:#160b08;padding:40px 20px;text-align:center;color:var(--gray-m
 
 <script>
 // ===================== DATA =====================
-const products = [
-  // Frutas
-  {id:1,name:'Salada de Frutas com Suco de Laranja Natural',desc:'Frutas frescas da estação com suco de laranja espremido na hora.',cat:'frutas',price:4.50,unit:'unidade',img:'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=400&q=70',hot:false},
-  {id:2,name:'Salada de Frutas com Gelatina Colorida',desc:'Frutas frescas com gelatina colorida, uma combinação especial.',cat:'frutas',price:4.80,unit:'unidade',img:'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=400&q=70',hot:false},
-  // Fritos
-  {id:3,name:'Coxinha',desc:'Coxinha de frango tradicional, crocante por fora e cremosa por dentro.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=400&q=70',hot:true},
-  {id:4,name:'Coxinha com Catupiry',desc:'Nossa coxinha especial com recheio de frango e catupiry cremoso.',cat:'fritos',price:100.00,unit:'cento',img:'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=400&q=70',hot:true},
-  {id:5,name:'Kibe',desc:'Kibe frito com carne moída temperada e toque de hortelã.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:6,name:'Bolinha de Queijo',desc:'Mini bolinhas crocantes recheadas com queijo derretido.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:true},
-  {id:7,name:'Risole de Carne',desc:'Risole frito com recheio de carne moída e temperos especiais.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:8,name:'Risole de Milho',desc:'Risole com recheio cremoso de milho verde e queijo.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:9,name:'Risole de Alho Poró',desc:'Risole especial com recheio de alho poró e creme.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:10,name:'Pastel de Carne',desc:'Pastel frito com recheio generoso de carne moída temperada.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:11,name:'Pastel de Queijo',desc:'Pastel crocante recheado com queijo mussarela derretido.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:12,name:'Pastel de Frango',desc:'Pastel frito com recheio de frango desfiado e temperos.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  {id:13,name:'Pastel de Pizza',desc:'Pastel recheado com molho, mussarela e presunto.',cat:'fritos',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=70',hot:false},
-  // Assados
-  {id:14,name:'Empada de Frango',desc:'Empada assada com recheio cremoso de frango e azeitona.',cat:'assados',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=70',hot:false},
-  {id:15,name:'Esfirra de Carne',desc:'Esfirra assada com recheio temperado de carne moída.',cat:'assados',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=70',hot:false},
-  {id:16,name:'Esfirra de Frango',desc:'Esfirra assada com frango desfiado e temperos especiais.',cat:'assados',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=70',hot:false},
-  {id:17,name:'Enrolado de Presunto e Mussarela',desc:'Massa assada recheada com presunto e mussarela derretida.',cat:'assados',price:90.00,unit:'cento',img:'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&q=70',hot:true},
-  // Lanches
-  {id:18,name:'Mini Sanduíche de Patê de Frango',desc:'Mini sanduíches macios com patê de frango caseiro temperado.',cat:'lanches',price:112.50,unit:'cento',img:'https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400&q=70',hot:true},
-  {id:19,name:'Mini Pizza de Calabresa e Alho Poró',desc:'Mini pizzas assadas com molho, calabresa e alho poró.',cat:'lanches',price:87.80,unit:'cento',img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=70',hot:false},
-  // Bolos
-  {id:20,name:'Bolo Festa Retangular',desc:'Serve 40 a 50 pessoas. Escolha o recheio e a cobertura.',cat:'bolos',price:487.40,unit:'bolo',img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=70',hot:true},
-  {id:21,name:'Bolo Festa Redondo',desc:'Serve 20 pessoas. Perfeito para aniversários e comemorações.',cat:'bolos',price:198.90,unit:'bolo',img:'https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=400&q=70',hot:false},
-  {id:22,name:'Torta de Frango',desc:'Torta caseira de frango para 4 a 5 pessoas. Cremosa e saborosa.',cat:'bolos',price:130.60,unit:'torta',img:'https://images.unsplash.com/photo-1621743478914-cc8a86d7e7b5?w=400&q=70',hot:false},
-  {id:23,name:'Bolo de Creme',desc:'Bolo em 48 mini pedaços. Ideal para mesa de doces.',cat:'bolos',price:90.00,unit:'bolo',img:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&q=70',hot:false},
-  // Doces
-  {id:24,name:'Beijinho',desc:'Doce de coco com açúcar, envolto em açúcar cristal.',cat:'doces',price:2.00,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:false},
-  {id:25,name:'Ferrero Rocher Gourmet',desc:'Bombom artesanal com avelã, chocolate e wafer crocante.',cat:'doces',price:3.00,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:true},
-  {id:26,name:'Doce Gourmet de Nozes',desc:'Doce cremoso de nozes com chocolate belga.',cat:'doces',price:3.20,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:false},
-  {id:27,name:'Ninho com Nutella',desc:'Bombom de leite ninho com recheio de Nutella cremosa.',cat:'doces',price:2.70,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:true},
-  {id:28,name:'Palha Italiana',desc:'Palha italiana clássica com biscoito maisena e chocolate.',cat:'doces',price:2.70,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:false},
-  {id:29,name:'Churros Gourmet',desc:'Churros de chocolate artesanal com doce de leite.',cat:'doces',price:2.70,unit:'unidade',img:'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&q=70',hot:false},
-  // Pratos
-  {id:30,name:'Escondidinho de Mandioca com Carne de Sol',desc:'Prato especial mineiro com purê de mandioca e carne de sol desfiada.',cat:'pratos',price:180.50,unit:'porção',img:'https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=70',hot:true},
-];
+const products = [];
+
 
 const catNames = {
   frutas:'🍓 Saladas de Frutas',
@@ -883,12 +913,21 @@ function productCard(p){
 
 function renderMenu(catFilter='all'){
   const menu=document.getElementById('menu');
+  if(!products.length){
+    menu.innerHTML=`<div style="text-align:center;padding:60px 20px;color:var(--gray-mid)">
+      <span style="font-size:2.5rem">🍽️</span><br><br>
+      <strong style="color:var(--cream)">Cardápio em breve!</strong><br><br>
+      <span style="font-size:.85rem">Os produtos serão exibidos aqui após o administrador<br>configurar e adicionar os itens ao cardápio.</span>
+    </div>`;
+    return;
+  }
   const cats=catFilter==='all'?Object.keys(catNames):[catFilter];
-  menu.innerHTML=cats.map(cat=>{
+  const html=cats.map(cat=>{
     const ps=products.filter(p=>p.cat===cat);
     if(!ps.length) return '';
     return `<div class="menu-section"><h2 class="menu-section-title">${catNames[cat]}</h2><div class="products-grid">${ps.map(productCard).join('')}</div></div>`;
   }).join('');
+  menu.innerHTML=html||`<div style="text-align:center;padding:60px 20px;color:var(--gray-mid)">Nenhum produto nesta categoria.</div>`;
 }
 
 function renderBestsellers(){
@@ -1069,26 +1108,13 @@ function showToast(msg){
 }
 
 // ===================== GALLERY =====================
-const defaultGallery=[
-  {id:1,name:'Bolo Floral Elegante',tag:'festa',img:'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80'},
-  {id:2,name:'Naked Cake Rústico',tag:'naked',img:'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80'},
-  {id:3,name:'Bolo Casamento Branco',tag:'casamento',img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'},
-  {id:4,name:'Bolo Infantil Colorido',tag:'infantil',img:'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=600&q=80'},
-  {id:5,name:'Bolo Gourmet de Chocolate',tag:'gourmet',img:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80'},
-  {id:6,name:'Bolo Festa Rosa',tag:'festa',img:'https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=600&q=80'},
-  {id:7,name:'Naked Cake Frutas',tag:'naked',img:'https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80'},
-  {id:8,name:'Bolo Infantil Unicórnio',tag:'infantil',img:'https://images.unsplash.com/photo-1611293388250-580b08c4a145?w=600&q=80'},
-  {id:9,name:'Bolo Casamento Dourado',tag:'casamento',img:'https://images.unsplash.com/photo-1519869325930-281384150729?w=600&q=80'},
-  {id:10,name:'Bolo Gourmet Red Velvet',tag:'gourmet',img:'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=600&q=80'},
-  {id:11,name:'Bolo Festa Azul Marinho',tag:'festa',img:'https://images.unsplash.com/photo-1622207311835-b3a6c1b8b37c?w=600&q=80'},
-  {id:12,name:'Naked Cake Minimalista',tag:'naked',img:'https://images.unsplash.com/photo-1531685250784-7569952593d2?w=600&q=80'},
-];
+const defaultGallery=[];
 
 const galTagLabels={festa:'Festa',infantil:'Infantil',casamento:'Casamento',gourmet:'Gourmet',naked:'Naked Cake'};
 
 function getGallery(){
   const s=localStorage.getItem('ms_gallery');
-  return s?JSON.parse(s):defaultGallery;
+  return s?JSON.parse(s):[];
 }
 function saveGallery(list){localStorage.setItem('ms_gallery',JSON.stringify(list));}
 
@@ -1150,9 +1176,13 @@ document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===d
 // ===================== INIT =====================
 updateCartBadge();
 renderCart();
+// Show loading state immediately
+document.getElementById('menu').innerHTML='<div style="text-align:center;padding:60px 20px;color:var(--gray-mid)"><span style="font-size:2rem">⏳</span><br><br>Carregando cardápio…</div>';
 
 async function init(){
-  // Always load from cloud first if configured, then render
+  // Clear any old cached products from previous AI-generated versions
+  localStorage.removeItem('ms_custom_products');
+  // Load from cloud first, then render
   await loadCloudData();
   renderMenu();
   renderBestsellers();
@@ -1196,7 +1226,7 @@ window.sendWhatsApp=function(){
   const itens=cart.map(i=>`• ${i.name} x${i.qty} = ${fmtPrice(i.price*i.qty)}`).join('\n');
   const total=fmtPrice(cartTotal());
   const msg=`🧁 *MINAS SABORES — NOVO PEDIDO*\n━━━━━━━━━━━━━━━━━━━━\n👤 *Cliente:* ${nome}\n📱 *Telefone:* ${tel}\n━━━━━━━━━━━━━━━━━━━━\n📍 *Endereço:*\n${end}, ${num}${comp?', '+comp:''}\n${bairro} — ${cidade}\nCEP: ${cep}\n━━━━━━━━━━━━━━━━━━━━\n🛍️ *Itens:*\n${itens}\n━━━━━━━━━━━━━━━━━━━━\n💰 *Total: ${total}*\n💳 *Pagamento:* ${selectedPay}\n${obs?'📝 *Obs:* '+obs:''}\n━━━━━━━━━━━━━━━━━━━━\n_Aguardando confirmação_ ✅`;
-  window.open(`https://wa.me/5531999999999?text=${encodeURIComponent(msg)}`,'_blank');
+  window.open(`https://wa.me/5531999427371?text=${encodeURIComponent(msg)}`,'_blank');
   closeCheckout();
   cart=[];saveCart();updateCartBadge();renderCart();
   showToast('🎉 Pedido enviado com sucesso!');
@@ -1442,20 +1472,25 @@ async function saveCustomProducts(list){
 }
 
 async function loadCloudData(){
-  if(!hasBin()) return;
-  const data=await cloudGet();
-  if(!data) return;
-  // Products: use cloud version if it exists (even if empty array means admin cleared all)
-  if(Array.isArray(data.products)){
-    const list=data.products;
-    localStorage.setItem('ms_custom_products',JSON.stringify(list));
+  if(!hasBin()){
+    // No cloud configured — menu stays empty, admin must set up JSONBin
     products.length=0;
-    (list.length?list:products).forEach(()=>{});
-    list.forEach(p=>products.push(p));
+    return;
   }
-  // Gallery
-  if(Array.isArray(data.gallery)&&data.gallery.length){
-    localStorage.setItem('ms_gallery',JSON.stringify(data.gallery));
+  try{
+    const data=await cloudGet();
+    if(!data) return;
+    if(Array.isArray(data.products)){
+      products.length=0;
+      data.products.forEach(p=>products.push(p));
+      localStorage.setItem('ms_custom_products',JSON.stringify(data.products));
+    }
+    if(Array.isArray(data.gallery)&&data.gallery.length){
+      localStorage.setItem('ms_gallery',JSON.stringify(data.gallery));
+    }
+  }catch(e){
+    console.warn('Erro ao carregar nuvem:',e);
+    products.length=0;
   }
 }
 
