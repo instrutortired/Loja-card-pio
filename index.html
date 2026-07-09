@@ -1453,19 +1453,17 @@ function getAdminProducts(){
 
 async function saveCustomProducts(list){
   // Update local state immediately
-  localStorage.setItem('ms_custom_products',JSON.stringify(list));
   products.length=0;
   list.forEach(p=>products.push(p));
+  localStorage.setItem('ms_custom_products',JSON.stringify(list));
   renderMenu();
   renderBestsellers();
   // Save to cloud
   if(hasBin()){
-    showToast('☁️ Salvando na nuvem…');
-    // Fetch current bin to preserve gallery, then overwrite products
     const current=await cloudGet()||{};
     current.products=list;
     const ok=await cloudSet(current);
-    showToast(ok?'✅ Cardápio salvo na nuvem!':'⚠️ Erro ao salvar. Tente novamente.');
+    showToast(ok?'✅ Produto salvo na nuvem!':'⚠️ Erro ao salvar. Verifique o JSONBin.');
   } else {
     showToast('✅ Salvo! Configure o JSONBin para sincronizar entre dispositivos.');
   }
@@ -1636,33 +1634,41 @@ function openPF(id){
 }
 function closePF(){document.getElementById('product-form-modal').classList.remove('open');}
 
-function saveProduct(){
+async function saveProduct(){
   const id=document.getElementById('pfId').value;
   const name=document.getElementById('pfName').value.trim();
-  const price=parseFloat(document.getElementById('pfPrice').value);
+  const priceRaw=document.getElementById('pfPrice').value.trim().replace(',','.');
+  const price=parseFloat(priceRaw);
   const unit=document.getElementById('pfUnit').value.trim();
-  if(!name||!price||!unit){showToast('⚠️ Nome, preço e unidade são obrigatórios!');return;}
-  const ps=[...getAdminProducts()];
+
+  if(!name){showToast('⚠️ Nome é obrigatório!');return;}
+  if(!price||isNaN(price)){showToast('⚠️ Preço inválido!');return;}
+  if(!unit){showToast('⚠️ Unidade é obrigatória!');return;}
+
+  // Build updated list from current products array (already loaded from cloud)
+  const ps=[...products];
   const newP={
-    id:id?parseInt(id):Date.now(),
+    id: id ? parseInt(id) : Date.now(),
     name,
-    desc:document.getElementById('pfDesc').value.trim(),
-    cat:document.getElementById('pfCat').value,
+    desc: document.getElementById('pfDesc').value.trim(),
+    cat:  document.getElementById('pfCat').value,
     price,
     unit,
-    img:document.getElementById('pfImg').value.trim()||'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=70',
-    hot:document.getElementById('pfHot').checked
+    img:  document.getElementById('pfImg').value.trim() || 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=70',
+    hot:  document.getElementById('pfHot').checked
   };
+
   if(id){
-    const idx=ps.findIndex(x=>x.id===parseInt(id));
-    if(idx>=0) ps[idx]=newP;
+    const idx=ps.findIndex(x=>Number(x.id)===parseInt(id));
+    if(idx>=0) ps[idx]=newP; else ps.push(newP);
   } else {
     ps.push(newP);
   }
-  saveCustomProducts(ps);
+
   closePF();
+  showToast('☁️ Salvando…');
+  await saveCustomProducts(ps);
   renderAdminMenu();
-  showToast(id?'✅ Produto atualizado!':'✅ Produto adicionado!');
 }
 
 // auto-open if session active
