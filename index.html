@@ -1,297 +1,292 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html lang="pt-BR"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Epicurean Admin - Categories</title>
+<title>Minas Sabores - Finalizar Pedido</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "secondary": "#b7102a",
-                        "background": "#fbf9f8",
-                        "primary": "#000000",
-                        "surface-tint": "#5f5e5e",
-                        "primary-fixed-dim": "#c8c6c5",
-                        "on-error": "#ffffff",
-                        "surface-dim": "#dbd9d9",
-                        "primary-fixed": "#e5e2e1",
-                        "secondary-fixed-dim": "#ffb3b1",
-                        "on-primary-fixed-variant": "#474746",
-                        "tertiary-container": "#191c1d",
-                        "on-primary-container": "#858383",
-                        "on-surface-variant": "#444748",
-                        "on-secondary-fixed": "#410007",
-                        "inverse-surface": "#303030",
-                        "surface-variant": "#e4e2e2",
-                        "surface-container-high": "#eae8e7",
-                        "secondary-fixed": "#ffdad8",
-                        "on-surface": "#1b1c1c",
-                        "on-secondary-fixed-variant": "#92001c",
-                        "inverse-on-surface": "#f2f0f0",
-                        "secondary-container": "#db313f",
-                        "on-tertiary-container": "#828485",
-                        "tertiary": "#000000",
-                        "error-container": "#ffdad6",
-                        "on-tertiary-fixed": "#191c1d",
-                        "on-secondary-container": "#fffbff",
-                        "surface-container-highest": "#e4e2e2",
-                        "surface-container-lowest": "#ffffff",
-                        "on-tertiary": "#ffffff",
-                        "surface": "#fbf9f8",
-                        "primary-container": "#1c1b1b",
-                        "on-primary-fixed": "#1c1b1b",
-                        "on-background": "#1b1c1c",
-                        "outline-variant": "#c4c7c7",
-                        "inverse-primary": "#c8c6c5",
-                        "tertiary-fixed": "#e1e3e4",
-                        "surface-container-low": "#f5f3f3",
-                        "surface-bright": "#fbf9f8",
-                        "on-error-container": "#93000a",
-                        "tertiary-fixed-dim": "#c5c7c8",
-                        "error": "#ba1a1a",
-                        "outline": "#747878",
-                        "on-primary": "#ffffff",
-                        "on-tertiary-fixed-variant": "#454748",
-                        "surface-container": "#efeded",
-                        "on-secondary": "#ffffff"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "gutter": "24px",
-                        "stack-sm": "8px",
-                        "stack-lg": "32px",
-                        "stack-md": "16px",
-                        "margin-mobile": "16px",
-                        "container-max": "1200px"
-                    },
-                    "fontFamily": {
-                        "body-sm": ["Inter"],
-                        "display-lg": ["Playfair Display"],
-                        "body-md": ["Inter"],
-                        "title-lg": ["Inter"],
-                        "headline-md": ["Playfair Display"],
-                        "label-caps": ["Inter"],
-                        "display-lg-mobile": ["Playfair Display"],
-                        "label-price": ["Inter"]
-                    },
-                    "fontSize": {
-                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                        "label-price": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "700" }]
-                    }
-                }
-            }
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
         }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#f0e1c3",
+                    "on-tertiary-fixed-variant": "#4f4630",
+                    "on-primary-fixed-variant": "#58413c",
+                    "inverse-on-surface": "#f6efed",
+                    "secondary-container": "#fed65b",
+                    "outline-variant": "#d3c3c0",
+                    "surface-container-high": "#eee7e5",
+                    "tertiary": "#000000",
+                    "surface": "#fff8f6",
+                    "secondary-fixed-dim": "#e9c349",
+                    "background": "#fff8f6",
+                    "primary-fixed-dim": "#e0bfb8",
+                    "on-secondary-container": "#745c00",
+                    "on-background": "#1e1b1a",
+                    "on-tertiary-container": "#8e8369",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#735c00",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#33302f",
+                    "surface-dim": "#dfd9d7",
+                    "on-secondary-fixed-variant": "#574500",
+                    "surface-tint": "#725953",
+                    "on-surface-variant": "#4f4442",
+                    "inverse-primary": "#e0bfb8",
+                    "surface-container-highest": "#e8e1df",
+                    "primary-fixed": "#fddbd3",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "primary": "#000000",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#ffe088",
+                    "surface-bright": "#fff8f6",
+                    "on-tertiary-fixed": "#221b08",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#291713",
+                    "on-primary-container": "#9a7d77",
+                    "tertiary-container": "#221b08",
+                    "outline": "#817471",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-container-low": "#f9f2f0",
+                    "on-surface": "#1e1b1a",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e8e1df",
+                    "surface-container": "#f4ecea",
+                    "tertiary-fixed-dim": "#d3c5a8",
+                    "primary-container": "#291713"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "lg": "2.5rem",
+                    "md": "1.5rem",
+                    "margin-mobile": "1rem",
+                    "gutter": "1.5rem",
+                    "sm": "1rem",
+                    "margin-desktop": "2.5rem",
+                    "xs": "0.5rem",
+                    "max-width": "1280px",
+                    "xl": "4rem"
+            },
+            "fontFamily": {
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ],
+                    "display": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
     </script>
 <style>
-        .drag-handle { cursor: grab; }
-        .drag-handle:active { cursor: grabbing; }
-        .category-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .category-card:hover { transform: translateY(-2px); box-shadow: 0px 8px 24px rgba(0,0,0,0.06); }
-    </style>
-</head>
-<body class="bg-background text-on-background font-body-md text-body-md min-h-screen">
-<!-- TopNavBar -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-surface dark:bg-surface-container-high shadow-sm md:pl-72 transition-all duration-300">
-<div class="flex items-center gap-4">
-<button class="md:hidden text-primary p-2">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-xl">
+<!-- Header (Transactional, so no full nav shell) -->
+<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center justify-between px-margin-mobile h-16">
+<button aria-label="Voltar" class="text-primary p-2 -ml-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
 </button>
-<div class="text-title-lg font-title-lg font-bold text-primary dark:text-primary-fixed-dim">Epicurean Admin</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Finalizar Pedido</h1>
+<div class="w-10"></div> <!-- Spacer for alignment -->
 </div>
-<div class="flex items-center gap-4">
-<button class="text-primary dark:text-primary-fixed hover:text-secondary transition-colors duration-200">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="text-primary dark:text-primary-fixed hover:text-secondary transition-colors duration-200">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<img alt="Administrator Profile" class="w-8 h-8 rounded-full object-cover shadow-sm bg-surface-container" data-alt="A small circular profile picture of an elegant restaurant administrator wearing a dark chef's jacket in a modern, brightly lit minimal kitchen environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEPsoPrLbAdJ6CaERxv_MfPTCTx9rIehrUFN-ouLORvAKIk2xeqM885ZiPlc6L__YW6tjJxf8prpdA4UILR7xzclV-3nu906MK_VNnC3gWeoYylhJNPf0CbzIm8sEkDQ0eDb3x9TfheHEuhCiHez-jZAPaieczu0aIry2CfPF5p5Txdyv8rJHfWd2sQLQc9GECLCY37ZwonQu0COwx_jg9scMp7Jb8Lsd6L4d3mWmBRMlencHNhGREVTI4AdU1yPrVTPFYZMkVRrQu"/>
-</div>
-</nav>
-<!-- SideNavBar -->
-<aside class="fixed left-0 top-0 h-full flex flex-col p-4 z-40 hidden md:flex w-64 bg-surface-container-low dark:bg-surface-dim shadow-md pt-20">
-<div class="flex-1 space-y-2 mt-4">
-<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="text-label-caps font-label-caps">Dashboard</span>
-</a>
-<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
-<span class="text-label-caps font-label-caps">Menu Items</span>
-</a>
-<a class="flex items-center gap-4 bg-secondary text-on-secondary rounded-lg px-4 py-3 translate-x-1 transition-all shadow-sm" href="#">
-<span class="material-symbols-outlined" data-icon="category">category</span>
-<span class="text-label-caps font-label-caps">Categories</span>
-</a>
-<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
-<span class="text-label-caps font-label-caps">Analytics</span>
-</a>
-</div>
-<div class="mt-auto">
-<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-title-lg text-body-sm shadow-sm hover:opacity-90 transition-opacity mb-6">
-                Add New Dish
-            </button>
-<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-lg px-4 py-3 hover:bg-surface-container-high transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="logout">logout</span>
-<span class="text-label-caps font-label-caps">Logout</span>
-</a>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="pt-24 pb-12 px-margin-mobile md:px-gutter md:ml-64 max-w-container-max mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-stack-lg gap-4">
+</header>
+<main class="px-margin-mobile py-lg max-w-md mx-auto space-y-xl">
+<!-- Form Section -->
+<section class="space-y-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Dados de Entrega</h2>
+<div class="space-y-sm">
 <div>
-<h1 class="font-headline-md text-headline-md text-primary mb-1">Menu Categories</h1>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Organize and structure your restaurant's offerings.</p>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="nome">Nome Completo</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="nome" placeholder="Seu nome" type="text"/>
 </div>
-<button class="bg-secondary text-on-secondary px-6 py-3 rounded-full font-label-caps text-label-caps tracking-wider flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
-                NEW CATEGORY
-            </button>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="endereco">Endereço de Entrega</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="endereco" placeholder="Rua, Número, Bairro" type="text"/>
 </div>
-<!-- Categories Bento Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Category Card 1 -->
-<div class="category-card bg-surface rounded-xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-container flex flex-col relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-32 h-32 bg-surface-container-low rounded-bl-full -mr-8 -mt-8 z-0"></div>
-<div class="flex justify-between items-start z-10 mb-stack-md">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
-<span class="font-title-lg text-title-lg">01</span>
-</div>
-<div class="flex gap-2">
-<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors bg-surface-container-low rounded-full">
-<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-error transition-colors bg-surface-container-low rounded-full">
-<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
-</button>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="complemento">Complemento (Opcional)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="complemento" placeholder="Apto, Bloco, etc." type="text"/>
 </div>
 </div>
-<div class="z-10 flex-1">
-<h3 class="font-title-lg text-title-lg text-primary mb-2">Entradas</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">12 Active Items • Starters &amp; Appetizers</p>
+</section>
+<!-- Payment Method -->
+<section class="space-y-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Forma de Pagamento</h2>
+<div class="grid grid-cols-1 gap-sm">
+<label class="flex items-center p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest cursor-pointer hover:bg-surface-variant transition-colors has-[:checked]:border-primary has-[:checked]:ring-1 has-[:checked]:ring-primary">
+<input checked="" class="text-primary focus:ring-primary h-5 w-5 border-outline-variant" name="pagamento" type="radio" value="pix"/>
+<span class="ml-3 flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="qr_code_scanner">qr_code_scanner</span>
+                        Pix
+                    </span>
+</label>
+<label class="flex items-center p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest cursor-pointer hover:bg-surface-variant transition-colors has-[:checked]:border-primary has-[:checked]:ring-1 has-[:checked]:ring-primary">
+<input class="text-primary focus:ring-primary h-5 w-5 border-outline-variant" name="pagamento" type="radio" value="cartao"/>
+<span class="ml-3 flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="credit_card">credit_card</span>
+                        Cartão (Crédito/Débito na entrega)
+                    </span>
+</label>
+<label class="flex items-center p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest cursor-pointer hover:bg-surface-variant transition-colors has-[:checked]:border-primary has-[:checked]:ring-1 has-[:checked]:ring-primary">
+<input class="text-primary focus:ring-primary h-5 w-5 border-outline-variant" name="pagamento" type="radio" value="dinheiro"/>
+<span class="ml-3 flex items-center gap-2 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+                        Dinheiro
+                    </span>
+</label>
 </div>
-<div class="z-10 flex items-center justify-between mt-auto pt-4 border-t border-surface-container">
-<span class="font-label-caps text-label-caps text-on-surface-variant px-3 py-1 bg-surface-container-low rounded-full">Visible</span>
-<button class="drag-handle text-outline hover:text-primary transition-colors flex items-center gap-1">
-<span class="material-symbols-outlined text-[20px]" data-icon="drag_indicator">drag_indicator</span>
-<span class="font-label-caps text-label-caps">REORDER</span>
-</button>
+</section>
+<!-- Order Summary -->
+<section class="bg-tertiary-fixed rounded-lg p-md space-y-md border border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-on-tertiary-fixed">Resumo do Pedido</h2>
+<div class="space-y-sm border-b border-outline-variant/30 pb-md">
+<!-- Item 1 -->
+<div class="flex justify-between items-center font-body-md text-body-md text-on-tertiary-fixed">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm bg-surface/50 px-2 py-1 rounded">2x</span>
+<span>Pão de Queijo Tradicional</span>
 </div>
+<span>R$ 14,00</span>
 </div>
-<!-- Category Card 2 -->
-<div class="category-card bg-surface rounded-xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-container flex flex-col relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-32 h-32 bg-surface-container-low rounded-bl-full -mr-8 -mt-8 z-0"></div>
-<div class="flex justify-between items-start z-10 mb-stack-md">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
-<span class="font-title-lg text-title-lg">02</span>
+<!-- Item 2 -->
+<div class="flex justify-between items-center font-body-md text-body-md text-on-tertiary-fixed">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm bg-surface/50 px-2 py-1 rounded">1x</span>
+<span>Bolo de Fubá com Goiabada</span>
 </div>
-<div class="flex gap-2">
-<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors bg-surface-container-low rounded-full">
-<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-error transition-colors bg-surface-container-low rounded-full">
-<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
-</button>
-</div>
-</div>
-<div class="z-10 flex-1">
-<h3 class="font-title-lg text-title-lg text-primary mb-2">Pratos Principais</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">24 Active Items • Main Courses</p>
-</div>
-<div class="z-10 flex items-center justify-between mt-auto pt-4 border-t border-surface-container">
-<span class="font-label-caps text-label-caps text-on-surface-variant px-3 py-1 bg-surface-container-low rounded-full">Visible</span>
-<button class="drag-handle text-outline hover:text-primary transition-colors flex items-center gap-1">
-<span class="material-symbols-outlined text-[20px]" data-icon="drag_indicator">drag_indicator</span>
-<span class="font-label-caps text-label-caps">REORDER</span>
-</button>
-</div>
-</div>
-<!-- Category Card 3 -->
-<div class="category-card bg-surface rounded-xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-container flex flex-col relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-32 h-32 bg-surface-container-low rounded-bl-full -mr-8 -mt-8 z-0"></div>
-<div class="flex justify-between items-start z-10 mb-stack-md">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
-<span class="font-title-lg text-title-lg">03</span>
-</div>
-<div class="flex gap-2">
-<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors bg-surface-container-low rounded-full">
-<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-error transition-colors bg-surface-container-low rounded-full">
-<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
-</button>
+<span>R$ 22,00</span>
 </div>
 </div>
-<div class="z-10 flex-1">
-<h3 class="font-title-lg text-title-lg text-primary mb-2">Sobremesas</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">8 Active Items • Desserts &amp; Sweets</p>
+<div class="space-y-2 pt-2">
+<div class="flex justify-between font-body-md text-body-md text-on-tertiary-fixed-variant">
+<span>Subtotal</span>
+<span>R$ 36,00</span>
 </div>
-<div class="z-10 flex items-center justify-between mt-auto pt-4 border-t border-surface-container">
-<span class="font-label-caps text-label-caps text-on-surface-variant px-3 py-1 bg-surface-container-low rounded-full">Visible</span>
-<button class="drag-handle text-outline hover:text-primary transition-colors flex items-center gap-1">
-<span class="material-symbols-outlined text-[20px]" data-icon="drag_indicator">drag_indicator</span>
-<span class="font-label-caps text-label-caps">REORDER</span>
-</button>
+<div class="flex justify-between font-body-md text-body-md text-on-tertiary-fixed-variant">
+<span>Taxa de Entrega</span>
+<span>R$ 5,00</span>
 </div>
-</div>
-<!-- Category Card 4 -->
-<div class="category-card bg-surface rounded-xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-surface-container flex flex-col relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-32 h-32 bg-surface-container-low rounded-bl-full -mr-8 -mt-8 z-0"></div>
-<div class="flex justify-between items-start z-10 mb-stack-md">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
-<span class="font-title-lg text-title-lg">04</span>
-</div>
-<div class="flex gap-2">
-<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors bg-surface-container-low rounded-full">
-<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-error transition-colors bg-surface-container-low rounded-full">
-<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
-</button>
+<div class="flex justify-between font-headline-md text-headline-md text-on-tertiary-fixed pt-sm">
+<span>Total</span>
+<span>R$ 41,00</span>
 </div>
 </div>
-<div class="z-10 flex-1">
-<h3 class="font-title-lg text-title-lg text-primary mb-2">Bebidas</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">32 Active Items • Drinks &amp; Cocktails</p>
-</div>
-<div class="z-10 flex items-center justify-between mt-auto pt-4 border-t border-surface-container">
-<span class="font-label-caps text-label-caps text-on-surface-variant px-3 py-1 bg-surface-container-low rounded-full">Visible</span>
-<button class="drag-handle text-outline hover:text-primary transition-colors flex items-center gap-1">
-<span class="material-symbols-outlined text-[20px]" data-icon="drag_indicator">drag_indicator</span>
-<span class="font-label-caps text-label-caps">REORDER</span>
-</button>
-</div>
-</div>
-<!-- Add New Placeholder Card -->
-<div class="category-card bg-surface-container-low rounded-xl p-6 border border-dashed border-outline-variant flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors min-h-[220px]">
-<div class="w-14 h-14 rounded-full bg-surface shadow-sm flex items-center justify-center text-secondary mb-4">
-<span class="material-symbols-outlined text-[28px]" data-icon="add">add</span>
-</div>
-<h3 class="font-title-lg text-title-lg text-primary mb-1">Create Category</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Add a new section to your menu</p>
-</div>
-</div>
+</section>
 </main>
+<!-- Fixed Bottom Action -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant p-margin-mobile shadow-lg">
+<button class="w-full bg-[#D4AF37] text-[#22110D] font-label-md text-label-md font-semibold py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+</svg>
+            Enviar Pedido via WhatsApp
+        </button>
+</div>
 </body></html>
