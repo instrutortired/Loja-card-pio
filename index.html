@@ -1,292 +1,470 @@
 <!DOCTYPE html>
 
-<html lang="pt-BR"><head>
+<html class="scroll-smooth" lang="pt-BR"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Minas Sabores - Finalizar Pedido</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        .material-symbols-outlined {
-          font-variation-settings:
-          'FILL' 0,
-          'wght' 400,
-          'GRAD' 0,
-          'opsz' 24
-        }
-    </style>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "tertiary-fixed": "#f0e1c3",
-                    "on-tertiary-fixed-variant": "#4f4630",
-                    "on-primary-fixed-variant": "#58413c",
-                    "inverse-on-surface": "#f6efed",
-                    "secondary-container": "#fed65b",
-                    "outline-variant": "#d3c3c0",
-                    "surface-container-high": "#eee7e5",
-                    "tertiary": "#000000",
-                    "surface": "#fff8f6",
-                    "secondary-fixed-dim": "#e9c349",
-                    "background": "#fff8f6",
-                    "primary-fixed-dim": "#e0bfb8",
-                    "on-secondary-container": "#745c00",
-                    "on-background": "#1e1b1a",
-                    "on-tertiary-container": "#8e8369",
-                    "surface-container-lowest": "#ffffff",
-                    "secondary": "#735c00",
-                    "on-tertiary": "#ffffff",
-                    "inverse-surface": "#33302f",
-                    "surface-dim": "#dfd9d7",
-                    "on-secondary-fixed-variant": "#574500",
-                    "surface-tint": "#725953",
-                    "on-surface-variant": "#4f4442",
-                    "inverse-primary": "#e0bfb8",
-                    "surface-container-highest": "#e8e1df",
-                    "primary-fixed": "#fddbd3",
-                    "error-container": "#ffdad6",
-                    "error": "#ba1a1a",
-                    "on-secondary": "#ffffff",
-                    "primary": "#000000",
-                    "on-error": "#ffffff",
-                    "secondary-fixed": "#ffe088",
-                    "surface-bright": "#fff8f6",
-                    "on-tertiary-fixed": "#221b08",
-                    "on-primary": "#ffffff",
-                    "on-primary-fixed": "#291713",
-                    "on-primary-container": "#9a7d77",
-                    "tertiary-container": "#221b08",
-                    "outline": "#817471",
-                    "on-secondary-fixed": "#241a00",
-                    "surface-container-low": "#f9f2f0",
-                    "on-surface": "#1e1b1a",
-                    "on-error-container": "#93000a",
-                    "surface-variant": "#e8e1df",
-                    "surface-container": "#f4ecea",
-                    "tertiary-fixed-dim": "#d3c5a8",
-                    "primary-container": "#291713"
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fff8f6",
+                        "on-secondary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#f0e1c3",
+                        "inverse-on-surface": "#f6efed",
+                        "secondary": "#735c00",
+                        "on-tertiary-fixed": "#221b08",
+                        "surface-container-highest": "#e8e1df",
+                        "outline-variant": "#d3c3c0",
+                        "secondary-fixed-dim": "#e9c349",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#725953",
+                        "tertiary-container": "#221b08",
+                        "background": "#fff8f6",
+                        "on-primary-fixed": "#291713",
+                        "primary": "#000000",
+                        "surface-container-low": "#f9f2f0",
+                        "outline": "#817471",
+                        "on-tertiary-container": "#8e8369",
+                        "inverse-primary": "#e0bfb8",
+                        "surface-dim": "#dfd9d7",
+                        "primary-fixed-dim": "#e0bfb8",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#fed65b",
+                        "on-primary-container": "#9a7d77",
+                        "tertiary-fixed-dim": "#d3c5a8",
+                        "on-secondary-container": "#745c00",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fff8f6",
+                        "on-background": "#1e1b1a",
+                        "tertiary": "#000000",
+                        "on-surface-variant": "#4f4442",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#4f4630",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#58413c",
+                        "surface-variant": "#e8e1df",
+                        "surface-container": "#f4ecea",
+                        "primary-container": "#291713",
+                        "secondary-fixed": "#ffe088",
+                        "on-surface": "#1e1b1a",
+                        "inverse-surface": "#33302f",
+                        "surface-container-high": "#eee7e5",
+                        "primary-fixed": "#fddbd3",
+                        "brand-brown": "#22110D",
+                        "gold": "#e9c349"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xs": "0.5rem",
+                        "sm": "1rem",
+                        "max-width": "1280px",
+                        "unit": "4px",
+                        "md": "1.5rem",
+                        "margin-mobile": "1rem",
+                        "margin-desktop": "2.5rem",
+                        "lg": "2.5rem",
+                        "gutter": "1.5rem",
+                        "xl": "4rem"
+                    },
+                    "fontFamily": {
+                        "sans": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                        "display": ["Inter"],
+                    }
+                },
             },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "unit": "4px",
-                    "lg": "2.5rem",
-                    "md": "1.5rem",
-                    "margin-mobile": "1rem",
-                    "gutter": "1.5rem",
-                    "sm": "1rem",
-                    "margin-desktop": "2.5rem",
-                    "xs": "0.5rem",
-                    "max-width": "1280px",
-                    "xl": "4rem"
-            },
-            "fontFamily": {
-                    "label-sm": [
-                            "Inter"
-                    ],
-                    "label-md": [
-                            "Inter"
-                    ],
-                    "headline-md": [
-                            "Inter"
-                    ],
-                    "headline-lg-mobile": [
-                            "Inter"
-                    ],
-                    "display": [
-                            "Inter"
-                    ],
-                    "body-lg": [
-                            "Inter"
-                    ],
-                    "headline-lg": [
-                            "Inter"
-                    ],
-                    "body-md": [
-                            "Inter"
-                    ]
-            },
-            "fontSize": {
-                    "label-sm": [
-                            "12px",
-                            {
-                                    "lineHeight": "16px",
-                                    "letterSpacing": "0.05em",
-                                    "fontWeight": "600"
-                            }
-                    ],
-                    "label-md": [
-                            "14px",
-                            {
-                                    "lineHeight": "20px",
-                                    "letterSpacing": "0.01em",
-                                    "fontWeight": "500"
-                            }
-                    ],
-                    "headline-md": [
-                            "24px",
-                            {
-                                    "lineHeight": "32px",
-                                    "fontWeight": "500"
-                            }
-                    ],
-                    "headline-lg-mobile": [
-                            "28px",
-                            {
-                                    "lineHeight": "36px",
-                                    "fontWeight": "600"
-                            }
-                    ],
-                    "display": [
-                            "48px",
-                            {
-                                    "lineHeight": "56px",
-                                    "letterSpacing": "-0.02em",
-                                    "fontWeight": "600"
-                            }
-                    ],
-                    "body-lg": [
-                            "18px",
-                            {
-                                    "lineHeight": "28px",
-                                    "fontWeight": "400"
-                            }
-                    ],
-                    "headline-lg": [
-                            "32px",
-                            {
-                                    "lineHeight": "40px",
-                                    "letterSpacing": "-0.01em",
-                                    "fontWeight": "600"
-                            }
-                    ],
-                    "body-md": [
-                            "16px",
-                            {
-                                    "lineHeight": "24px",
-                                    "fontWeight": "400"
-                            }
-                    ]
-            }
-    },
-        },
-      }
+        }
     </script>
 <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background text-on-background font-body-md min-h-screen pb-xl">
-<!-- Header (Transactional, so no full nav shell) -->
-<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
-<div class="flex items-center justify-between px-margin-mobile h-16">
-<button aria-label="Voltar" class="text-primary p-2 -ml-2 rounded-full hover:bg-surface-variant transition-colors">
-<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+        .view-hidden { display: none !important; }
+        .fade-transition { transition: opacity 0.3s ease-in-out; }
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased select-none font-sans">
+<!-- SPLASH VIEW -->
+<div class="fade-transition" id="view-splash" style="opacity: 1;">
+<main class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Imagery -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-brand-brown/80 z-10"></div>
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzEBtXk0iH8gRj4OrUdMIIn8Dow6YmJUKweEPgbvqSpnkdFQQ_I-1bvd5b2nbvcjmfkVqSDM7hcxjayd0Elcagp7GnzCXvOVv73kBvvl9_Lz-2xIURm-S9z6_n73wkSRLGbIYauDWAkZewePEAoHnvQD2IhqJX_nuQlTfl5d_O93kmgGr634o01qZIetBZh_plZSjjhrGTNy4fEgKpteN-NG9YYdzHHjVIYsEwxMIhufoy7QIyEgG7ORyTnByKESI3avcJs2dxhNGX');"></div>
+</div>
+<!-- Content Canvas -->
+<section class="relative z-20 flex flex-col items-center text-center px-6 max-w-2xl mx-auto">
+<div class="animate-fade-in">
+<p class="text-[12px] tracking-[0.2em] text-gold uppercase mb-4 font-semibold">
+                        ARTESANAL • COM CARINHO • MINAS GERAIS
+                    </p>
+</div>
+<div class="mt-8 mb-12 flex flex-col items-center">
+<h1 class="font-serif italic text-[56px] leading-tight text-white mb-1">
+                        Minas
+                    </h1>
+<h2 class="font-serif text-[48px] leading-none text-gold">
+                        Sabores
+                    </h2>
+</div>
+<div class="mb-12 px-4">
+<p class="text-lg text-white/90 leading-relaxed font-light">
+                        Bolos, doces e salgados feitos com carinho e ingredientes selecionados para momentos especiais.
+                    </p>
+</div>
+<div class="w-full flex flex-col items-center gap-4">
+<button class="group relative inline-flex items-center justify-center px-10 py-4 bg-gold text-brand-brown font-bold text-sm rounded-full shadow-lg transition-all active:scale-95" onclick="toggleView('menu')">
+<span class="mr-2">Ver Cardápio</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
 </button>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Finalizar Pedido</h1>
-<div class="w-10"></div> <!-- Spacer for alignment -->
+<div class="flex flex-col gap-2 mt-8 w-full max-w-xs">
+<div class="glass-pill rounded-full px-4 py-2 flex items-center justify-center gap-2 text-white/80 text-[12px]">
+<span class="material-symbols-outlined text-[16px]">inventory_2</span>
+<span>Pedido mínimo 20 unidades</span>
 </div>
-</header>
-<main class="px-margin-mobile py-lg max-w-md mx-auto space-y-xl">
-<!-- Form Section -->
-<section class="space-y-md">
-<h2 class="font-headline-md text-headline-md text-on-surface">Dados de Entrega</h2>
-<div class="space-y-sm">
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="nome">Nome Completo</label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="nome" placeholder="Seu nome" type="text"/>
+<div class="glass-pill rounded-full px-4 py-2 flex items-center justify-center gap-2 text-white/80 text-[12px]">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Encomenda com 3-4 dias</span>
 </div>
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="endereco">Endereço de Entrega</label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="endereco" placeholder="Rua, Número, Bairro" type="text"/>
+<div class="glass-pill rounded-full px-4 py-2 flex items-center justify-center gap-2 text-white/80 text-[12px]">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>Entrega sob consulta</span>
 </div>
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="complemento">Complemento (Opcional)</label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="complemento" placeholder="Apto, Bloco, etc." type="text"/>
-</div>
-</div>
-</section>
-<!-- Payment Method -->
-<section class="space-y-md">
-<h2 class="font-headline-md text-headline-md text-on-surface">Forma de Pagamento</h2>
-<div class="grid grid-cols-1 gap-sm">
-<label class="flex items-center p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest cursor-pointer hover:bg-surface-variant transition-colors has-[:checked]:border-primary has-[:checked]:ring-1 has-[:checked]:ring-primary">
-<input checked="" class="text-primary focus:ring-primary h-5 w-5 border-outline-variant" name="pagamento" type="radio" value="pix"/>
-<span class="ml-3 flex items-center gap-2 font-body-md text-body-md text-on-surface">
-<span class="material-symbols-outlined text-primary" data-icon="qr_code_scanner">qr_code_scanner</span>
-                        Pix
-                    </span>
-</label>
-<label class="flex items-center p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest cursor-pointer hover:bg-surface-variant transition-colors has-[:checked]:border-primary has-[:checked]:ring-1 has-[:checked]:ring-primary">
-<input class="text-primary focus:ring-primary h-5 w-5 border-outline-variant" name="pagamento" type="radio" value="cartao"/>
-<span class="ml-3 flex items-center gap-2 font-body-md text-body-md text-on-surface">
-<span class="material-symbols-outlined text-primary" data-icon="credit_card">credit_card</span>
-                        Cartão (Crédito/Débito na entrega)
-                    </span>
-</label>
-<label class="flex items-center p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest cursor-pointer hover:bg-surface-variant transition-colors has-[:checked]:border-primary has-[:checked]:ring-1 has-[:checked]:ring-primary">
-<input class="text-primary focus:ring-primary h-5 w-5 border-outline-variant" name="pagamento" type="radio" value="dinheiro"/>
-<span class="ml-3 flex items-center gap-2 font-body-md text-body-md text-on-surface">
-<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
-                        Dinheiro
-                    </span>
-</label>
-</div>
-</section>
-<!-- Order Summary -->
-<section class="bg-tertiary-fixed rounded-lg p-md space-y-md border border-outline-variant">
-<h2 class="font-headline-md text-headline-md text-on-tertiary-fixed">Resumo do Pedido</h2>
-<div class="space-y-sm border-b border-outline-variant/30 pb-md">
-<!-- Item 1 -->
-<div class="flex justify-between items-center font-body-md text-body-md text-on-tertiary-fixed">
-<div class="flex items-center gap-2">
-<span class="font-label-sm text-label-sm bg-surface/50 px-2 py-1 rounded">2x</span>
-<span>Pão de Queijo Tradicional</span>
-</div>
-<span>R$ 14,00</span>
-</div>
-<!-- Item 2 -->
-<div class="flex justify-between items-center font-body-md text-body-md text-on-tertiary-fixed">
-<div class="flex items-center gap-2">
-<span class="font-label-sm text-label-sm bg-surface/50 px-2 py-1 rounded">1x</span>
-<span>Bolo de Fubá com Goiabada</span>
-</div>
-<span>R$ 22,00</span>
-</div>
-</div>
-<div class="space-y-2 pt-2">
-<div class="flex justify-between font-body-md text-body-md text-on-tertiary-fixed-variant">
-<span>Subtotal</span>
-<span>R$ 36,00</span>
-</div>
-<div class="flex justify-between font-body-md text-body-md text-on-tertiary-fixed-variant">
-<span>Taxa de Entrega</span>
-<span>R$ 5,00</span>
-</div>
-<div class="flex justify-between font-headline-md text-headline-md text-on-tertiary-fixed pt-sm">
-<span>Total</span>
-<span>R$ 41,00</span>
 </div>
 </div>
 </section>
 </main>
-<!-- Fixed Bottom Action -->
-<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant p-margin-mobile shadow-lg">
-<button class="w-full bg-[#D4AF37] text-[#22110D] font-label-md text-label-md font-semibold py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+</div>
+<!-- MENU VIEW -->
+<div class="view-hidden fade-transition min-h-screen pb-[120px]" id="view-menu" style="opacity: 0;">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-outline-variant/30 flex justify-between items-center px-4 h-16">
+<div class="flex items-center gap-3">
+<button class="p-2 -ml-2 text-on-surface" onclick="toggleView('splash')">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-serif text-[22px] font-bold tracking-tight text-on-surface">Minas Sabores</h1>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex items-center justify-center w-10 h-10 bg-[#25D366] text-white rounded-full active:opacity-80 shadow-sm" href="https://wa.me/5599427371" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</a>
+<span class="material-symbols-outlined p-2 text-on-surface cursor-pointer">search</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-20 px-4">
+<!-- Hero Image Section -->
+<div class="w-full h-48 bg-surface-container rounded-2xl overflow-hidden mb-8 relative border border-outline-variant/20 shadow-sm">
+<img alt="Minas Sabores" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmJFAjAjpE9R65peE3YgHOF1sG98kV-c7q58FP7zgmXbw1ZnpYdZVtMCPQHh5P5xbM5fY9Hp4QcW2-6mEGdMj-SrVZBdD-5iiOxH1_qEf0kKDQvxaKf9m59LruvvHvyuDyuG0SrRboMNkiCKCtO9ScrBWUXK6jmfyxlhPDWrLGoiS60TEID1MMUL80hkllxP8znZwHGshmkqDwuNsoD09TN7fcrMWo-uXHPV7V-nq8cGRqNEsLTpIH0fyELTLR0JgR21VC8VZpbzVo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-brown/80 via-transparent to-transparent flex items-end p-5">
+<h2 class="text-white font-serif text-2xl font-bold text-shadow">Menu Digital</h2>
+</div>
+</div>
+<!-- Product List -->
+<section class="space-y-2">
+<!-- Item 1 -->
+<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<div class="flex-1 pr-4">
+<h3 class="font-serif text-lg font-bold text-on-surface">Salada de Frutas Tradicional</h3>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Banana, maçã, mamão, morango e suco de laranja.</p>
+<p class="text-base font-bold text-on-surface mt-2">R$ 15,00</p>
+</div>
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold active:text-brand-brown transition-all" onclick="adicionarItem('Salada de Frutas Tradicional', 15.00)">
+<span class="material-symbols-outlined">add</span>
+</button>
+</article>
+<!-- Item 2 -->
+<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<div class="flex-1 pr-4">
+<h3 class="font-serif text-lg font-bold text-on-surface">Salada de Frutas Especial</h3>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Frutas tradicionais com adicional de leite condensado e granola.</p>
+<p class="text-base font-bold text-on-surface mt-2">R$ 18,50</p>
+</div>
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold transition-all" onclick="adicionarItem('Salada de Frutas Especial', 18.50)">
+<span class="material-symbols-outlined">add</span>
+</button>
+</article>
+<!-- Item 3 -->
+<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<div class="flex-1 pr-4">
+<h3 class="font-serif text-lg font-bold text-on-surface">Taça Tropicália</h3>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Manga, kiwi, abacaxi, uva e iogurte natural.</p>
+<p class="text-base font-bold text-on-surface mt-2">R$ 22,00</p>
+</div>
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold transition-all" onclick="adicionarItem('Taça Tropicália', 22.00)">
+<span class="material-symbols-outlined">add</span>
+</button>
+</article>
+<!-- Item 4 -->
+<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<div class="flex-1 pr-4">
+<h3 class="font-serif text-lg font-bold text-on-surface">Coxinha de Frango</h3>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Massa tradicional de batata com recheio cremoso de frango.</p>
+<p class="text-base font-bold text-on-surface mt-2">R$ 8,00</p>
+</div>
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold transition-all" onclick="adicionarItem('Coxinha de Frango', 8.00)">
+<span class="material-symbols-outlined">add</span>
+</button>
+</article>
+<!-- Item 5 -->
+<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<div class="flex-1 pr-4">
+<h3 class="font-serif text-lg font-bold text-on-surface">Pastel de Queijo</h3>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Massa crocante recheada com queijo minas curado.</p>
+<p class="text-base font-bold text-on-surface mt-2">R$ 7,50</p>
+</div>
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold transition-all" onclick="adicionarItem('Pastel de Queijo', 7.50)">
+<span class="material-symbols-outlined">add</span>
+</button>
+</article>
+</section>
+</main>
+<!-- Bottom Cart Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-high border-t border-outline-variant/30 p-4 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Carrinho</p>
+<p class="font-serif text-xl text-on-surface font-bold" id="cart-total-menu">R$ 0,00</p>
+</div>
+<button class="bg-gold text-brand-brown font-bold text-sm px-6 py-3 rounded-xl flex items-center gap-2 active:scale-95 transition-all shadow-md" onclick="toggleView('checkout')">
+<span>Finalizar Pedido</span>
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CHECKOUT VIEW -->
+<div class="view-hidden fade-transition min-h-screen" id="view-checkout" style="opacity: 0;">
+<header class="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 h-16 flex items-center px-4 justify-between">
+<button class="text-on-surface p-2 -ml-2 rounded-full active:bg-surface-container" onclick="toggleView('menu')">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-serif text-xl font-bold text-on-surface">Finalizar Pedido</h1>
+<div class="w-10"></div>
+</header>
+<main class="px-4 py-6 space-y-8 pb-[140px]">
+<!-- Delivery Info -->
+<section class="space-y-4">
+<h2 class="font-serif text-xl font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-gold">local_shipping</span>
+                    Dados de Entrega
+                </h2>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" for="nome">Nome Completo</label>
+<input class="w-full bg-surface-container border-none rounded-xl px-4 py-3.5 text-on-surface placeholder-on-surface-variant/40 focus:ring-2 focus:ring-gold" id="nome" placeholder="Como deseja ser chamado?" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" for="endereco">Endereço</label>
+<input class="w-full bg-surface-container border-none rounded-xl px-4 py-3.5 text-on-surface placeholder-on-surface-variant/40 focus:ring-2 focus:ring-gold" id="endereco" placeholder="Rua, Número, Bairro" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" for="complemento">Complemento (Opcional)</label>
+<input class="w-full bg-surface-container border-none rounded-xl px-4 py-3.5 text-on-surface placeholder-on-surface-variant/40 focus:ring-2 focus:ring-gold" id="complemento" placeholder="Apto, Bloco, Referência..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Payment Method -->
+<section class="space-y-4">
+<h2 class="font-serif text-xl font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-gold">payments</span>
+                    Pagamento
+                </h2>
+<div class="grid grid-cols-1 gap-3">
+<label class="flex items-center p-4 border border-outline-variant/30 rounded-2xl bg-surface-container cursor-pointer transition-all has-[:checked]:bg-gold/10 has-[:checked]:border-gold">
+<input checked="" class="text-gold focus:ring-gold h-5 w-5 border-outline-variant bg-transparent" name="pagamento" type="radio" value="Pix"/>
+<span class="ml-3 flex items-center gap-3 text-on-surface font-medium">
+<span class="material-symbols-outlined text-on-surface-variant">qr_code_2</span>
+                            Pix
+                        </span>
+</label>
+<label class="flex items-center p-4 border border-outline-variant/30 rounded-2xl bg-surface-container cursor-pointer transition-all has-[:checked]:bg-gold/10 has-[:checked]:border-gold">
+<input class="text-gold focus:ring-gold h-5 w-5 border-outline-variant bg-transparent" name="pagamento" type="radio" value="Cartão"/>
+<span class="ml-3 flex items-center gap-3 text-on-surface font-medium">
+<span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+                            Cartão (na entrega)
+                        </span>
+</label>
+<label class="flex items-center p-4 border border-outline-variant/30 rounded-2xl bg-surface-container cursor-pointer transition-all has-[:checked]:bg-gold/10 has-[:checked]:border-gold">
+<input class="text-gold focus:ring-gold h-5 w-5 border-outline-variant bg-transparent" name="pagamento" type="radio" value="Dinheiro"/>
+<span class="ml-3 flex items-center gap-3 text-on-surface font-medium">
+<span class="material-symbols-outlined text-on-surface-variant">money</span>
+                            Dinheiro
+                        </span>
+</label>
+</div>
+</section>
+<!-- Summary -->
+<section class="bg-surface-container-low rounded-3xl p-6 space-y-5 border border-outline-variant/20">
+<h2 class="font-serif text-xl font-bold text-on-surface">Resumo do Pedido</h2>
+<div class="space-y-4" id="cart-items-container">
+<!-- Populated via JS -->
+</div>
+<div class="pt-4 border-t border-outline-variant/20 space-y-2">
+<div class="flex justify-between text-on-surface-variant text-sm font-medium">
+<span>Subtotal</span>
+<span id="checkout-subtotal">R$ 0,00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant text-sm font-medium">
+<span>Taxa de Entrega</span>
+<span class="text-secondary font-bold">Grátis</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="font-serif text-xl font-bold text-on-surface">Total</span>
+<span class="font-serif text-2xl font-bold text-on-surface" id="checkout-total">R$ 0,00</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Final Action -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant/30 p-4 z-50">
+<button class="w-full bg-gold text-brand-brown text-base font-bold py-4 rounded-2xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-lg" onclick="enviarPedido()">
 <svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
 </svg>
-            Enviar Pedido via WhatsApp
-        </button>
+                Enviar Pedido pelo WhatsApp
+            </button>
 </div>
+</div>
+<script>
+        let carrinho = [];
+
+        function formatarMoeda(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function adicionarItem(nome, preco) {
+            const itemExistente = carrinho.find(item => item.nome === nome);
+            if (itemExistente) {
+                itemExistente.quantidade++;
+            } else {
+                carrinho.push({ nome, preco, quantidade: 1 });
+            }
+            atualizarCarrinho();
+            
+            // Toast Notification
+            const toast = document.createElement('div');
+            toast.className = 'fixed top-24 left-1/2 -translate-x-1/2 bg-brand-brown text-gold px-6 py-2.5 rounded-full text-sm font-bold z-[100] transition-all shadow-xl border border-gold/20';
+            toast.textContent = `Adicionado!`;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => document.body.removeChild(toast), 300);
+            }, 1000);
+        }
+
+        function calcularTotal() {
+            return carrinho.reduce((total, item) => total + (item.preco * item.quantidade), 0);
+        }
+
+        function atualizarCarrinho() {
+            const total = calcularTotal();
+            
+            // Update UI elements
+            document.getElementById('cart-total-menu').textContent = formatarMoeda(total);
+            document.getElementById('checkout-subtotal').textContent = formatarMoeda(total);
+            document.getElementById('checkout-total').textContent = formatarMoeda(total);
+            
+            const container = document.getElementById('cart-items-container');
+            container.innerHTML = '';
+            
+            if (carrinho.length === 0) {
+                container.innerHTML = '<p class="text-on-surface-variant italic text-sm text-center py-4">Seu carrinho está vazio.</p>';
+                return;
+            }
+            
+            carrinho.forEach((item, index) => {
+                container.innerHTML += `
+                    <div class="flex justify-between items-start text-on-surface">
+                        <div class="flex gap-4">
+                            <span class="text-xs font-bold bg-gold/20 text-brand-brown w-6 h-6 flex items-center justify-center rounded-md shrink-0 mt-0.5">${item.quantidade}</span>
+                            <div class="space-y-0.5">
+                                <span class="font-bold text-sm">${item.nome}</span>
+                                <div class="flex items-center gap-3">
+                                    <button onclick="alterarQuantidade(${index}, -1)" class="text-gold"><span class="material-symbols-outlined text-lg">remove_circle_outline</span></button>
+                                    <button onclick="alterarQuantidade(${index}, 1)" class="text-gold"><span class="material-symbols-outlined text-lg">add_circle_outline</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="font-bold text-sm">${formatarMoeda(item.preco * item.quantidade)}</span>
+                    </div>
+                `;
+            });
+        }
+
+        function alterarQuantidade(index, delta) {
+            carrinho[index].quantidade += delta;
+            if (carrinho[index].quantidade <= 0) {
+                carrinho.splice(index, 1);
+            }
+            atualizarCarrinho();
+        }
+
+        function toggleView(view) {
+            const views = {
+                splash: document.getElementById('view-splash'),
+                menu: document.getElementById('view-menu'),
+                checkout: document.getElementById('view-checkout')
+            };
+            
+            // Hide all
+            Object.values(views).forEach(v => {
+                v.style.opacity = '0';
+                setTimeout(() => v.classList.add('view-hidden'), 300);
+            });
+            
+            // Show target
+            setTimeout(() => {
+                views[view].classList.remove('view-hidden');
+                setTimeout(() => { 
+                    views[view].style.opacity = '1'; 
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }, 50);
+            }, 300);
+        }
+
+        function enviarPedido() {
+            if (carrinho.length === 0) {
+                alert('O seu carrinho está vazio! Adicione algo saboroso primeiro.');
+                return;
+            }
+
+            const nome = document.getElementById('nome').value;
+            const endereco = document.getElementById('endereco').value;
+            const pagamento = document.querySelector('input[name="pagamento"]:checked').value;
+            
+            if (!nome || !endereco) {
+                alert('Por favor, preencha o nome e endereço para entrega.');
+                return;
+            }
+
+            const total = calcularTotal();
+            const itensTexto = carrinho.map(item => `${item.quantidade}x ${item.nome} (${formatarMoeda(item.preco * item.quantidade)})`).join('%0A');
+            
+            const msg = `*Novo Pedido - Minas Sabores*%0A%0A*Cliente:* ${nome}%0A*Endereço:* ${endereco}%0A%0A*Itens:*%0A${itensTexto}%0A%0A*Total:* ${formatarMoeda(total)}%0A*Pagamento:* ${pagamento}%0A%0A_Pedido realizado via Menu Digital_`;
+            
+            window.open(`https://wa.me/5599427371?text=${msg}`, '_blank');
+        }
+    </script>
 </body></html>
