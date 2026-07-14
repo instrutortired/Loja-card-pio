@@ -101,6 +101,13 @@
         }
         .text-shadow { text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
     </style>
+
+<style>
+html,body{overflow-x:hidden;width:100%}
+*{box-sizing:border-box}
+img{max-width:100%;height:auto}
+</style>
+
 </head>
 <body class="bg-surface text-on-surface antialiased select-none font-sans">
 <!-- SPLASH VIEW -->
@@ -167,14 +174,14 @@
 </div>
 </header>
 <!-- Main Content -->
-<main class="pt-20 px-4">
+<main class="pt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
 <!-- Section Header -->
 <div class="py-4 border-b border-gold/10 mb-4">
 <h2 class="text-brand-brown font-serif text-2xl font-bold">Menu Digital</h2>
 <p class="text-xs text-gold font-bold uppercase tracking-widest mt-1">Nossas Delícias</p>
 </div>
 <!-- Product List -->
-<section class="space-y-2">
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 <!-- Item 1 -->
 <article class="flex justify-between items-center py-5 border-b border-gold/5">
 <div class="flex-1 pr-4">
@@ -234,7 +241,7 @@
 </main>
 <!-- Bottom Cart Bar -->
 <div class="fixed bottom-0 left-0 w-full bg-cream/95 backdrop-blur-md border-t border-gold/20 p-4 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
-<div class="flex justify-between items-center max-w-md mx-auto">
+<div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
 <div>
 <p class="text-[10px] text-brand-brown/60 uppercase tracking-widest font-bold">Carrinho</p>
 <p class="font-serif text-xl text-brand-brown font-bold" id="cart-total-menu">R$ 0,00</p>
