@@ -27,7 +27,7 @@
                         "on-tertiary": "#ffffff",
                         "surface-tint": "#725953",
                         "tertiary-container": "#221b08",
-                        "background": "#fff8f6",
+                        "background": "#F5E6C8",
                         "on-primary-fixed": "#291713",
                         "primary": "#000000",
                         "surface-container-low": "#f9f2f0",
@@ -37,7 +37,7 @@
                         "surface-dim": "#dfd9d7",
                         "primary-fixed-dim": "#e0bfb8",
                         "on-error-container": "#93000a",
-                        "secondary-container": "#fed65b",
+                        "secondary-container": "#D4AF37",
                         "on-primary-container": "#9a7d77",
                         "tertiary-fixed-dim": "#d3c5a8",
                         "on-secondary-container": "#745c00",
@@ -45,8 +45,8 @@
                         "on-secondary-fixed": "#241a00",
                         "on-primary": "#ffffff",
                         "surface-container-lowest": "#ffffff",
-                        "surface": "#fff8f6",
-                        "on-background": "#1e1b1a",
+                        "surface": "#F5E6C8",
+                        "on-background": "#22110D",
                         "tertiary": "#000000",
                         "on-surface-variant": "#4f4442",
                         "on-error": "#ffffff",
@@ -56,13 +56,14 @@
                         "surface-variant": "#e8e1df",
                         "surface-container": "#f4ecea",
                         "primary-container": "#291713",
-                        "secondary-fixed": "#ffe088",
-                        "on-surface": "#1e1b1a",
+                        "secondary-fixed": "#D4AF37",
+                        "on-surface": "#22110D",
                         "inverse-surface": "#33302f",
                         "surface-container-high": "#eee7e5",
                         "primary-fixed": "#fddbd3",
                         "brand-brown": "#22110D",
-                        "gold": "#e9c349"
+                        "gold": "#D4AF37",
+                        "cream": "#F5E6C8"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.125rem",
@@ -95,31 +96,25 @@
         .view-hidden { display: none !important; }
         .fade-transition { transition: opacity 0.3s ease-in-out; }
         .glass-pill {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(34, 17, 13, 0.05);
+            border: 1px solid rgba(34, 17, 13, 0.1);
         }
-        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .text-shadow { text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body class="bg-surface text-on-surface antialiased select-none font-sans">
 <!-- SPLASH VIEW -->
 <div class="fade-transition" id="view-splash" style="opacity: 1;">
-<main class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-<!-- Background Imagery -->
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-brand-brown/80 z-10"></div>
-<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzEBtXk0iH8gRj4OrUdMIIn8Dow6YmJUKweEPgbvqSpnkdFQQ_I-1bvd5b2nbvcjmfkVqSDM7hcxjayd0Elcagp7GnzCXvOVv73kBvvl9_Lz-2xIURm-S9z6_n73wkSRLGbIYauDWAkZewePEAoHnvQD2IhqJX_nuQlTfl5d_O93kmgGr634o01qZIetBZh_plZSjjhrGTNy4fEgKpteN-NG9YYdzHHjVIYsEwxMIhufoy7QIyEgG7ORyTnByKESI3avcJs2dxhNGX');"></div>
-</div>
+<main class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-cream">
 <!-- Content Canvas -->
 <section class="relative z-20 flex flex-col items-center text-center px-6 max-w-2xl mx-auto">
 <div class="animate-fade-in">
-<p class="text-[12px] tracking-[0.2em] text-gold uppercase mb-4 font-semibold">
+<p class="text-[12px] tracking-[0.2em] text-gold uppercase mb-4 font-bold">
                         ARTESANAL • COM CARINHO • MINAS GERAIS
                     </p>
 </div>
 <div class="mt-8 mb-12 flex flex-col items-center">
-<h1 class="font-serif italic text-[56px] leading-tight text-white mb-1">
+<h1 class="font-serif italic text-[56px] leading-tight text-brand-brown mb-1">
                         Minas
                     </h1>
 <h2 class="font-serif text-[48px] leading-none text-gold">
@@ -127,7 +122,7 @@
                     </h2>
 </div>
 <div class="mb-12 px-4">
-<p class="text-lg text-white/90 leading-relaxed font-light">
+<p class="text-lg text-brand-brown/80 leading-relaxed font-medium">
                         Bolos, doces e salgados feitos com carinho e ingredientes selecionados para momentos especiais.
                     </p>
 </div>
@@ -137,15 +132,15 @@
 <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
 </button>
 <div class="flex flex-col gap-2 mt-8 w-full max-w-xs">
-<div class="glass-pill rounded-full px-4 py-2 flex items-center justify-center gap-2 text-white/80 text-[12px]">
+<div class="glass-pill rounded-full px-4 py-2.5 flex items-center justify-center gap-2 text-brand-brown/70 text-[12px] font-bold">
 <span class="material-symbols-outlined text-[16px]">inventory_2</span>
 <span>Pedido mínimo 20 unidades</span>
 </div>
-<div class="glass-pill rounded-full px-4 py-2 flex items-center justify-center gap-2 text-white/80 text-[12px]">
+<div class="glass-pill rounded-full px-4 py-2.5 flex items-center justify-center gap-2 text-brand-brown/70 text-[12px] font-bold">
 <span class="material-symbols-outlined text-[16px]">calendar_today</span>
 <span>Encomenda com 3-4 dias</span>
 </div>
-<div class="glass-pill rounded-full px-4 py-2 flex items-center justify-center gap-2 text-white/80 text-[12px]">
+<div class="glass-pill rounded-full px-4 py-2.5 flex items-center justify-center gap-2 text-brand-brown/70 text-[12px] font-bold">
 <span class="material-symbols-outlined text-[16px]">local_shipping</span>
 <span>Entrega sob consulta</span>
 </div>
@@ -157,87 +152,92 @@
 <!-- MENU VIEW -->
 <div class="view-hidden fade-transition min-h-screen pb-[120px]" id="view-menu" style="opacity: 0;">
 <!-- Top Navigation -->
-<header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-outline-variant/30 flex justify-between items-center px-4 h-16">
+<header class="fixed top-0 w-full z-50 bg-cream/95 backdrop-blur-sm border-b border-gold/20 flex justify-between items-center px-4 h-16">
 <div class="flex items-center gap-3">
-<button class="p-2 -ml-2 text-on-surface" onclick="toggleView('splash')">
+<button class="p-2 -ml-2 text-brand-brown" onclick="toggleView('splash')">
 <span class="material-symbols-outlined">arrow_back</span>
 </button>
-<h1 class="font-serif text-[22px] font-bold tracking-tight text-on-surface">Minas Sabores</h1>
+<h1 class="font-serif text-[22px] font-bold tracking-tight text-brand-brown">Minas Sabores</h1>
 </div>
 <div class="flex items-center gap-2">
 <a class="flex items-center justify-center w-10 h-10 bg-[#25D366] text-white rounded-full active:opacity-80 shadow-sm" href="https://wa.me/5599427371" rel="noopener noreferrer" target="_blank">
 <span class="material-symbols-outlined text-[20px]">chat</span>
 </a>
-<span class="material-symbols-outlined p-2 text-on-surface cursor-pointer">search</span>
+<span class="material-symbols-outlined p-2 text-brand-brown cursor-pointer">search</span>
 </div>
 </header>
 <!-- Main Content -->
 <main class="pt-20 px-4">
+<!-- Section Header -->
+<div class="py-4 border-b border-gold/10 mb-4">
+<h2 class="text-brand-brown font-serif text-2xl font-bold">Menu Digital</h2>
+<p class="text-xs text-gold font-bold uppercase tracking-widest mt-1">Nossas Delícias</p>
+</div>
 <!-- Product List -->
 <section class="space-y-2">
 <!-- Item 1 -->
-<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<article class="flex justify-between items-center py-5 border-b border-gold/5">
 <div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-on-surface">Salada de Frutas Tradicional</h3>
-<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Banana, maçã, mamão, morango e suco de laranja.</p>
-<p class="text-base font-bold text-on-surface mt-2">R$ 15,00</p>
+<h3 class="font-serif text-lg font-bold text-brand-brown">Salada de Frutas Tradicional</h3>
+<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Banana, maçã, mamão, morango e suco de laranja.</p>
+<p class="text-base font-bold text-gold mt-2">R$ 15,00</p>
 </div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold active:text-brand-brown transition-all" onclick="adicionarItem('Salada de Frutas Tradicional', 15.00)">
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Salada de Frutas Tradicional', 15.00)">
 <span class="material-symbols-outlined">add</span>
 </button>
 </article>
 <!-- Item 2 -->
-<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<article class="flex justify-between items-center py-5 border-b border-gold/5">
 <div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-on-surface">Salada de Frutas Especial</h3>
-<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Frutas tradicionais com adicional de leite condensado e granola.</p>
-<p class="text-base font-bold text-on-surface mt-2">R$ 18,50</p>
+<h3 class="font-serif text-lg font-bold text-brand-brown">Salada de Frutas Especial</h3>
+<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Frutas tradicionais com adicional de leite condensado e granola.</p>
+<p class="text-base font-bold text-gold mt-2">R$ 18,50</p>
 </div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold transition-all" onclick="adicionarItem('Salada de Frutas Especial', 18.50)">
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Salada de Frutas Especial', 18.50)">
 <span class="material-symbols-outlined">add</span>
 </button>
 </article>
 <!-- Item 3 -->
-<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<article class="flex justify-between items-center py-5 border-b border-gold/5">
 <div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-on-surface">Taça Tropicália</h3>
-<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Manga, kiwi, abacaxi, uva e iogurte natural.</p>
-<p class="text-base font-bold text-on-surface mt-2">R$ 22,00</p>
+<h3 class="font-serif text-lg font-bold text-brand-brown">Taça Tropicália</h3>
+<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Manga, kiwi, abacaxi, uva e iogurte natural.</p>
+<p class="text-base font-bold text-gold mt-2">R$ 22,00</p>
 </div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold transition-all" onclick="adicionarItem('Taça Tropicália', 22.00)">
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Taça Tropicália', 22.00)">
 <span class="material-symbols-outlined">add</span>
 </button>
 </article>
 <!-- Item 4 -->
-<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<article class="flex justify-between items-center py-5 border-b border-gold/5">
 <div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-on-surface">Coxinha de Frango</h3>
-<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Massa tradicional de batata com recheio cremoso de frango.</p>
-<p class="text-base font-bold text-on-surface mt-2">R$ 8,00</p>
+<h3 class="font-serif text-lg font-bold text-brand-brown">Coxinha de Frango</h3>
+<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Massa tradicional de batata com recheio cremoso de frango.</p>
+<p class="text-base font-bold text-gold mt-2">R$ 8,00</p>
 </div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold transition-all" onclick="adicionarItem('Coxinha de Frango', 8.00)">
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Coxinha de Frango', 8.00)">
 <span class="material-symbols-outlined">add</span>
 </button>
 </article>
 <!-- Item 5 -->
-<article class="flex justify-between items-center py-5 border-b border-outline-variant/10">
+<article class="flex justify-between items-center py-5 border-b border-gold/5">
 <div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-on-surface">Pastel de Queijo</h3>
-<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Massa crocante recheada com queijo minas curado.</p>
-<p class="text-base font-bold text-on-surface mt-2">R$ 7,50</p>
+<h3 class="font-serif text-lg font-bold text-brand-brown">Pastel de Queijo</h3>
+<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Massa crocante recheada com queijo minas curado.</p>
+<p class="text-base font-bold text-gold mt-2">R$ 7,50</p>
 </div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border border-gold text-on-surface active:bg-gold transition-all" onclick="adicionarItem('Pastel de Queijo', 7.50)">
+<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Pastel de Queijo', 7.50)">
 <span class="material-symbols-outlined">add</span>
 </button>
 </article>
 </section>
 </main>
 <!-- Bottom Cart Bar -->
-<div class="fixed bottom-0 left-0 w-full bg-surface-container-high border-t border-outline-variant/30 p-4 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+<div class="fixed bottom-0 left-0 w-full bg-cream/95 backdrop-blur-md border-t border-gold/20 p-4 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
 <div class="flex justify-between items-center max-w-md mx-auto">
 <div>
-<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Carrinho</p>
-<p class="font-serif text-xl text-on-surface font-bold" id="cart-total-menu">R$ 0,00</p>
+<p class="text-[10px] text-brand-brown/60 uppercase tracking-widest font-bold">Carrinho</p>
+<p class="font-serif text-xl text-brand-brown font-bold" id="cart-total-menu">R$ 0,00</p>
 </div>
 <button class="bg-gold text-brand-brown font-bold text-sm px-6 py-3 rounded-xl flex items-center gap-2 active:scale-95 transition-all shadow-md" onclick="toggleView('checkout')">
 <span>Finalizar Pedido</span>
@@ -247,90 +247,90 @@
 </div>
 </div>
 <!-- CHECKOUT VIEW -->
-<div class="view-hidden fade-transition min-h-screen" id="view-checkout" style="opacity: 0;">
-<header class="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 h-16 flex items-center px-4 justify-between">
-<button class="text-on-surface p-2 -ml-2 rounded-full active:bg-surface-container" onclick="toggleView('menu')">
+<div class="view-hidden fade-transition min-h-screen bg-cream" id="view-checkout" style="opacity: 0;">
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-gold/20 h-16 flex items-center px-4 justify-between">
+<button class="text-brand-brown p-2 -ml-2 rounded-full active:bg-gold/10" onclick="toggleView('menu')">
 <span class="material-symbols-outlined">arrow_back</span>
 </button>
-<h1 class="font-serif text-xl font-bold text-on-surface">Finalizar Pedido</h1>
+<h1 class="font-serif text-xl font-bold text-brand-brown">Finalizar Pedido</h1>
 <div class="w-10"></div>
 </header>
 <main class="px-4 py-6 space-y-8 pb-[140px]">
 <!-- Delivery Info -->
 <section class="space-y-4">
-<h2 class="font-serif text-xl font-bold text-on-surface flex items-center gap-2">
+<h2 class="font-serif text-xl font-bold text-brand-brown flex items-center gap-2">
 <span class="material-symbols-outlined text-gold">local_shipping</span>
                     Dados de Entrega
                 </h2>
 <div class="space-y-4">
 <div>
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" for="nome">Nome Completo</label>
-<input class="w-full bg-surface-container border-none rounded-xl px-4 py-3.5 text-on-surface placeholder-on-surface-variant/40 focus:ring-2 focus:ring-gold" id="nome" placeholder="Como deseja ser chamado?" type="text"/>
+<label class="block text-xs font-bold text-brand-brown/60 uppercase tracking-wider mb-2" for="nome">Nome Completo</label>
+<input class="w-full bg-white/50 border border-gold/20 rounded-xl px-4 py-3.5 text-brand-brown placeholder-brand-brown/30 focus:ring-2 focus:ring-gold focus:border-gold outline-none" id="nome" placeholder="Como deseja ser chamado?" type="text"/>
 </div>
 <div>
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" for="endereco">Endereço</label>
-<input class="w-full bg-surface-container border-none rounded-xl px-4 py-3.5 text-on-surface placeholder-on-surface-variant/40 focus:ring-2 focus:ring-gold" id="endereco" placeholder="Rua, Número, Bairro" type="text"/>
+<label class="block text-xs font-bold text-brand-brown/60 uppercase tracking-wider mb-2" for="endereco">Endereço</label>
+<input class="w-full bg-white/50 border border-gold/20 rounded-xl px-4 py-3.5 text-brand-brown placeholder-brand-brown/30 focus:ring-2 focus:ring-gold focus:border-gold outline-none" id="endereco" placeholder="Rua, Número, Bairro" type="text"/>
 </div>
 <div>
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2" for="complemento">Complemento (Opcional)</label>
-<input class="w-full bg-surface-container border-none rounded-xl px-4 py-3.5 text-on-surface placeholder-on-surface-variant/40 focus:ring-2 focus:ring-gold" id="complemento" placeholder="Apto, Bloco, Referência..." type="text"/>
+<label class="block text-xs font-bold text-brand-brown/60 uppercase tracking-wider mb-2" for="complemento">Complemento (Opcional)</label>
+<input class="w-full bg-white/50 border border-gold/20 rounded-xl px-4 py-3.5 text-brand-brown placeholder-brand-brown/30 focus:ring-2 focus:ring-gold focus:border-gold outline-none" id="complemento" placeholder="Apto, Bloco, Referência..." type="text"/>
 </div>
 </div>
 </section>
 <!-- Payment Method -->
 <section class="space-y-4">
-<h2 class="font-serif text-xl font-bold text-on-surface flex items-center gap-2">
+<h2 class="font-serif text-xl font-bold text-brand-brown flex items-center gap-2">
 <span class="material-symbols-outlined text-gold">payments</span>
                     Pagamento
                 </h2>
 <div class="grid grid-cols-1 gap-3">
-<label class="flex items-center p-4 border border-outline-variant/30 rounded-2xl bg-surface-container cursor-pointer transition-all has-[:checked]:bg-gold/10 has-[:checked]:border-gold">
-<input checked="" class="text-gold focus:ring-gold h-5 w-5 border-outline-variant bg-transparent" name="pagamento" type="radio" value="Pix"/>
-<span class="ml-3 flex items-center gap-3 text-on-surface font-medium">
-<span class="material-symbols-outlined text-on-surface-variant">qr_code_2</span>
+<label class="flex items-center p-4 border border-gold/20 rounded-2xl bg-white/50 cursor-pointer transition-all has-[:checked]:bg-gold/10 has-[:checked]:border-gold">
+<input checked="" class="text-gold focus:ring-gold h-5 w-5 border-gold bg-transparent" name="pagamento" type="radio" value="Pix"/>
+<span class="ml-3 flex items-center gap-3 text-brand-brown font-medium">
+<span class="material-symbols-outlined text-gold">qr_code_2</span>
                             Pix
                         </span>
 </label>
-<label class="flex items-center p-4 border border-outline-variant/30 rounded-2xl bg-surface-container cursor-pointer transition-all has-[:checked]:bg-gold/10 has-[:checked]:border-gold">
-<input class="text-gold focus:ring-gold h-5 w-5 border-outline-variant bg-transparent" name="pagamento" type="radio" value="Cartão"/>
-<span class="ml-3 flex items-center gap-3 text-on-surface font-medium">
-<span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+<label class="flex items-center p-4 border border-gold/20 rounded-2xl bg-white/50 cursor-pointer transition-all has-[:checked]:bg-gold/10 has-[:checked]:border-gold">
+<input class="text-gold focus:ring-gold h-5 w-5 border-gold bg-transparent" name="pagamento" type="radio" value="Cartão"/>
+<span class="ml-3 flex items-center gap-3 text-brand-brown font-medium">
+<span class="material-symbols-outlined text-gold">credit_card</span>
                             Cartão (na entrega)
                         </span>
 </label>
-<label class="flex items-center p-4 border border-outline-variant/30 rounded-2xl bg-surface-container cursor-pointer transition-all has-[:checked]:bg-gold/10 has-[:checked]:border-gold">
-<input class="text-gold focus:ring-gold h-5 w-5 border-outline-variant bg-transparent" name="pagamento" type="radio" value="Dinheiro"/>
-<span class="ml-3 flex items-center gap-3 text-on-surface font-medium">
-<span class="material-symbols-outlined text-on-surface-variant">money</span>
+<label class="flex items-center p-4 border border-gold/20 rounded-2xl bg-white/50 cursor-pointer transition-all has-[:checked]:bg-gold/10 has-[:checked]:border-gold">
+<input class="text-gold focus:ring-gold h-5 w-5 border-gold bg-transparent" name="pagamento" type="radio" value="Dinheiro"/>
+<span class="ml-3 flex items-center gap-3 text-brand-brown font-medium">
+<span class="material-symbols-outlined text-gold">money</span>
                             Dinheiro
                         </span>
 </label>
 </div>
 </section>
 <!-- Summary -->
-<section class="bg-surface-container-low rounded-3xl p-6 space-y-5 border border-outline-variant/20">
-<h2 class="font-serif text-xl font-bold text-on-surface">Resumo do Pedido</h2>
+<section class="bg-white/40 rounded-3xl p-6 space-y-5 border border-gold/10 shadow-sm">
+<h2 class="font-serif text-xl font-bold text-brand-brown">Resumo do Pedido</h2>
 <div class="space-y-4" id="cart-items-container">
 <!-- Populated via JS -->
 </div>
-<div class="pt-4 border-t border-outline-variant/20 space-y-2">
-<div class="flex justify-between text-on-surface-variant text-sm font-medium">
+<div class="pt-4 border-t border-gold/10 space-y-2">
+<div class="flex justify-between text-brand-brown/60 text-sm font-medium">
 <span>Subtotal</span>
 <span id="checkout-subtotal">R$ 0,00</span>
 </div>
-<div class="flex justify-between text-on-surface-variant text-sm font-medium">
+<div class="flex justify-between text-brand-brown/60 text-sm font-medium">
 <span>Taxa de Entrega</span>
 <span class="text-secondary font-bold">Grátis</span>
 </div>
 <div class="flex justify-between items-center pt-2">
-<span class="font-serif text-xl font-bold text-on-surface">Total</span>
-<span class="font-serif text-2xl font-bold text-on-surface" id="checkout-total">R$ 0,00</span>
+<span class="font-serif text-xl font-bold text-brand-brown">Total</span>
+<span class="font-serif text-2xl font-bold text-gold" id="checkout-total">R$ 0,00</span>
 </div>
 </div>
 </section>
 </main>
 <!-- Final Action -->
-<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant/30 p-4 z-50">
+<div class="fixed bottom-0 left-0 w-full bg-cream border-t border-gold/20 p-4 z-50">
 <button class="w-full bg-gold text-brand-brown text-base font-bold py-4 rounded-2xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-lg" onclick="enviarPedido()">
 <svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
@@ -357,7 +357,7 @@
             
             // Toast Notification
             const toast = document.createElement('div');
-            toast.className = 'fixed top-24 left-1/2 -translate-x-1/2 bg-brand-brown text-gold px-6 py-2.5 rounded-full text-sm font-bold z-[100] transition-all shadow-xl border border-gold/20';
+            toast.className = 'fixed top-24 left-1/2 -translate-x-1/2 bg-brand-brown text-gold px-6 py-2.5 rounded-full text-sm font-bold z-[100] transition-all shadow-xl border border-gold/30';
             toast.textContent = `Adicionado!`;
             document.body.appendChild(toast);
             
@@ -383,13 +383,13 @@
             container.innerHTML = '';
             
             if (carrinho.length === 0) {
-                container.innerHTML = '<p class="text-on-surface-variant italic text-sm text-center py-4">Seu carrinho está vazio.</p>';
+                container.innerHTML = '<p class="text-brand-brown/60 italic text-sm text-center py-4">Seu carrinho está vazio.</p>';
                 return;
             }
             
             carrinho.forEach((item, index) => {
                 container.innerHTML += `
-                    <div class="flex justify-between items-start text-on-surface">
+                    <div class="flex justify-between items-start text-brand-brown">
                         <div class="flex gap-4">
                             <span class="text-xs font-bold bg-gold/20 text-brand-brown w-6 h-6 flex items-center justify-center rounded-md shrink-0 mt-0.5">${item.quantidade}</span>
                             <div class="space-y-0.5">
@@ -400,7 +400,7 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="font-bold text-sm">${formatarMoeda(item.preco * item.quantidade)}</span>
+                        <span class="font-bold text-sm text-brand-brown">${formatarMoeda(item.preco * item.quantidade)}</span>
                     </div>
                 `;
             });
