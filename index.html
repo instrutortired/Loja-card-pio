@@ -350,23 +350,115 @@ img{max-width:100%;height:auto}
     <!-- DOCES -->
     <div class="md:col-span-2 xl:col-span-3 mt-6">
         <h2 class="font-serif text-2xl font-bold text-brand-brown border-b border-gold/20 pb-2">
-            🍫 Doces Gourmet
-        </h2>
-        <p class="text-sm text-brand-brown/60">
-            Nos pedidos de 100 doces é possível escolher dois sabores (50 unidades de cada).
-        </p>
-    </div>
+     <!-- DOCES GOURMET -->
+<div class="md:col-span-2 xl:col-span-3 mt-6">
+    <h2 class="font-serif text-2xl font-bold text-brand-brown border-b border-gold/20 pb-2">
+        🍫 Doces Gourmet
+    </h2>
 
-    <article class="md:col-span-2 xl:col-span-3 bg-white/40 rounded-xl p-6 border border-gold/10">
-        <ul class="space-y-3 text-brand-brown">
-            <li><strong>Beijinho</strong> — Unidade: R$ 2,00 | 50 un.: R$ 75,00 | 100 un.: R$ 150,00</li>
-            <li><strong>Ferrero Rocher Gourmet</strong> — Unidade: R$ 3,00 | 50 un.: R$ 125,00 | 100 un.: R$ 250,00</li>
-            <li><strong>Doce Gourmet de Nozes</strong> — Unidade: R$ 3,20 | 50 un.: R$ 140,00 | 100 un.: R$ 280,00</li>
-            <li><strong>Ninho com Nutella</strong> — Unidade: R$ 2,70 | 50 un.: R$ 85,00 | 100 un.: R$ 170,00</li>
-            <li><strong>Palha Italiana</strong> — Unidade: R$ 2,70 | 50 un.: R$ 85,00 | 100 un.: R$ 170,00</li>
-            <li><strong>Churros Gourmet</strong> — Unidade: R$ 2,70 | 50 un.: R$ 85,00 | 100 un.: R$ 170,00</li>
-        </ul>
-    </article>
+    <p class="text-sm text-brand-brown/60 mt-2">
+        Nos pedidos de <strong>100 doces</strong> é possível escolher
+        <strong>2 sabores</strong>, sendo <strong>50 unidades de cada</strong>.
+    </p>
+</div>
+
+<script>
+const doces = [
+{
+nome:"Beijinho",
+precos:[
+["Unidade",2],
+["50 unidades",75],
+["100 unidades",150]
+]
+},
+{
+nome:"Ferrero Rocher Gourmet",
+precos:[
+["Unidade",3],
+["50 unidades",125],
+["100 unidades",250]
+]
+},
+{
+nome:"Doce Gourmet de Nozes",
+precos:[
+["Unidade",3.20],
+["50 unidades",140],
+["100 unidades",280]
+]
+},
+{
+nome:"Ninho com Nutella",
+precos:[
+["Unidade",2.70],
+["50 unidades",85],
+["100 unidades",170]
+]
+},
+{
+nome:"Palha Italiana",
+precos:[
+["Unidade",2.70],
+["50 unidades",85],
+["100 unidades",170]
+]
+},
+{
+nome:"Churros Gourmet",
+precos:[
+["Unidade",2.70],
+["50 unidades",85],
+["100 unidades",170]
+]
+}
+];
+
+document.write(doces.map(doce=>`
+
+<div class="bg-white/40 rounded-2xl p-5 border border-gold/10 shadow-sm">
+
+<h3 class="font-serif text-xl font-bold text-brand-brown mb-4">
+${doce.nome}
+</h3>
+
+${doce.precos.map(preco=>`
+
+<div class="flex justify-between items-center py-2 border-b border-gold/10 last:border-0">
+
+<div>
+<p class="font-medium text-brand-brown">${preco[0]}</p>
+<p class="text-gold font-bold">
+R$ ${preco[1].toFixed(2).replace(".",",")}
+</p>
+</div>
+
+<button
+onclick="adicionarItem('${doce.nome} - ${preco[0]}',${preco[1]})"
+class="flex items-center justify-center
+w-10 h-10
+rounded-full
+border-2
+border-gold
+text-brand-brown
+hover:bg-gold
+hover:text-white
+transition">
+
+<span class="material-symbols-outlined">
+add
+</span>
+
+</button>
+
+</div>
+
+`).join("")}
+
+</div>
+
+`).join(""));
+</script>
 
     <!-- PRATO ESPECIAL -->
     <div class="md:col-span-2 xl:col-span-3 mt-6">
