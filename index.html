@@ -182,58 +182,210 @@ img{max-width:100%;height:auto}
 </div>
 <!-- Product List -->
 <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-<!-- Item 1 -->
-<article class="flex justify-between items-center py-5 border-b border-gold/5">
-<div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-brand-brown">Salada de Frutas Tradicional</h3>
-<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Banana, maçã, mamão, morango e suco de laranja.</p>
-<p class="text-base font-bold text-gold mt-2">R$ 15,00</p>
-</div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Salada de Frutas Tradicional', 15.00)">
-<span class="material-symbols-outlined">add</span>
-</button>
-</article>
-<!-- Item 2 -->
-<article class="flex justify-between items-center py-5 border-b border-gold/5">
-<div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-brand-brown">Salada de Frutas Especial</h3>
-<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Frutas tradicionais com adicional de leite condensado e granola.</p>
-<p class="text-base font-bold text-gold mt-2">R$ 18,50</p>
-</div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Salada de Frutas Especial', 18.50)">
-<span class="material-symbols-outlined">add</span>
-</button>
-</article>
-<!-- Item 3 -->
-<article class="flex justify-between items-center py-5 border-b border-gold/5">
-<div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-brand-brown">Taça Tropicália</h3>
-<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Manga, kiwi, abacaxi, uva e iogurte natural.</p>
-<p class="text-base font-bold text-gold mt-2">R$ 22,00</p>
-</div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Taça Tropicália', 22.00)">
-<span class="material-symbols-outlined">add</span>
-</button>
-</article>
-<!-- Item 4 -->
-<article class="flex justify-between items-center py-5 border-b border-gold/5">
-<div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-brand-brown">Coxinha de Frango</h3>
-<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Massa tradicional de batata com recheio cremoso de frango.</p>
-<p class="text-base font-bold text-gold mt-2">R$ 8,00</p>
-</div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Coxinha de Frango', 8.00)">
-<span class="material-symbols-outlined">add</span>
-</button>
-</article>
-<!-- Item 5 -->
-<article class="flex justify-between items-center py-5 border-b border-gold/5">
-<div class="flex-1 pr-4">
-<h3 class="font-serif text-lg font-bold text-brand-brown">Pastel de Queijo</h3>
-<p class="text-sm text-brand-brown/60 mt-1 leading-relaxed">Massa crocante recheada com queijo minas curado.</p>
-<p class="text-base font-bold text-gold mt-2">R$ 7,50</p>
-</div>
-<button aria-label="Add to cart" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold text-brand-brown active:bg-gold active:text-white transition-all" onclick="adicionarItem('Pastel de Queijo', 7.50)">
+
+    <!-- SALADAS DE FRUTAS -->
+    <div class="md:col-span-2 xl:col-span-3">
+        <h2 class="font-serif text-2xl font-bold text-brand-brown border-b border-gold/20 pb-2">
+            🍓 Saladas de Frutas
+        </h2>
+    </div>
+
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div class="flex-1 pr-4">
+            <h3 class="font-serif text-lg font-bold text-brand-brown">Salada de Frutas com Suco de Laranja Natural</h3>
+            <p class="text-base font-bold text-gold mt-2">R$ 4,50</p>
+        </div>
+        <button onclick="adicionarItem('Salada de Frutas com Suco de Laranja Natural',4.50)" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </article>
+
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div class="flex-1 pr-4">
+            <h3 class="font-serif text-lg font-bold text-brand-brown">Salada de Frutas com Gelatina Colorida</h3>
+            <p class="text-base font-bold text-gold mt-2">R$ 4,80</p>
+        </div>
+        <button onclick="adicionarItem('Salada de Frutas com Gelatina Colorida',4.80)" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </article>
+
+    <!-- SALGADOS FRITOS -->
+    <div class="md:col-span-2 xl:col-span-3 mt-6">
+        <h2 class="font-serif text-2xl font-bold text-brand-brown border-b border-gold/20 pb-2">
+            🥟 Salgados Fritos
+        </h2>
+        <p class="text-sm text-brand-brown/60">Preço por cento.</p>
+    </div>
+
+    <script>
+    const salgadosFritos=[
+        ["Coxinha",90],
+        ["Coxinha com Catupiry",100],
+        ["Kibe",90],
+        ["Bolinha de Queijo",90],
+        ["Risole de Carne",90],
+        ["Risole de Milho",90],
+        ["Risole de Alho Poró",90],
+        ["Pastel de Carne",90],
+        ["Pastel de Queijo",90],
+        ["Pastel de Frango",90],
+        ["Pastel de Pizza",90]
+    ];
+
+    document.write(salgadosFritos.map(item=>`
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div>
+            <h3 class="font-serif text-lg font-bold text-brand-brown">${item[0]}</h3>
+            <p class="text-base font-bold text-gold mt-2">R$ ${item[1].toFixed(2).replace(".",",")}</p>
+        </div>
+        <button onclick="adicionarItem('${item[0]}',${item[1]})"
+        class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </article>
+    `).join(""));
+    </script>
+
+    <!-- SALGADOS ASSADOS -->
+    <div class="md:col-span-2 xl:col-span-3 mt-6">
+        <h2 class="font-serif text-2xl font-bold text-brand-brown border-b border-gold/20 pb-2">
+            🥐 Salgados Assados
+        </h2>
+        <p class="text-sm text-brand-brown/60">Preço por cento.</p>
+    </div>
+
+    <script>
+    const assados=[
+        ["Empada de Frango",90],
+        ["Esfirra de Carne",90],
+        ["Esfirra de Frango",90],
+        ["Enrolado de Presunto e Mussarela",90]
+    ];
+
+    document.write(assados.map(item=>`
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div>
+            <h3 class="font-serif text-lg font-bold text-brand-brown">${item[0]}</h3>
+            <p class="text-base font-bold text-gold mt-2">R$ ${item[1].toFixed(2).replace(".",",")}</p>
+        </div>
+        <button onclick="adicionarItem('${item[0]}',${item[1]})"
+        class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </article>
+    `).join(""));
+    </script>
+
+    <!-- MINI LANCHES -->
+    <div class="md:col-span-2 xl:col-span-3 mt-6">
+        <h2 class="font-serif text-2xl font-bold text-brand-brown border-b border-gold/20 pb-2">
+            🥪 Mini Lanches
+        </h2>
+    </div>
+
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div>
+            <h3 class="font-serif text-lg font-bold">Mini Sanduíche de Patê de Frango</h3>
+            <p class="text-base font-bold text-gold">R$ 112,50</p>
+        </div>
+        <button onclick="adicionarItem('Mini Sanduíche de Patê de Frango',112.50)" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </article>
+
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div>
+            <h3 class="font-serif text-lg font-bold">Mini Pizza de Calabresa e Alho Poró</h3>
+            <p class="text-base font-bold text-gold">R$ 87,80</p>
+        </div>
+        <button onclick="adicionarItem('Mini Pizza de Calabresa e Alho Poró',87.80)" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </article>
+
+    <!-- BOLOS -->
+    <div class="md:col-span-2 xl:col-span-3 mt-6">
+        <h2 class="font-serif text-2xl font-bold text-brand-brown border-b border-gold/20 pb-2">
+            🍰 Bolos e Tortas
+        </h2>
+    </div>
+
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div>
+            <h3 class="font-serif text-lg font-bold">Bolo Festa Retangular</h3>
+            <p class="text-sm text-brand-brown/60">40 a 50 pessoas</p>
+            <p class="text-base font-bold text-gold">R$ 487,40</p>
+        </div>
+        <button onclick="adicionarItem('Bolo Festa Retangular',487.40)" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold"><span class="material-symbols-outlined">add</span></button>
+    </article>
+
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div>
+            <h3 class="font-serif text-lg font-bold">Bolo Festa Redondo</h3>
+            <p class="text-sm text-brand-brown/60">20 pessoas</p>
+            <p class="text-base font-bold text-gold">R$ 198,90</p>
+        </div>
+        <button onclick="adicionarItem('Bolo Festa Redondo',198.90)" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold"><span class="material-symbols-outlined">add</span></button>
+    </article>
+
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div>
+            <h3 class="font-serif text-lg font-bold">Torta de Frango</h3>
+            <p class="text-sm text-brand-brown/60">4 a 5 pessoas</p>
+            <p class="text-base font-bold text-gold">R$ 130,60</p>
+        </div>
+        <button onclick="adicionarItem('Torta de Frango',130.60)" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold"><span class="material-symbols-outlined">add</span></button>
+    </article>
+
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div>
+            <h3 class="font-serif text-lg font-bold">Bolo de Creme</h3>
+            <p class="text-sm text-brand-brown/60">48 mini pedaços</p>
+            <p class="text-base font-bold text-gold">R$ 90,00</p>
+        </div>
+        <button onclick="adicionarItem('Bolo de Creme',90)" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold"><span class="material-symbols-outlined">add</span></button>
+    </article>
+
+    <!-- DOCES -->
+    <div class="md:col-span-2 xl:col-span-3 mt-6">
+        <h2 class="font-serif text-2xl font-bold text-brand-brown border-b border-gold/20 pb-2">
+            🍫 Doces Gourmet
+        </h2>
+        <p class="text-sm text-brand-brown/60">
+            Nos pedidos de 100 doces é possível escolher dois sabores (50 unidades de cada).
+        </p>
+    </div>
+
+    <article class="md:col-span-2 xl:col-span-3 bg-white/40 rounded-xl p-6 border border-gold/10">
+        <ul class="space-y-3 text-brand-brown">
+            <li><strong>Beijinho</strong> — Unidade: R$ 2,00 | 50 un.: R$ 75,00 | 100 un.: R$ 150,00</li>
+            <li><strong>Ferrero Rocher Gourmet</strong> — Unidade: R$ 3,00 | 50 un.: R$ 125,00 | 100 un.: R$ 250,00</li>
+            <li><strong>Doce Gourmet de Nozes</strong> — Unidade: R$ 3,20 | 50 un.: R$ 140,00 | 100 un.: R$ 280,00</li>
+            <li><strong>Ninho com Nutella</strong> — Unidade: R$ 2,70 | 50 un.: R$ 85,00 | 100 un.: R$ 170,00</li>
+            <li><strong>Palha Italiana</strong> — Unidade: R$ 2,70 | 50 un.: R$ 85,00 | 100 un.: R$ 170,00</li>
+            <li><strong>Churros Gourmet</strong> — Unidade: R$ 2,70 | 50 un.: R$ 85,00 | 100 un.: R$ 170,00</li>
+        </ul>
+    </article>
+
+    <!-- PRATO ESPECIAL -->
+    <div class="md:col-span-2 xl:col-span-3 mt-6">
+        <h2 class="font-serif text-2xl font-bold text-brand-brown border-b border-gold/20 pb-2">
+            🍲 Pratos Especiais
+        </h2>
+    </div>
+
+    <article class="flex justify-between items-center py-5 border-b border-gold/5">
+        <div>
+            <h3 class="font-serif text-lg font-bold">Escondidinho de Mandioca com Carne de Sol</h3>
+            <p class="text-base font-bold text-gold">R$ 180,50</p>
+        </div>
+        <button onclick="adicionarItem('Escondidinho de Mandioca com Carne de Sol',180.50)" class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-gold">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </article>
+
+</section>
 <span class="material-symbols-outlined">add</span>
 </button>
 </article>
